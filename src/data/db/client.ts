@@ -52,6 +52,7 @@ dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
 const connectionString = process.env.DATABASE_URL + "?sslmode=require";
 
+console.log("[📦] Connecting to database...");
 if (!connectionString) {
   throw new Error(
     "[❌] Connection to database is failed.\n\
@@ -59,7 +60,6 @@ if (!connectionString) {
     [❌] Please check DATABASE_URL variable.\n",
   );
 }
-
 export const schemaPg = postgres(connectionString, { ssl: "allow", max: 1 });
 
 export const schemaNeon = neon(connectionString);
