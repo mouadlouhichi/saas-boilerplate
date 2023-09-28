@@ -24,6 +24,7 @@
 import path from "node:path";
 
 import { Client, neon, neonConfig } from "@neondatabase/serverless";
+import { createClient } from "@supabase/supabase-js";
 import { inferRouterOutputs } from "@trpc/server";
 import dotenv from "dotenv";
 import { DrizzleConfig } from "drizzle-orm";
@@ -64,10 +65,7 @@ export const schemaPg = postgres(connectionString, { ssl: "allow", max: 1 });
 
 export const schemaNeon = neon(connectionString);
 
-export const neonClient = new Client({
-  connectionString,
-  ssl: true,
-});
+export const neonClient = createClient(connectionString, "anon");
 
 const dbConfig: DrizzleConfig = {
   logger: env.NODE_ENV === "development",
