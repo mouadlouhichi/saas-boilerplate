@@ -51,7 +51,7 @@ neonConfig.fetchConnectionCache = true;
 dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 
-const connectionString = process.env.DATABASE_URL + "?sslmode=require";
+const connectionString = process.env.DATABASE_URL;
 
 console.log("[📦] Connecting to database...");
 if (!connectionString) {
