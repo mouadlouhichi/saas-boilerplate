@@ -2,6 +2,10 @@
 
 # Install dependencies only when needed
 FROM node:18-alpine AS deps
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
@@ -77,4 +81,4 @@ EXPOSE 3000
 ENV HOSTNAME 127.0.0.1
 ENV PORT 3000
 
-CMD ["node", "server.js"]
+CMD ["pnpm", "start"]
