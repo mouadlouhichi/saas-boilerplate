@@ -43,6 +43,7 @@ jobs:
             LINKEDIN_SECRET_ARG: ${{ secrets.LINKEDIN_SECRET }}
             FACEBOOK_ID_ARG: ${{ secrets.FACEBOOK_ID }}
             FACEBOOK_SECRET_ARG: ${{ secrets.FACEBOOK_SECRET }}
+            NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY_ARG: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}
         with:
           name: mouadlouhichi/mindrested-app/mindrested
           registry: ghcr.io
