@@ -34,7 +34,7 @@ export type WithChildren<T = unknown> = T & { children: React.ReactNode };
 export type PageParams = { params: { locale: string } };
 
 export type GenerateMetadata = (
-  params: PageParams
+  params: PageParams,
 ) => Metadata | Promise<Metadata>;
 
 export interface NavItem {
