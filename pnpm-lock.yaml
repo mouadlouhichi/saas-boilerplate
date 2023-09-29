@@ -60,8 +60,8 @@ dependencies:
     specifier: ^3.3.1
     version: 3.3.1(react-hook-form@7.46.2)
   '@loglib/tracker':
-    specifier: ^0.6.2
-    version: 0.6.2(react@18.2.0)
+    specifier: ^0.8.0
+    version: 0.8.0(react@18.2.0)
   '@mdx-js/loader':
     specifier: ^2.3.0
     version: 2.3.0(webpack@5.88.2)
@@ -3673,12 +3673,13 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: true
 
-  /@loglib/tracker@0.6.2(react@18.2.0):
-    resolution: {integrity: sha512-0lo4Ug85W2i7VYmyOFqFZIW9suIIbhmCafa+xcJNtuROsT5p1iAppXfO/0l4XDEJlntuok7Z6fPEYbcI3vdVKQ==}
+  /@loglib/tracker@0.8.0(react@18.2.0):
+    resolution: {integrity: sha512-WShEN7s4fcmWaWgBNmx4sDNaoLPudvfmopHxeJpWTAb4SEpypRsk4Kx143UQQEvFHE+jPQi/P3m8ennpVqFWAg==}
     peerDependencies:
       react: ^16.8||^17||^18
     dependencies:
       react: 18.2.0
+      web-vitals: 3.5.0
     dev: false
 
   /@mapbox/node-pre-gyp@1.0.11(encoding@0.1.13):
@@ -21996,6 +21997,10 @@ packages:
   /web-streams-polyfill@4.0.0-beta.3:
     resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
     engines: {node: '>= 14'}
+    dev: false
+
+  /web-vitals@3.5.0:
+    resolution: {integrity: sha512-f5YnCHVG9Y6uLCePD4tY8bO/Ge15NPEQWtvm3tPzDKygloiqtb4SVqRHBcrIAqo2ztqX5XueqDn97zHF0LdT6w==}
     dev: false
 
   /webidl-conversions@3.0.1:
