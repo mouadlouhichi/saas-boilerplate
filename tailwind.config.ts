@@ -21,11 +21,10 @@ function customColors(cssVar: string) {
   };
 }
 
-
 export const content = [
   "./src/**/*.{js,jsx,ts,tsx}",
   "./public/index.html",
-  "./stories/**/*.{js,ts,jsx,tsx}" // Here!
+  "./stories/**/*.{js,ts,jsx,tsx}", // Here!
 ];
 export const darkMode = "class";
 export const theme = {
@@ -34,14 +33,14 @@ export const theme = {
     center: true,
     padding: {
       DEFAULT: "1rem",
-      "2xl": "128px"
-    }
+      "2xl": "128px",
+    },
   },
   fontFamily: {
     sans: ["var(--font-manrope)"],
     body: ["var(--font-montserrat)"],
     mono: ["var(--font-raleway)"],
-    display: ["var(--font-sharp)"]
+    display: ["var(--font-sharp)"],
   },
 
   extend: {
@@ -53,10 +52,10 @@ export const theme = {
         300: customColors("--c-primary-300"),
         400: customColors("--c-primary-400"),
         500: customColors("--c-primary-500"),
-        6000: customColors("--c-primary-600"),
+        6000: "green",
         700: customColors("--c-primary-700"),
         800: customColors("--c-primary-800"),
-        900: customColors("--c-primary-900")
+        900: customColors("--c-primary-900"),
       },
       secondary: {
         50: customColors("--c-secondary-50"),
@@ -68,7 +67,7 @@ export const theme = {
         6000: customColors("--c-secondary-600"),
         700: customColors("--c-secondary-700"),
         800: customColors("--c-secondary-800"),
-        900: customColors("--c-secondary-900")
+        900: customColors("--c-secondary-900"),
       },
       neutral: {
         50: customColors("--c-neutral-50"),
@@ -80,44 +79,44 @@ export const theme = {
         6000: customColors("--c-neutral-600"),
         700: customColors("--c-neutral-700"),
         800: customColors("--c-neutral-800"),
-        900: customColors("--c-neutral-900")
+        900: customColors("--c-neutral-900"),
       },
       lightBlue: {
-        500: customColors("--c-lightBlue-500")
+        500: customColors("--c-lightBlue-500"),
       },
       darkBlue: {
-        500: customColors("--c-darkBlue-500")
+        500: customColors("--c-darkBlue-500"),
       },
       Newblue: {
-        500: customColors("--c-Newblue-500")
+        500: customColors("--c-Newblue-500"),
       },
       gold: {
-        500: customColors("--c-gold-500")
+        500: customColors("--c-gold-500"),
       },
       darkGray: {
-        500: customColors("--c-darkGray-500")
+        500: customColors("--c-darkGray-500"),
       },
       yellow: {
-        500: customColors("--c-yellow-500")
+        500: customColors("--c-yellow-500"),
       },
       darkgreen: {
-        500: customColors("--c-darkgreen-500")
+        500: customColors("--c-darkgreen-500"),
       },
       lightGreen: {
-        500: customColors("--c-lightGreen-500")
-      }
+        500: customColors("--c-lightGreen-500"),
+      },
     },
     backgroundImage: {
       "lines-pattern": "url('/images/linesBg.svg')",
-      "dark-lines": "url('/images/whiteLinesBg.svg')"
-    }
-  }
+      "dark-lines": "url('/images/whiteLinesBg.svg')",
+    },
+  },
 };
 export const variants = {
-  extend: {}
+  extend: {},
 };
 export const plugins = [
   require("@tailwindcss/typography"),
   require("@tailwindcss/forms"),
-  require("@tailwindcss/aspect-ratio")
+  require("@tailwindcss/aspect-ratio"),
 ];

@@ -11,7 +11,7 @@ import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 export interface GallerySliderProps {
   className?: string;
-  galleryImgs: (StaticImageData | string)[];
+  galleryImgs?: (StaticImageData | string)[];
   ratioClass?: string;
   uniqueID: string;
   href?: Route<string>;
@@ -22,7 +22,7 @@ export interface GallerySliderProps {
 
 export default function GallerySlider({
   className = "",
-  galleryImgs,
+  galleryImgs = [],
   ratioClass = "aspect-w-4 aspect-h-3",
   imageClass = "",
   uniqueID = "uniqueID",

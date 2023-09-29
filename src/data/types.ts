@@ -64,7 +64,7 @@ export type TwMainColor =
 //
 export interface StayDataType {
   id: string | number;
-  author: AuthorType;
+  author?: AuthorType;
   date: string;
   href: Route<string>;
   title: string;
@@ -77,7 +77,7 @@ export interface StayDataType {
   like: boolean;
   galleryImgs: (StaticImageData | string)[];
   price: string;
-  listingCategory: TaxonomyType;
+  listingCategory?: TaxonomyType;
   maxGuests: number;
   bedrooms: number;
   bathrooms: number;
