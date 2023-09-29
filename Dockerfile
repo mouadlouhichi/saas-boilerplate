@@ -87,4 +87,4 @@ EXPOSE 3000
 ENV HOSTNAME 127.0.0.1
 ENV PORT 3000
 
-CMD ["next", "start"]
+CMD ["node", "server.js"]
