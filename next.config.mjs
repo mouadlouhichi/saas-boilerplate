@@ -2,9 +2,9 @@
  * Everything starts here. This is the main Next.js configuration file.
  * @see https://nextjs.org/docs/app/building-your-application/configuring
  */
+import nextIntlPlugin from "next-intl/plugin";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
-import nextIntlPlugin from "next-intl/plugin";
 import { createSecureHeaders } from "next-secure-headers";
 import remarkGfm from "remark-gfm";
 
@@ -57,6 +57,7 @@ const nextConfig = {
    * Configuration for next/image.
    */
   images: {
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: hostnames.map((hostname) => ({
       protocol: "https",
@@ -102,7 +103,9 @@ const withMDX = createMDX({ options: { remarkPlugins: [remarkGfm] } });
  */
 const withNextIntl = nextIntlPlugin("./src/i18n/server.ts");
 
-const withBundleAnalyzerConfig = withBundleAnalyzer({enabled : process.env.ANALYZE === 'true'});
+const withBundleAnalyzerConfig = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 /**
  * Send the config to server while build or lint.
  */

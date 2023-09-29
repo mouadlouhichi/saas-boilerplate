@@ -1,30 +1,31 @@
-import { env } from "@/data/env/env.mjs";
-import { type CartLineItem } from "@/types";
 import { clsx, type ClassValue } from "clsx";
 import dayjs from "dayjs";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 import { twMerge } from "tailwind-merge";
 import * as z from "zod";
 
-export const signInPagePath = (locale: string) => `/${locale}/sign-in`;
+import { env } from "@/data/env/env.mjs";
 
 /**
- * `clsx` is a tiny utility for constructing className strings conditionally.
- * `cn` function is a small extension for `clsx` to implement better support for TailwindCSS classes.
+ * A small extension to `clsx` to make it TailwindCSS class-aware.
+ * @alias cls
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 export const cls = cn;
 
-export const ERR = {
-  unauthenticated: "Unauthenticated",
-  unauthorized: "Unauthorized",
-  db: "Failed to find in database",
-  undefined: "Undefined variable",
-  fetch: "Failed to fetch data",
-  not_allowed: "User should not be allowed to do this action",
-};
+export function formatPrice(
+  price: number | string,
+  currency: "USD" | "EUR" | "GBP" | "BDT" = "USD",
+  notation: "compact" | "engineering" | "scientific" | "standard" = "standard"
+) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency,
+    notation
+  }).format(Number(price));
+}
 
 export function formatDate(date: Date | string | number) {
   return dayjs(date).format("MMMM D, YYYY");
@@ -33,7 +34,7 @@ export function formatDate(date: Date | string | number) {
 export function formatBytes(
   bytes: number,
   decimals = 0,
-  sizeType: "accurate" | "normal" = "normal",
+  sizeType: "accurate" | "normal" = "normal"
 ) {
   const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
   const accurateSizes = ["Bytes", "KiB", "MiB", "GiB", "TiB"];
@@ -59,7 +60,7 @@ export function unslugify(str: string) {
 export function toTitleCase(str: string) {
   return str.replace(
     /\w\S*/g,
-    (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase(),
+    (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase()
   );
 }
 
@@ -88,52 +89,11 @@ export function catchError(err: unknown) {
     const errors = err.issues.map((issue) => {
       return issue.message;
     });
-    return toast(errors.join("\n"));
+    return toast.error(errors.join("\n"));
   } else if (err instanceof Error) {
-    return toast(err.message);
+    return toast.error(err.message);
   } else {
-    return toast("Something went wrong, please try again later.");
-  }
-}
-
-/**
- * @see https://github.com/nextauthjs/next-auth/blob/main/docs/docs/guides/basics/pages.md?plain=1#L47
- */
-export function catchAuthError(error?: string | null) {
-  switch (error) {
-    case "OAuthAccountNotLinked":
-      return {
-        title: "You already have an account",
-        description:
-          "Please sign in with the other service you used to sign up.",
-      };
-    case "EmailSignin":
-      return {
-        title: "Unable to send login e-mail",
-        description: "Sending your login e-mail failed. Please try again.",
-      };
-    case "CredentialsSignin":
-      return {
-        title: "Invalid username or password",
-        description:
-          "The username and password you entered did not match our records. Please double-check and try again.",
-      };
-    case "SessionRequired":
-      return {
-        title: "Login required",
-        description: "You must be logged in to view this page",
-      };
-    case "OAuthCallback":
-    case "OAuthCreateAccount":
-    case "OAuthSignin":
-    case "EmailCreateAccount":
-    case "Callback":
-    case "Default":
-    default:
-      return {
-        title: "Something went wrong.",
-        description: "Your sign in request failed. Please try again.",
-      };
+    return toast.error("Something went wrong, please try again later.");
   }
 }
 
@@ -142,81 +102,3 @@ export function isMacOs() {
 
   return window.navigator.userAgent.includes("Mac");
 }
-
-export function calculateOrderAmount(items: CartLineItem[]) {
-  const total = items.reduce((acc, item) => {
-    return acc + Number(item.price) * item.quantity;
-  }, 0);
-  const fee = Math.round(total * 0.1);
-
-  const totalInCents = Math.round(total * 100);
-  const feeInCents = Math.round(fee * 100);
-
-  return {
-    total: totalInCents, // Converts to cents which stripe charges in
-    fee: feeInCents,
-  };
-}
-
-export function formatPrice(
-  price: number | string,
-  currency: "USD" | "EUR" | "GBP" | "BDT" = "USD",
-  notation: "compact" | "engineering" | "scientific" | "standard" = "standard",
-) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency,
-    notation,
-  }).format(Number(price));
-}
-
-export const numberToSI = (number: any) => {
-  const SI_SYMBOL = ["", "k", "M", "B", "T"];
-
-  const tier = (Math.log10(Math.abs(number)) / 3) | 0;
-
-  if (tier == 0) return number;
-
-  const suffix = SI_SYMBOL[tier];
-  const scale = Math.pow(10, tier * 3);
-
-  const scaled = number / scale;
-
-  return scaled.toFixed(1) + suffix;
-};
-
-export const numberToMoney = (number: any) => {
-  const parsedNumber = parseFloat(number);
-
-  if (isNaN(parsedNumber)) return "--";
-
-  const money = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
-
-  return money.format(parsedNumber);
-};
-
-export const numberToSIMoney = (number: any) => {
-  const parsedNumber = parseFloat(number);
-
-  if (isNaN(parsedNumber)) return "--";
-
-  const money = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    notation: "compact",
-  });
-
-  return money.format(parsedNumber);
-};
-
-export const numberToPercent = (number: any) => {
-  const percent = new Intl.NumberFormat("pt-BR", {
-    style: "percent",
-    maximumSignificantDigits: 2,
-  });
-
-  return percent.format(number / 100);
-};

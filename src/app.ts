@@ -1,272 +1,196 @@
-/**
- * To reduce the number of config files, we aim to combine everything into a single file.
- * Materials about @satisfies: https://youtu.be/49gHWuepxxE, https://youtu.be/G1RtAmI0-vc
- */
+// ?? To reduce the number of config files, we aim to combine everything into a single file.
+// ?? Materials about @satisfies: https://youtu.be/49gHWuepxxE, https://youtu.be/G1RtAmI0-vc
 
-// TODO: remove unused config
+import type { FooterItem, MainNavItem } from "@/types";
 
 import { ContentSection, HeroHeader } from "@/server/config/appts";
-import { productCategories } from "@/server/config/products";
 import { networks } from "@/server/config/socials";
-import { slugify } from "@/server/utils";
-import { MainMenuItem, type FooterItem } from "@/types";
+
+import { FOOTER_NAVIGATION, NAVIGATION } from "./data/navigation";
+import { ImageSvgIcons } from "./images/icons";
+
+// ========================================================
 
 export const appts = {
-  name: "Relivator",
+  name: "MindRested",
   social: networks({
-    youtube: "@bleverse_com",
-    discord: "Pb8uKbwpsJ",
-    facebook: "groups/bleverse",
-    twitter: "blefnk",
-    github: "blefnk",
-  }),
-  // currently not recommended to use debug
-  debug: false,
+    youtube: "@mindrested_maroc",
+    facebook: "mindrested_maroc",
+    twitter: "mindrested_maroc",
+    instagram: "mindrested_maroc"
+  })
 };
 
 export default appts;
 
-export type articles = {
-  type?: "blog_news" | "blog_only" | "news_only" | undefined;
-  articles_provider?: "default" | "contentlayer" | undefined;
-};
-
 export type SiteConfig = typeof siteConfig;
 
 const links = {
-  twitter: "https://x.com/blefnk",
-  github: "https://github.com/blefnk/relivator",
-  githubAccount: "https://github.com/blefnk",
-  discord: "https://discord.gg/Pb8uKbwpsJ",
-  facebook: "https://facebook.com/groups/bleverse",
+  twitter: "https://x.com/mindrested_maroc",
+  youtube: "https://youtube.com/mindrested_maroc",
+  instagram: "https://instagram.com/mindrested_maroc",
+  facebook: "https://facebook.com/groups/bleverse"
 };
 
 export const contactConfig = {
-  email: "blefnk@gmail.com",
+  email: "contact.mindrested@gmail.com"
 };
 
-export const REPOSITORY_OWNER = "blefnk";
-export const REPOSITORY_NAME = "relivator";
+// ========================================================
+
+export const REPOSITORY_OWNER = "mouadlouhichi";
+export const REPOSITORY_NAME = "mindrested-app";
 export const REPOSITORY_URL = `https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}`;
-export const baseUrl = "https://relivator.bleverse.com";
+export const baseUrl = "http://localhost:3000";
+
+// ========================================================
 
 export const BASE_URL =
   process.env.NODE_ENV === "production" ? baseUrl : "http://localhost:3000";
-export const BRAND_NAME = "Relivator";
-export const BRAND_DESCRIPTION =
-  "Next.js 13 free store and dashboard template. It helps you build great eCommerce and SaaS apps faster than ever. Get it now!";
+export const BRAND_NAME = "Mindrested";
+export const BRAND_TITLE =
+  "Your Mental Health Journey Starts Here | MindRested";
 
-export const OWNER_ROLE = "owner";
-export const ADMIN_ROLE = "admin";
-export const MEMBER_ROLE = "member";
+export const BRAND_DESCRIPTION =
+  "MindRested: Elevate Your Well-being with Online Therapy, Progress Tracking, and Self-Care Resources. Start your journey to better mental health today.";
+
+export const OWNER_ROLE = "Owner";
+export const ADMIN_ROLE = "Admin";
+export const Therapist_ROLE = "Therapist";
+export const USER_ROLE = "User";
+export const GUEST_ROLE = "Guest";
 
 export const TRIAL_LENGTH_IN_DAYS = 7;
-export const ROLES = [OWNER_ROLE, ADMIN_ROLE, MEMBER_ROLE] as const;
+export const ROLES = [
+  OWNER_ROLE,
+  ADMIN_ROLE,
+  Therapist_ROLE,
+  GUEST_ROLE
+] as const;
+
+export const POLICIES = {
+  SESSION_CREATE: "session:create",
+  SESSION_READ: "session:read",
+  SESSION_UPDATE: "session:update",
+  SESSION_DELETE: "session:delete",
+  SESSION_BOOK: "session:book",
+  SESSION_CANCEL: "session:cancel",
+  SESSION_RESCHEDULE: "session:reschedule",
+  SESSION_COMPLETE: "session:complete",
+  SESSION_REVIEW: "session:review",
+  SESSION_REPORT: "session:report",
+  SESSION_VIEW: "session:view",
+  SESSION_LIST: "session:list",
+  SESSION_SEARCH: "session:search",
+  SESSION_FILTER: "session:filter",
+  SESSION_SORT: "session:sort",
+  SESSION_EXPORT: "session:export",
+  SESSION_IMPORT: "session:import",
+  SESSION_SYNC: "session:sync",
+  SESSION_PUBLISH: "session:publish",
+  SESSION_UNPUBLISH: "session:unpublish",
+  SESSION_ARCHIVE: "session:archive",
+  SESSION_UNARCHIVE: "session:unarchive",
+  SESSION_RESTORE: "session:restore",
+  SESSION_PURGE: "session:purge",
+  SESSION_PURGE_ALL: "session:purge_all",
+  SESSION_PURGE_DELETED: "session:purge_deleted",
+  SESSION_PURGE_ARCHIVED: "session:purge_archived",
+  SESSION_PURGE_EXPIRED: "session:purge_expired",
+  SESSION_PURGE_CANCELLED: "session:purge_cancelled",
+  SESSION_PURGE_COMPLETED: "session:purge_completed",
+  SESSION_PURGE_UNPUBLISHED: "session:purge_unpublished",
+  SESSION_PURGE_PUBLISHED: "session:purge_published",
+  SESSION_PURGE_REJECTED: "session:purge_rejected",
+  SESSION_PURGE_PENDING: "session:purge_pending",
+  SESSION_PURGE_ACTIVE: "session:purge_active",
+  // V2
+  COMMENT_CREATE: "comment:create",
+  COMMENT_READ: "comment:read",
+  COMMENT_UPDATE: "comment:update",
+  COMMENT_DELETE: "comment:delete",
+  POST_CREATE: "post:create",
+  POST_READ: "post:read",
+  POST_UPDATE: "post:update"
+} as const;
+// ======================= default features===========================
+
+export const defaultFeatures = {
+  internationalizationEnabled: true,
+  themeToggleEnabled: true,
+  authEnabled: true
+};
 
 export const settings = {
   internationalizationEnabled: true,
-  themeToggleEnabled: true,
+  themeToggleEnabled: true
 };
 
 export const siteConfig = {
-  name: "Relivator",
-  shortName: "Relivator",
-  author: "Bleverse",
+  name: "MindRested",
+  shortName: "MindRested",
+  author: "mouadlouhichi",
   description:
-    "NextJS 13 free starter: store, landing, dashboard. It helps you build great eCommerce and SaaS apps faster than ever. Get it!",
+    "Elevate your mental well-being with MindRested - your trusted online therapy platform. Schedule sessions, track progress, and access self-care resources for a healthier you.",
   company: {
-    name: "Bleverse",
-    link: "https://bleverse.com",
-    email: "blefnk@gmail.com",
-    twitter: "@blefnk",
+    name: "MindRested",
+    link: "https://www.mindrested.com",
+    email: "contact@mindrested.com",
+    twitter: "@mindrested_maroc"
   },
   handles: {
-    twitter: "@blefnk",
+    twitter: "@mindrested_maroc"
   },
   keywords: [
-    "App Router",
-    "Blefonix",
-    "Bleverse",
-    "Drizzle Orm",
-    "Landing Page",
-    "Lemon Squeezy",
-    "Next.js 13.5",
-    "Nextjs",
-    "Open Source",
-    "Parallel Routes",
-    "PostgreSQL",
-    "Radix Ui",
-    "React",
-    "Relivator",
-    "Server Actions",
-    "Server Components",
-    "Shadcn/UI",
-    "Starter",
-    "Stripe",
-    "T3 Stack",
-    "Tailwind Css",
-    "Template",
-    "Tools",
-    "Utils",
+    "online therapy",
+    "mental health",
+    "therapy platform",
+    "self-care",
+    "Mental wellness",
+    "therapist appointments",
+    "therapy progress",
+    "Morocco",
+    "MindRested",
+    "counseling",
+    "emotional support",
+    "mental well-being",
+    "therapeutic sessions",
+    "stress management",
+    "anxiety relief",
+    "depression help",
+    "virtual therapy",
+    "licensed therapists",
+    "online counseling",
+    "psychological support",
+    "mental health resources",
+    "therapy sessions",
+    "mental health tracking",
+    "mental health progress",
+    "online mental health",
+    "therapy access",
+    "personalized therapy",
+    "professional therapists",
+    "therapeutic resources",
+    "self-help tools"
   ],
   url: {
     base: baseUrl,
-    author: REPOSITORY_OWNER,
+    author: REPOSITORY_OWNER
   },
   ogImage: `${baseUrl}/og-image.png`,
-  mainNav: [
-    {
-      title: "Lobby",
-      items: [
-        {
-          title: "Products",
-          href: "/products",
-          description: "All the products we have to offer.",
-          items: [],
-        },
-        {
-          title: "Build a Look",
-          href: "/custom/clothing",
-          description: "Build your own custom clothes.",
-          items: [],
-        },
-        {
-          title: "Blog",
-          href: "/blog",
-          description: "Read our latest blog posts.",
-          items: [],
-        },
-      ],
-    },
-    ...productCategories.map((category) => ({
-      title: category.title,
-      items: [
-        {
-          title: "All",
-          href: `/categories/${slugify(category.title)}`,
-          description: `All ${category.title}.`,
-          items: [],
-        },
-        ...category.subcategories.map((subcategory) => ({
-          title: subcategory.title,
-          href: `/categories/${slugify(category.title)}/${subcategory.slug}`,
-          description: subcategory.description,
-          items: [],
-        })),
-      ],
-    })),
-  ] satisfies MainMenuItem[],
+  mainNav: NAVIGATION,
   links,
-  footerNav: [
-    {
-      title: "Bleverse",
-      items: [
-        {
-          title: "Community",
-          href: "https://bleverse.com",
-          external: true,
-        },
-        {
-          title: "MF Piano",
-          href: "https://mfpiano.org",
-          external: true,
-        },
-        {
-          title: "Peresfer",
-          href: "https://peresfer.com",
-          external: true,
-        },
-        {
-          title: "Relivator",
-          href: "https://relivator.bleverse.com",
-          external: true,
-        },
-      ],
-    },
-    {
-      title: "Help",
-      items: [
-        {
-          title: "Contact",
-          href: "/contact",
-          external: false,
-        },
-        {
-          title: "Privacy",
-          href: "/privacy",
-          external: false,
-        },
-        {
-          title: "Terms",
-          href: "/terms",
-          external: false,
-        },
-        {
-          title: "About",
-          href: "/about",
-          external: false,
-        },
-      ],
-    },
-    {
-      title: "Social",
-      items: [
-        {
-          title: "Facebook",
-          href: links.facebook,
-          external: true,
-        },
-        {
-          title: "Discord",
-          href: links.discord,
-          external: true,
-        },
-        {
-          title: "Twitter",
-          href: links.twitter,
-          external: true,
-        },
-        {
-          title: "Github",
-          href: links.githubAccount,
-          external: true,
-        },
-      ],
-    },
-    {
-      title: "Github",
-      items: [
-        {
-          title: "Nomaders",
-          href: "https://github.com/blefnk/nomaders",
-          external: true,
-        },
-        {
-          title: "Reliverse",
-          href: "https://github.com/blefnk/reliverse",
-          external: true,
-        },
-        {
-          title: "Relivator",
-          href: "https://github.com/blefnk/relivator",
-          external: true,
-        },
-        {
-          title: "Utilities",
-          href: "https://github.com/blefnk/utils",
-          external: true,
-        },
-      ],
-    },
-  ] satisfies FooterItem[],
+  footerNav: FOOTER_NAVIGATION
 };
 
+// ========================================================
+
 export const heroHeader: HeroHeader = {
-  header1: `Next.js 13 Store & Dashboard Template`,
-  header2: `Build Great eCommerce and SaaS Faster`,
-  subheader: `shadcn/ui, Link, App Router, TypeScript, T3, Stripe, NextAuth.js, Tailwind,
+  header1: `Next.js 13 Template 2023: Store & Dashboard`,
+  header2: `Helps Build Great eCommerce & SaaS Faster`,
+  subheader: `shadcn/ui, Link, App Router, TypeScript, T3, Stripe, Clerk, Tailwind,
   Drizzle, Zod, RSC, SWC, tRPC, NextAuth, Server Actions, Lucide Icons,
-  etc.`,
+  etc.`
 };
 
 export const featureCards: ContentSection = {
@@ -275,17 +199,17 @@ export const featureCards: ContentSection = {
   content: [
     {
       text: `Next.js`,
-      subtext: `The React Framework`,
+      subtext: `The React Framework`
     },
     {
       text: `shadcn/ui`,
-      subtext: `Beautifully Designed Components`,
+      subtext: `Beautifully Designed Components`
     },
     {
       text: `Vercel`,
-      subtext: `Develop. Preview. Ship.`,
-    },
-  ],
+      subtext: `Develop. Preview. Ship.`
+    }
+  ]
 };
 
 export const features: ContentSection = {
@@ -294,15 +218,38 @@ export const features: ContentSection = {
   content: [
     {
       text: `SEO Optimized`,
-      subtext: `Improved website visibility on search engines`,
+      subtext: `Improved website visibility on search engines`
     },
     {
       text: `Highly Performant`,
-      subtext: `Fast loading times and smooth performance`,
+      subtext: `Fast loading times and smooth performance`
     },
     {
       text: `Easy Customization`,
-      subtext: `Change your content and layout with little effort`,
-    },
-  ],
+      subtext: `Change your content and layout with little effort`
+    }
+  ]
 };
+
+// ========================================================
+
+export const loginSocials = [
+  {
+    name: "Continue with Facebook",
+    href: "#",
+    icon: ImageSvgIcons.FacebookSvg,
+    provider: "facebook"
+  },
+  {
+    name: "Continue with Twitter",
+    href: "#",
+    icon: ImageSvgIcons.TwitterSvg,
+    provider: "linkedin"
+  },
+  {
+    name: "Continue with Google",
+    href: "#",
+    icon: ImageSvgIcons.GoogleSvg,
+    provider: "google"
+  }
+];

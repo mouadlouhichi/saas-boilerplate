@@ -32,6 +32,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_APP_URL: z.string().url(),
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string(),
+    NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
   },
 
   /**
@@ -44,42 +45,38 @@ export const env = createEnv({
   // !! We are incrementally moving towards full and strict ENV data safety.
   // !! Accordingly, possibly, optional params will be eliminated in the future.
   server: {
+    ANALYZE: z.string(),
+
     // DATABASE
     DATABASE_URL: z.string().url(),
 
     // AUTHENTICATION
     NEXTAUTH_SECRET: z.string().trim().min(1),
-    GITHUB_CLIENT_ID: optionalString,
-    GITHUB_CLIENT_SECRET: optionalString,
-    DISCORD_CLIENT_ID: optionalString,
-    DISCORD_CLIENT_SECRET: optionalString,
-    GOOGLE_CLIENT_ID: optionalString,
-    GOOGLE_CLIENT_SECRET: optionalString,
+    NEXTAUTH_URL: z.string().url(),
+    GOOGLE_ID: optionalString,
+    GOOGLE_SECRET: optionalString,
+    LINKEDIN_ID: optionalString,
+    LINKEDIN_SECRET: optionalString,
+    FACEBOOK_ID: optionalString,
+    FACEBOOK_SECRET: optionalString,
+    GITHUB_ID: optionalString,
+    GITHUB_SECRET: optionalString,
+
+    // VERCEL SPECIFIC
+    VERCEL_GIT_COMMIT_SHA: z.string().optional(),
+    VERCEL_URL: z.string().optional(),
 
     // MAILING
-    RESEND_API_KEY: optionalString,
-    EMAIL_FROM: z.string(),
-
-    // POSTMARK
-    SMTP_FROM: z.string(),
-    POSTMARK_API_TOKEN: optionalString,
-    POSTMARK_SIGN_IN_TEMPLATE: optionalString,
-    POSTMARK_ACTIVATION_TEMPLATE: optionalString,
-
-    // STRIPE
-    STRIPE_API_KEY: z.string(),
-    STRIPE_BASIC_MONTHLY_PRICE_ID: z.string(),
-    STRIPE_ADVANCED_MONTHLY_PRICE_ID: z.string(),
-    STRIPE_ENTERPRISE_MONTHLY_PRICE_ID: z.string(),
-    STRIPE_WEBHOOK_SECRET: z.string(),
+    //EMAIL_FROM: z.string(),
+    //RESEND_API_KEY: optionalString,
 
     // ANALYTICS
     LOGLIB_API_KEY: z.string(),
     LOGLIB_SITE_ID: z.string(),
 
     // UPLOADTHING
-    UPLOADTHING_APP_ID: z.string(),
-    UPLOADTHING_SECRET: z.string(),
+    //UPLOADTHING_APP_ID: z.string(),
+    //UPLOADTHING_SECRET: z.string()
   },
 
   /**
@@ -101,10 +98,11 @@ export const env = createEnv({
    * 💡 You'll get type errors if not all variables from `client` are included here.
    */
   experimental__runtimeEnv: {
-    NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
       process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+    NODE_ENV: process.env.NODE_ENV,
   },
 
   /**

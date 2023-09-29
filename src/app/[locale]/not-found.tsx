@@ -1,28 +1,20 @@
-import Link from "next/link";
-import { Button } from "@/islands/primitives/button";
-import { typography } from "@/server/text";
-import { ChevronLeft } from "lucide-react";
-import { Balancer } from "react-wrap-balancer";
+import React from "react";
+import Image from "next/image";
+import I404Png from "@/images/404.png";
 
-export default function NotFound() {
-  return (
-    <main className="bg-background text-foreground antialiased">
-      <div className="duration-really-slow container grid min-h-screen place-content-center text-center animate-in fade-in">
-        <h1 className={typography.h1}>Sadly! Page not found! 🫠</h1>
-        <Balancer
-          as="p"
-          className="mx-auto mt-4 !block leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-        >
-          The resource you're seeking might have been relocated or is not a part
-          of our website. Double-check the URL or explore other pages.
-        </Balancer>
-        <Button className="mx-auto mt-6 w-fit gap-1" asChild>
-          <Link href="/">
-            <ChevronLeft size={16} />
-            <span>Return to Home Page</span>
-          </Link>
-        </Button>
-      </div>
-    </main>
-  );
-}
+const Page404 = () => (
+  <div className="nc-Page404">
+    <div className="container relative pb-16 pt-5 lg:pb-20 lg:pt-5">
+      {/* HEADER */}
+      <header className="mx-auto max-w-2xl space-y-2 text-center">
+        <Image src={I404Png} alt="not-found" />
+        <span className="block text-sm font-medium tracking-wider text-neutral-800 dark:text-neutral-200 sm:text-base">
+          {`THE PAGE YOU WERE LOOKING FOR DOESN'T EXIST.`}{" "}
+        </span>
+        <div className="pt-8"></div>
+      </header>
+    </div>
+  </div>
+);
+
+export default Page404;

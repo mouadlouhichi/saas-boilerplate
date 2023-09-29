@@ -1,14 +1,11 @@
 "use client";
 
 import { type ComponentProps } from "react";
-import { authOptions } from "@/server/auth";
-import { TooltipProvider } from "@/shared/Primitives/Tooltip";
-import { WithChildren } from "@/types";
-import { getServerSession } from "next-auth";
 import { AbstractIntlMessages, NextIntlClientProvider } from "next-intl";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
+import { WithChildren } from "@/types";
 
-import NextAuthProvider from "./session-provider";
+import { TooltipProvider } from "@/shared/Primitives/Tooltip";
 
 export function ThemeProvider({
   children,
@@ -32,17 +29,13 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export async function AppProvider({ children, locale, messages }: Props) {
-  const session = await getServerSession(authOptions());
-
+export const AppProvider = ({ children, locale, messages }: Props) => {
   return (
     //handle theme rerendereing
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <NextAuthProvider session={session}>
-        <ThemeProvider>
-          <TooltipProvider>{children}</TooltipProvider>
-        </ThemeProvider>
-      </NextAuthProvider>
-    </NextIntlClientProvider>
+    <ThemeProvider>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <TooltipProvider>{children}</TooltipProvider>
+      </NextIntlClientProvider>
+    </ThemeProvider>
   );
-}
+};

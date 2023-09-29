@@ -1,5 +1,6 @@
-import { XTwitterIcon } from "@/islands/icons";
-import { FaDiscord, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+import facebookSvg from "@/images/icons/Facebook.svg";
+import googleSvg from "@/images/icons/Google.svg";
+import twitterSvg from "@/images/icons/Twitter.svg";
 
 // Define the keys (or network names) we will use to identify each platform.
 export type NetworkKey = keyof typeof networkDefaults;
@@ -23,29 +24,24 @@ export const networkDefaults: Record<
 > = {
   youtube: {
     label: "YouTube",
-    IconComponent: FaYoutube,
-    baseUrl: "https://youtube.com/",
-  },
-  discord: {
-    label: "Discord",
-    IconComponent: FaDiscord,
-    baseUrl: "https://discord.gg/",
+    IconComponent: googleSvg,
+    baseUrl: "https://youtube.com/"
   },
   facebook: {
     label: "Facebook",
-    IconComponent: FaFacebook,
-    baseUrl: "https://facebook.com/",
+    IconComponent: facebookSvg,
+    baseUrl: "https://facebook.com/"
   },
   twitter: {
     label: "X (formerly known as Twitter)",
-    IconComponent: XTwitterIcon,
-    baseUrl: "https://x.com/",
+    IconComponent: twitterSvg,
+    baseUrl: "https://x.com/"
   },
-  github: {
-    label: "GitHub",
-    IconComponent: FaGithub,
-    baseUrl: "https://github.com/",
-  },
+  instagram: {
+    label: "instagram",
+    IconComponent: twitterSvg,
+    baseUrl: "https://instagram.com/"
+  }
 };
 
 /**
@@ -54,7 +50,7 @@ export const networkDefaults: Record<
  * If an unknown network key is found, it collects them for an error message.
  */
 export const networks = (
-  input: Partial<Record<NetworkKey, string>>,
+  input: Partial<Record<NetworkKey, string>>
 ): Network[] => {
   // Array to collect invalid/unknown network keys.
   const invalidKeys: string[] = [];
@@ -74,7 +70,7 @@ export const networks = (
         id: key,
         url: `${baseUrl}${value}`,
         IconComponent,
-        label,
+        label
       };
     })
     .filter(Boolean); // this will filter out null values, which are placeholders for invalid keys
@@ -82,7 +78,7 @@ export const networks = (
   // If any unknown network keys were found, throw an error.
   if (invalidKeys.length) {
     throw new Error(
-      `Unknown social network key (app.ts): ${invalidKeys.join(", ")}`,
+      `Unknown social network key (app.ts): ${invalidKeys.join(", ")}`
     );
   }
 

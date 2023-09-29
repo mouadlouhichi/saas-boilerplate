@@ -1,7 +1,8 @@
-import { CustomLink } from "@/data/types";
 import { PathName, Route } from "@/routers/types";
-import { MegamenuItem, NavItemType } from "@/shared/Navigation/NavigationItem";
 import ncNanoId from "@/utils/ncNanoId";
+
+import { CustomLink } from "@/data/types";
+import { MegamenuItem, NavItemType } from "@/shared/Navigation/NavigationItem";
 
 import __megamenu from "./jsons/__megamenu.json";
 
@@ -14,8 +15,8 @@ const megaMenuDemo: MegamenuItem[] = [
     items: __megamenu.map((i) => ({
       id: ncNanoId(),
       href: "/" as PathName,
-      name: i.Company,
-    })),
+      name: i.Company
+    }))
   },
   {
     id: ncNanoId(),
@@ -25,8 +26,8 @@ const megaMenuDemo: MegamenuItem[] = [
     items: __megamenu.map((i) => ({
       id: ncNanoId(),
       href: "/" as PathName,
-      name: i.AppName,
-    })),
+      name: i.AppName
+    }))
   },
   {
     id: ncNanoId(),
@@ -36,8 +37,8 @@ const megaMenuDemo: MegamenuItem[] = [
     items: __megamenu.map((i) => ({
       id: ncNanoId(),
       href: "/" as PathName,
-      name: i.City,
-    })),
+      name: i.City
+    }))
   },
   {
     id: ncNanoId(),
@@ -47,8 +48,8 @@ const megaMenuDemo: MegamenuItem[] = [
     items: __megamenu.map((i) => ({
       id: ncNanoId(),
       href: "/" as PathName,
-      name: i.Contruction,
-    })),
+      name: i.Contruction
+    }))
   },
   {
     id: ncNanoId(),
@@ -58,29 +59,29 @@ const megaMenuDemo: MegamenuItem[] = [
     items: __megamenu.map((i) => ({
       id: ncNanoId(),
       href: "/" as PathName,
-      name: i.Country,
-    })),
-  },
+      name: i.Country
+    }))
+  }
 ];
 
 const demoChildMenus: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/" as PathName,
-    name: "Online booking",
+    name: "Online booking"
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Real estate",
-    isNew: true,
+    isNew: true
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Home 3",
-    isNew: true,
-  },
+    isNew: true
+  }
 ];
 
 const otherPageChildMenus: NavItemType[] = [
@@ -89,7 +90,7 @@ const otherPageChildMenus: NavItemType[] = [
   { id: ncNanoId(), href: "/" as PathName, name: "About" },
   { id: ncNanoId(), href: "/" as PathName, name: "Contact us" },
   { id: ncNanoId(), href: "/" as PathName, name: "Login" },
-  { id: ncNanoId(), href: "/" as PathName, name: "Signup" },
+  { id: ncNanoId(), href: "/" as PathName, name: "Signup" }
 ];
 
 const templatesChildrenMenus: NavItemType[] = [
@@ -102,54 +103,54 @@ const templatesChildrenMenus: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/" as PathName as Route,
-        name: "Add listing 1",
+        name: "Add listing 1"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/2" as Route,
-        name: "Add listing 2",
+        name: "Add listing 2"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/3" as Route,
-        name: "Add listing 3",
+        name: "Add listing 3"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/4" as Route,
-        name: "Add listing 4",
+        name: "Add listing 4"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/5" as Route,
-        name: "Add listing 5",
+        name: "Add listing 5"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/6" as Route,
-        name: "Add listing 6",
+        name: "Add listing 6"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/7" as Route,
-        name: "Add listing 7",
+        name: "Add listing 7"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/8" as Route,
-        name: "Add listing 8",
+        name: "Add listing 8"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/9" as Route,
-        name: "Add listing 9",
+        name: "Add listing 9"
       },
       {
         id: ncNanoId(),
         href: "/add-listing/10" as Route,
-        name: "Add listing 10",
-      },
-    ],
+        name: "Add listing 10"
+      }
+    ]
   },
   //
   { id: ncNanoId(), href: "/" as PathName, name: "Checkout" },
@@ -161,8 +162,8 @@ const templatesChildrenMenus: NavItemType[] = [
   {
     id: ncNanoId(),
     href: "/" as PathName,
-    name: "Subscription",
-  },
+    name: "Subscription"
+  }
 ];
 
 export const NAVIGATION_DEMO: NavItemType[] = [
@@ -172,14 +173,14 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     name: "Business",
     type: "dropdown",
     children: demoChildMenus,
-    isNew: true,
+    isNew: true
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Five columns",
     type: "megaMenu",
-    megaMenu: megaMenuDemo,
+    megaMenu: megaMenuDemo
   },
   {
     id: ncNanoId(),
@@ -197,10 +198,10 @@ export const NAVIGATION_DEMO: NavItemType[] = [
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Stay page (map)",
+            name: "Stay page (map)"
           },
-          { id: ncNanoId(), href: "/" as PathName, name: "Stay Detail" },
-        ],
+          { id: ncNanoId(), href: "/" as PathName, name: "Stay Detail" }
+        ]
       },
 
       //
@@ -213,19 +214,19 @@ export const NAVIGATION_DEMO: NavItemType[] = [
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Experiences page",
+            name: "Experiences page"
           },
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Experiences page (map)",
+            name: "Experiences page (map)"
           },
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Experiences Detail",
-          },
-        ],
+            name: "Experiences Detail"
+          }
+        ]
       },
 
       //
@@ -237,8 +238,8 @@ export const NAVIGATION_DEMO: NavItemType[] = [
         children: [
           { id: ncNanoId(), href: "/" as PathName, name: "Cars page" },
           { id: ncNanoId(), href: "/" as PathName, name: "Cars page (map)" },
-          { id: ncNanoId(), href: "/" as PathName, name: "Car Detail" },
-        ],
+          { id: ncNanoId(), href: "/" as PathName, name: "Car Detail" }
+        ]
       },
 
       //
@@ -251,29 +252,29 @@ export const NAVIGATION_DEMO: NavItemType[] = [
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Real Estate Listings",
+            name: "Real Estate Listings"
           },
           {
             id: ncNanoId(),
             href: "/" as PathName,
-            name: "Real Estate Maps",
-          },
-        ],
+            name: "Real Estate Maps"
+          }
+        ]
       },
       //
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Flights listings",
-      },
-    ],
+        name: "Flights listings"
+      }
+    ]
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Templates",
     type: "dropdown",
-    children: templatesChildrenMenus,
+    children: templatesChildrenMenus
   },
 
   {
@@ -281,8 +282,8 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     href: "/" as PathName,
     name: "Other pages",
     type: "dropdown",
-    children: otherPageChildMenus,
-  },
+    children: otherPageChildMenus
+  }
 ];
 
 export const NAVIGATION_DEMO_2: NavItemType[] = [
@@ -290,7 +291,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Business",
-    type: "none",
+    type: "none"
   },
 
   //
@@ -303,7 +304,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Stay listings (map)",
+        name: "Stay listings (map)"
       },
       { id: ncNanoId(), href: "/" as PathName, name: "Stay detail" },
 
@@ -311,19 +312,19 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Experiences listings",
+        name: "Experiences listings"
       },
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Experiences (map)",
+        name: "Experiences (map)"
       },
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Experiences detail",
-      },
-    ],
+        name: "Experiences detail"
+      }
+    ]
   },
   {
     id: ncNanoId(),
@@ -338,20 +339,20 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Real estate listings",
+        name: "Real estate listings"
       },
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Real estate (map)",
+        name: "Real estate (map)"
       },
       //
       {
         id: ncNanoId(),
         href: "/" as PathName,
-        name: "Flights listings",
-      },
-    ],
+        name: "Flights listings"
+      }
+    ]
   },
 
   //
@@ -360,7 +361,7 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     href: "/" as PathName,
     name: "Templates",
     type: "dropdown",
-    children: templatesChildrenMenus,
+    children: templatesChildrenMenus
   },
 
   //
@@ -369,8 +370,8 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     href: "/" as PathName,
     name: "Other pages",
     type: "dropdown",
-    children: otherPageChildMenus,
-  },
+    children: otherPageChildMenus
+  }
 ];
 
 export const NAVIGATION: NavItemType[] = [
@@ -378,33 +379,33 @@ export const NAVIGATION: NavItemType[] = [
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Business",
-    type: "none",
+    type: "none"
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "About",
-    type: "none",
+    type: "none"
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Resources",
-    type: "none",
+    type: "none"
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Join Us",
 
-    type: "none",
+    type: "none"
   },
   {
     id: ncNanoId(),
     href: "/" as PathName,
     name: "Contact",
-    type: "none",
-  },
+    type: "none"
+  }
 ];
 
 export interface WidgetFooterMenu {
@@ -422,8 +423,8 @@ export const FOOTER_NAVIGATION: WidgetFooterMenu[] = [
       { href: "#", label: "Setting Up Your Account" },
       { href: "#", label: "Choosing the Right Therapist" },
       { href: "#", label: "Privacy & Security" },
-      { href: "#", label: "Frequently Asked Questions" },
-    ],
+      { href: "#", label: "Frequently Asked Questions" }
+    ]
   },
   {
     id: ncNanoId(),
@@ -433,8 +434,8 @@ export const FOOTER_NAVIGATION: WidgetFooterMenu[] = [
       { href: "#", label: "Our Therapists" },
       { href: "#", label: "Testimonials" },
       { href: "#", label: "Blog" },
-      { href: "#", label: "Community Involvement" },
-    ],
+      { href: "#", label: "Community Involvement" }
+    ]
   },
   {
     id: ncNanoId(),
@@ -444,8 +445,8 @@ export const FOOTER_NAVIGATION: WidgetFooterMenu[] = [
       { href: "#", label: "Guided Meditation" },
       { href: "#", label: "Self-Care Tips" },
       { href: "#", label: "Videos & Workshops" },
-      { href: "#", label: "Books & Resources" },
-    ],
+      { href: "#", label: "Books & Resources" }
+    ]
   },
   {
     id: ncNanoId(),
@@ -455,7 +456,7 @@ export const FOOTER_NAVIGATION: WidgetFooterMenu[] = [
       { href: "#", label: "Support Center" },
       { href: "#", label: "Live Chat" },
       { href: "#", label: "Phone Support" },
-      { href: "#", label: "Email Support" },
-    ],
-  },
+      { href: "#", label: "Email Support" }
+    ]
+  }
 ];

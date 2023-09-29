@@ -1,102 +1,100 @@
-/**
- * This file is the `locale` root of the app. Everything starts here for rendering a UI.
- * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts
- */
+import { use } from "react";
+import type { Metadata } from "next";
+import { Manrope, Montserrat, Raleway } from "next/font/google";
+import localFont from "next/font/local";
+import { notFound } from "next/navigation";
+import { getCurrentUser, isAdmin } from "@/lib/getCurrentUser";
+import { HandleOnComplete } from "@/lib/router-events";
+import { AppProvider } from "@/providers/AppProvider";
+import ClientCommons from "@/providers/ClientCommons";
+import LoglibAnalytics from "@/providers/LoglibAnalytics";
+import { TRPCProvider } from "@/providers/trpcProvider";
+import UserContextProvider from "@/providers/UserProvider";
+import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "react-hot-toast";
 
-import "@/styles/globals.css";
-import "@/styles/index.scss";
+import { languages } from "@/data/i18n/settings";
+import { DEFAULT_METADATA } from "@/data/meta";
+import { TailwindIndicator } from "@/shared/TailwindIndicator";
 
-import { PropsWithChildren } from "react";
-import {
-  Playfair_Display as FontHeading,
-  Inter as FontSans,
-} from "next/font/google";
-import { siteConfig } from "@/app";
-import { DEFAULT_METADATA, seo } from "@/data/meta";
-import { fullURL } from "@/data/meta/builder";
-import { defaultLocale, locales } from "@/i18n/locales";
-import LoglibAnalytics from "@/islands/loglib-analytics";
-import { SiteFooter } from "@/islands/navigation/site-footer";
-import { SiteHeader } from "@/islands/navigation/site-header";
-import { TooltipProvider } from "@/islands/primitives/tooltip";
-import { TailwindIndicator } from "@/islands/providers/indicators/tailwind-indicator";
-import { NextIntlProvider } from "@/islands/providers/nextintl-provider";
-import NextAuthProvider from "@/islands/providers/session-provider";
-import { NextThemesProvider } from "@/islands/providers/theme-provider";
-import { ToasterNotifier } from "@/islands/wrappers/toaster";
-import TrpcQueryProvider from "@/islands/wrappers/trpc/trpc-query-provider";
-import { authOptions } from "@/server/auth";
-import { cn } from "@/server/utils";
-import { WithChildren, type LocaleLayoutParams } from "@/types";
-import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
-import { getServerSession } from "next-auth";
-import { Metadata } from "next";
-
-const fontSans = FontSans({
+// Manrope : Primary Font
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-manrope",
 });
 
-const fontHeading = FontHeading({
+//Monsterrat : Secondary Font
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-heading",
-  weight: "500",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-montserrat",
 });
 
-export const metadata: Metadata = seo(DEFAULT_METADATA);
+// Raleway Accent Font
+const raleway = Raleway({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-raleway",
+});
 
+// Sharp : Business Accent Font
+const sharp = localFont({
+  src: "../../fonts/sharp/la-sharp-sans.woff2",
+  variable: "--font-sharp",
+});
 
-type LocaleLayoutProps = PropsWithChildren<LocaleLayoutParams>;
+interface RootLayoutProps {
+  children: React.ReactNode;
+  params: { locale: string };
+}
 
-export default async function LocaleLayout({
-  children, // share page or nested layout
-  params: { locale }, // share user locale
-}: WithChildren<LocaleLayoutProps>) {
-  /**
-   * Next.js 13 internationalization library
-   * @see https://next-intl-docs.vercel.app
-   */
-  let messages: any;
+async function getMessages(locale: string) {
   try {
-    messages = (await import(`@/i18n/messages/${locale}.json`)).default;
+    return (await import(`../../data/i18n/messages/${locale}.json`)).default;
   } catch (error) {
-    console.log("❌ Internationalization", error);
+    notFound();
   }
+}
 
-  /**
-   * _For debug purposes_ use this to check the session object:
-   * @example ```<pre>{JSON.stringify(session, null, 2)}</pre>```
-   * @see https://next-auth.js.org/configuration/nextjs#in-app-router
-   */
-  const session = await getServerSession(authOptions());
+export async function generateStaticParams() {
+  return languages.map((locale) => ({ locale }));
+}
 
+export const metadata: Metadata = DEFAULT_METADATA;
+export default function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  const messages = use(getMessages(locale));
+
+  const user = use(getCurrentUser());
+  const admin = use(isAdmin(user?.id));
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable,
-        )}
-      >
-        <NextIntlProvider locale={locale} messages={messages}>
-          <NextAuthProvider session={session}>
-            <NextThemesProvider>
-              <TrpcQueryProvider>
-                <TooltipProvider>
-                  <SiteHeader />
-                  {children}
-                  <SiteFooter />
-                </TooltipProvider>
-                <TailwindIndicator />
-                <ToasterNotifier />
-                <LoglibAnalytics />
-                <VercelAnalytics />
-              </TrpcQueryProvider>
-            </NextThemesProvider>
-          </NextAuthProvider>
-        </NextIntlProvider>
+    <html
+      suppressHydrationWarning
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      lang={locale}
+      className={`${manrope.className} ${montserrat.variable}  ${raleway.variable} ${sharp.variable} `}
+    >
+      <body className="bg-white  font-sans text-base text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200">
+        <UserContextProvider user={user} isAdmin={admin}>
+          <TRPCProvider>
+            <AppProvider locale={locale} messages={messages}>
+              <ClientCommons />
+              {children}
+
+              <TailwindIndicator />
+              <LoglibAnalytics />
+              <Analytics />
+              <HandleOnComplete />
+              <Toaster position="top-center" />
+            </AppProvider>
+          </TRPCProvider>
+        </UserContextProvider>
       </body>
     </html>
   );

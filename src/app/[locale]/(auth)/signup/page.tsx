@@ -2,12 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import { useLocale } from "next-intl";
 import authBackground from "@/images/backgrounds/authBackground-l.jpg";
-
 import Auth from "@/shared/Auth/Auth";
+import { useLocale } from "next-intl";
 
-async function PageSignup() {
+function PageSignup() {
   const lng = useLocale();
   const callbackUrl = `/${lng}`;
   console.log("callbackUrl", callbackUrl);

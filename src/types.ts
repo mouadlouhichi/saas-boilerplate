@@ -1,36 +1,42 @@
 import { Metadata } from "next";
 import { NextResponse, type NextRequest } from "next/server";
-import {
-  commentsTypeEnum,
-  type accounts,
-  type comments,
-  type Store,
-} from "@/data/db/schema";
-import { IUser } from "@/data/routers/handlers/users";
-import { type userPrivateMetadataSchema } from "@/data/validations/auth";
-import type {
-  cartItemSchema,
-  cartLineItemSchema,
-  checkoutItemSchema,
-} from "@/data/validations/cart";
-import { type Icons } from "@/islands/icons";
-import type { storeSubscriptionPlans } from "@/server/config/subscriptions";
-import { type DefaultSession } from "next-auth";
+
+
+import { User, type DefaultSession } from "next-auth";
 import { type FileWithPath } from "react-dropzone";
 import { type z, type ZodIssue } from "zod";
+import { LucideProps } from "lucide-react";
+
 
 /**
  * =======================================================================
- * TYPES: MISCELLANEOUS
+ * TYPES: NEXT
  * =======================================================================
  */
+export type UserSession =
+| (User & {
+    id: string;
+  })
+| undefined;
 
-export type Comment = typeof comments.$inferSelect;
-export const CommentTuple = commentsTypeEnum.enumValues;
-export type CommentType = (typeof CommentTuple)[number];
-export type Account = typeof accounts.$inferSelect;
-export type SubPlan = (typeof storeSubscriptionPlans)[number];
-export type PlanName = (typeof storeSubscriptionPlans)[number]["name"];
+declare module "next-auth" {
+interface Session {
+  user?: User & {
+    id: string;
+    hasSurvey: boolean;
+  };
+}
+}
+
+declare module "next-auth/jwt" {
+interface JWT {
+  userId?: string | null;
+  email?: string | null;
+}
+}
+
+
+
 
 /**
  * =======================================================================
@@ -72,61 +78,7 @@ export type NextRouteHandler<T = void, U = NextRouteContext> = (
   context: U,
 ) => NextResponse<T> | Promise<NextResponse<T>>;
 
-/**
- * =======================================================================
- * TYPES: NEXT-AUTH
- * =======================================================================
- */
 
-type JwtPayload = {
-  userId?: IUser["id"];
-};
-
-declare module "next-auth" {
-  /**
-   * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
-   */
-  interface Session {
-    userId?: IUser["id"];
-  }
-}
-
-// declare module "next-auth" {
-//   /**
-//    * Returned by useSession, getSession and received
-//    * as a prop on the SessionProvider React Context
-//    */
-//   interface Session extends DefaultSession {
-//     user: {
-//       userId?: string | null;
-//       email?: string | null;
-//       image?: string | null;
-//       role: User["role"];
-//     } & DefaultSession["user"];
-//   }
-//   /**
-//    * Here we can specify the new custom types
-//    * for Session which extends DefaultSession
-//    */
-//   interface User {
-//     role: "admin" | "user";
-//   }
-// }
-
-declare module "next-auth/jwt" {
-  /**
-   * Returned by the jwt callback and
-   * getToken when using jwt sessions
-   */
-  // interface JWT {
-  //   userId?: string | null;
-  //   email?: string | null;
-  // }
-  interface JWT extends JwtPayload {
-    // @ts-expect-error
-    [k in JwtPayload]: JwtPayload[k];
-  }
-}
 
 /**
  * =======================================================================
@@ -173,10 +125,11 @@ export interface NavItem {
   href?: string;
   disabled?: boolean;
   external?: boolean;
-  icon?: keyof typeof Icons;
+  icon?: LucideProps;
   label?: string;
   description?: string;
 }
+
 
 export interface NavItemWithChildren extends NavItem {
   items: NavItemWithChildren[];
@@ -205,7 +158,6 @@ export type SidebarNavItem = NavItemWithChildren;
  * =======================================================================
  */
 
-export type UserRole = z.infer<typeof userPrivateMetadataSchema.shape.role>;
 
 export interface Option {
   label: string;
@@ -231,42 +183,4 @@ export interface DataTableSearchableColumn<TData> {
 export interface DataTableFilterableColumn<TData>
   extends DataTableSearchableColumn<TData> {
   options: Option[];
-}
-
-/**
- * =======================================================================
- * TYPES: STORE
- * =======================================================================
- */
-
-export interface CuratedStore {
-  id: Store["id"];
-  name: Store["name"];
-  description?: Store["description"];
-  stripeAccountId?: Store["stripeAccountId"];
-  productCount?: number;
-}
-
-export type CartItem = z.infer<typeof cartItemSchema>;
-
-export type CheckoutItem = z.infer<typeof checkoutItemSchema>;
-
-export type CartLineItem = z.infer<typeof cartLineItemSchema>;
-
-export interface SubscriptionPlan {
-  id: "starter" | "basic" | "advanced" | "enterprise";
-  name: string;
-  description: string;
-  features: string[];
-  stripePriceId: string;
-  price: number;
-}
-
-export interface UserSubscriptionPlan extends SubscriptionPlan {
-  stripeSubscriptionId?: string | null;
-  stripeCurrentPeriodEnd?: string | null;
-  stripeCustomerId?: string | null;
-  isSubscribed: boolean;
-  isCanceled: boolean;
-  isActive: boolean;
 }
