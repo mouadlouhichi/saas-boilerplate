@@ -1,14 +1,13 @@
 import * as React from "react";
 import { type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { Button } from "@/islands/primitives/button";
+import { cn } from "@/server/utils";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
   DoubleArrowLeftIcon,
   DoubleArrowRightIcon,
 } from "@radix-ui/react-icons";
-
-import { cn } from "~/server/utils";
-import { Button } from "~/islands/primitives/button";
 
 interface PaginationButtonProps
   extends React.DetailedHTMLProps<

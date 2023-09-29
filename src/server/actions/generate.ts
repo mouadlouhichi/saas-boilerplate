@@ -1,15 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { faker } from "@faker-js/faker";
-
+import { db } from "@/data/db/client";
+import { products, type Product } from "@/data/db/schema";
 import {
   getSubcategories,
   productCategories,
   productTags,
-} from "~/server/config/products";
-import { db } from "~/data/db/client";
-import { products, type Product } from "~/data/db/schema";
+} from "@/server/config/products";
+import { faker } from "@faker-js/faker";
 
 export async function generateProducts({
   storeId,

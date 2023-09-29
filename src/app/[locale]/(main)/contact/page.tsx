@@ -1,5 +1,5 @@
-import ContactForm from "~/forms/contact-form";
-import HeadingText from "~/islands/modules/heading-text";
+import ContactForm from "@/forms/contact-form";
+import HeadingText from "@/islands/modules/heading-text";
 
 export const metadata = {
   title: "Contact",

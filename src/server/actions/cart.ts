@@ -2,17 +2,16 @@
 
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
-import { type CartLineItem } from "~/types";
-import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
-import { type z } from "zod";
-
-import { db } from "~/data/db/client";
-import { carts, products, stores } from "~/data/db/schema";
+import { db } from "@/data/db/client";
+import { carts, products, stores } from "@/data/db/schema";
 import type {
   cartItemSchema,
   deleteCartItemSchema,
   deleteCartItemsSchema,
-} from "~/data/validations/cart";
+} from "@/data/validations/cart";
+import { type CartLineItem } from "@/types";
+import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
+import { type z } from "zod";
 
 export async function getCartAction(storeId?: number): Promise<CartLineItem[]> {
   const cartId = cookies().get("cartId")?.value;

@@ -1,15 +1,6 @@
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
-import { type CheckoutItem } from "~/types";
-import { eq } from "drizzle-orm";
-import { getServerSession } from "next-auth";
-// import type { Stripe } from "stripe"
-import type Stripe from "stripe";
-import { z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { planTuple } from "~/server/config/subscriptions2";
-import { db } from "~/data/db/client";
+import { db } from "@/data/db/client";
 import {
   accounts,
   addresses,
@@ -17,10 +8,18 @@ import {
   orders,
   payments,
   users,
-} from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import { stripe } from "~/data/routers/stripe";
-import { userPrivateMetadataSchema } from "~/data/validations/auth";
+} from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import { stripe } from "@/data/routers/stripe";
+import { userPrivateMetadataSchema } from "@/data/validations/auth";
+import { authOptions } from "@/server/auth";
+import { planTuple } from "@/server/config/subscriptions2";
+import { type CheckoutItem } from "@/types";
+import { eq } from "drizzle-orm";
+import { getServerSession } from "next-auth";
+// import type { Stripe } from "stripe"
+import type Stripe from "stripe";
+import { z } from "zod";
 
 export async function POST(req: Request) {
   const body = await req.text();

@@ -1,16 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { type CartLineItem } from "~/types";
-
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { Input } from "@/islands/primitives/input";
 import {
   deleteCartItemAction,
   updateCartItemAction,
-} from "~/server/actions/cart";
-import { catchError } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
-import { Input } from "~/islands/primitives/input";
+} from "@/server/actions/cart";
+import { catchError } from "@/server/utils";
+import { type CartLineItem } from "@/types";
 
 interface UpdateCartProps {
   cartLineItem: CartLineItem;

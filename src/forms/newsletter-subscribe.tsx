@@ -1,14 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { type z } from "zod";
-
-import { emailSchema } from "~/data/validations/email";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { emailSchema } from "@/data/validations/email";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -16,8 +11,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { type z } from "zod";
 
 type Inputs = z.infer<typeof emailSchema>;
 

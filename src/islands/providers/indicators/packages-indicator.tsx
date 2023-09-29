@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { env } from "@/data/env/env.mjs";
 import axios from "axios"; // Or use SWR, react-query, etc.
-
-import { env } from "~/data/env/env.mjs";
 
 /**
  * todo: it is basic implementation

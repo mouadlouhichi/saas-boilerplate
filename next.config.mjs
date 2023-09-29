@@ -2,7 +2,7 @@
  * Everything starts here. This is the main Next.js configuration file.
  * @see https://nextjs.org/docs/app/building-your-application/configuring
  */
-
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import createMDX from "@next/mdx";
 import nextIntlPlugin from "next-intl/plugin";
 import { createSecureHeaders } from "next-secure-headers";
@@ -34,6 +34,10 @@ const hostnames = [
   "pbs.twimg.com",
   "i.imgur.com",
   "utfs.io",
+  "images.pexels.com",
+  "a0.muscache.com",
+  "www.gstatic.com",
+  "lh3.googleusercontent.com",
 ];
 
 /** @type {import('next').NextConfig} */
@@ -45,6 +49,8 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["mysql2"],
     serverActions: true,
+    typedRoutes: true,
+
     mdxRs: true,
   },
   /**
@@ -96,7 +102,8 @@ const withMDX = createMDX({ options: { remarkPlugins: [remarkGfm] } });
  */
 const withNextIntl = nextIntlPlugin("./src/i18n/server.ts");
 
+const withBundleAnalyzerConfig = withBundleAnalyzer({enabled : process.env.ANALYZE === 'true'});
 /**
  * Send the config to server while build or lint.
  */
-export default withNextIntl(withMDX(nextConfig));
+export default withBundleAnalyzerConfig(withNextIntl(withMDX(nextConfig)));

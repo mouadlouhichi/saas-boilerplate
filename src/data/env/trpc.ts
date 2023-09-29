@@ -1,6 +1,5 @@
+import { Context } from "@/data/env/context";
 import { initTRPC, TRPCError } from "@trpc/server";
-
-import { Context } from "~/data/env/context";
 
 const t = initTRPC.context<Context>().create();
 

@@ -1,4 +1,4 @@
-import { DataTableLoading } from "~/islands/modules/data-table/data-table-loading";
+import { DataTableLoading } from "@/islands/modules/data-table/data-table-loading";
 
 export default function ProductsLoading() {
   return (

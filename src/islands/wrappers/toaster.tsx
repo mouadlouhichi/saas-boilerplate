@@ -1,6 +1,6 @@
 "use client";
 
-import { useToast } from "~/hooks/use-toast-1";
+import { useToast } from "@/hooks/use-toast-1";
 import {
   Toast,
   ToastClose,
@@ -8,7 +8,7 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "~/islands/toast-1";
+} from "@/islands/toast-1";
 
 export function ToasterNotifier() {
   const { toasts } = useToast();

@@ -1,12 +1,11 @@
 import Image from "next/image";
+import { UpdateCart } from "@/islands/checkout/update-cart";
+import { Icons } from "@/islands/icons";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { Separator } from "@/islands/primitives/separator";
+import { cn, formatPrice } from "@/server/utils";
+import { type CartLineItem } from "@/types";
 import { Slot } from "@radix-ui/react-slot";
-import { type CartLineItem } from "~/types";
-
-import { cn, formatPrice } from "~/server/utils";
-import { UpdateCart } from "~/islands/checkout/update-cart";
-import { Icons } from "~/islands/icons";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
-import { Separator } from "~/islands/primitives/separator";
 
 interface CartLineItemsProps extends React.HTMLAttributes<HTMLDivElement> {
   cartLineItems: CartLineItem[];

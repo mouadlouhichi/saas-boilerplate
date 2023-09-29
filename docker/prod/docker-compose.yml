@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  mindrested:
+    container_name: mindrested-prod
+    build:
+      context: ../../
+      dockerfile: docker/prod/Dockerfile
+    ports:
+      - '3000:3000'

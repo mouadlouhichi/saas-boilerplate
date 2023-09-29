@@ -1,17 +1,16 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { type CheckoutItem } from "~/types";
-import { desc, eq, inArray } from "drizzle-orm";
-import { type z } from "zod";
-
-import { db } from "~/data/db/client";
-import { carts, orders, products, type Cart } from "~/data/db/schema";
-import { stripe } from "~/data/routers/stripe";
+import { db } from "@/data/db/client";
+import { carts, orders, products, type Cart } from "@/data/db/schema";
+import { stripe } from "@/data/routers/stripe";
 import type {
   getCheckoutSessionProductsSchema,
   getOrderedProductsSchema,
-} from "~/data/validations/order";
+} from "@/data/validations/order";
+import { type CheckoutItem } from "@/types";
+import { desc, eq, inArray } from "drizzle-orm";
+import { type z } from "zod";
 
 export async function getOrderedProducts(
   input: z.infer<typeof getOrderedProductsSchema>,

@@ -1,12 +1,11 @@
 "use client";
 
-import { REPOSITORY_URL } from "~/app";
+import { REPOSITORY_URL } from "@/app";
+import { typography } from "@/server/text";
 import { Github } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next-intl/link";
 import { cnBase } from "tailwind-variants";
-
-import { typography } from "~/server/text";
 
 type OssRepoSectionProps = {
   githubStars?: any;

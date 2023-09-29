@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-
-import { handler } from "~/server/funcs";
+import { handler } from "@/server/funcs";
 
 type ResponseData = {
   pong: string;

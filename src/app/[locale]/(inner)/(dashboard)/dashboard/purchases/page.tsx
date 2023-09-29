@@ -1,16 +1,15 @@
 import { type Metadata } from "next";
 import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
-// import { env } from "~/data/env/env.mjs";
-import { fullURL } from "~/data/meta/builder";
+// import { env } from "@/data/env/env.mjs";
+import { fullURL } from "@/data/meta/builder";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { authOptions } from "@/server/auth";
+import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

@@ -2,15 +2,10 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next-intl/link";
-import { toast } from "sonner";
-
-import { addToCartAction } from "~/server/actions/cart";
-import { cn, formatPrice } from "~/server/utils";
-import { type Product } from "~/data/db/schema";
-import { Icons } from "~/islands/icons";
-import { AspectRatio } from "~/islands/primitives/aspect-ratio";
-import { Button } from "~/islands/primitives/button";
+import { type Product } from "@/data/db/schema";
+import { Icons } from "@/islands/icons";
+import { AspectRatio } from "@/islands/primitives/aspect-ratio";
+import { Button } from "@/islands/primitives/button";
 import {
   Card,
   CardContent,
@@ -18,7 +13,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { addToCartAction } from "@/server/actions/cart";
+import { cn, formatPrice } from "@/server/utils";
+import Link from "next-intl/link";
+import { toast } from "sonner";
 
 interface ProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
   product: Pick<Product, "id" | "name" | "price" | "images" | "category">;

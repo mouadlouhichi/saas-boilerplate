@@ -1,11 +1,10 @@
 import { redirect } from "next/navigation";
+import { seo } from "@/data/meta";
+import { fullURL } from "@/data/meta/builder";
+import AuthPageContent from "@/islands/content/auth-pages-content";
+import { authOptions } from "@/server/auth";
 import { getServerSession } from "next-auth";
 import { getProviders } from "next-auth/react";
-
-import { authOptions } from "~/server/auth";
-import { seo } from "~/data/meta";
-import { fullURL } from "~/data/meta/builder";
-import AuthPageContent from "~/islands/content/auth-pages-content";
 
 export const metadata = seo({
   metadataBase: fullURL(),

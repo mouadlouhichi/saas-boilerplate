@@ -3,33 +3,33 @@
  * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts
  */
 
-import "~/styles/globals.css";
+import "@/styles/globals.css";
+import "@/styles/index.scss";
 
 import { PropsWithChildren } from "react";
 import {
   Playfair_Display as FontHeading,
   Inter as FontSans,
 } from "next/font/google";
+import { siteConfig } from "@/app";
+import { seo } from "@/data/meta";
+import { fullURL } from "@/data/meta/builder";
+import { defaultLocale, locales } from "@/i18n/locales";
+import LoglibAnalytics from "@/islands/loglib-analytics";
+import { SiteFooter } from "@/islands/navigation/site-footer";
+import { SiteHeader } from "@/islands/navigation/site-header";
+import { TooltipProvider } from "@/islands/primitives/tooltip";
+import { TailwindIndicator } from "@/islands/providers/indicators/tailwind-indicator";
+import { NextIntlProvider } from "@/islands/providers/nextintl-provider";
+import NextAuthProvider from "@/islands/providers/session-provider";
+import { NextThemesProvider } from "@/islands/providers/theme-provider";
+import { ToasterNotifier } from "@/islands/wrappers/toaster";
+import TrpcQueryProvider from "@/islands/wrappers/trpc/trpc-query-provider";
+import { authOptions } from "@/server/auth";
+import { cn } from "@/server/utils";
+import { WithChildren, type LocaleLayoutParams } from "@/types";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
-import { siteConfig } from "~/app";
-import { defaultLocale, locales } from "~/i18n/locales";
-import { WithChildren, type LocaleLayoutParams } from "~/types";
 import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
-import { cn } from "~/server/utils";
-import { seo } from "~/data/meta";
-import { fullURL } from "~/data/meta/builder";
-import LoglibAnalytics from "~/islands/loglib-analytics";
-import { SiteFooter } from "~/islands/navigation/site-footer";
-import { SiteHeader } from "~/islands/navigation/site-header";
-import { TooltipProvider } from "~/islands/primitives/tooltip";
-import { TailwindIndicator } from "~/islands/providers/indicators/tailwind-indicator";
-import { NextIntlProvider } from "~/islands/providers/nextintl-provider";
-import NextAuthProvider from "~/islands/providers/session-provider";
-import { NextThemesProvider } from "~/islands/providers/theme-provider";
-import { ToasterNotifier } from "~/islands/wrappers/toaster";
-import TrpcQueryProvider from "~/islands/wrappers/trpc/trpc-query-provider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -114,7 +114,7 @@ export default async function LocaleLayout({
    */
   let messages: any;
   try {
-    messages = (await import(`~/i18n/messages/${locale}.json`)).default;
+    messages = (await import(`@/i18n/messages/${locale}.json`)).default;
   } catch (error) {
     console.log("❌ Internationalization", error);
   }
@@ -179,8 +179,8 @@ export default async function LocaleLayout({
 // [ IMPLEMENT ]
 
 /**
- * import { PackagesIndicator } from "~/islands/packages-indicator";
- * import { VariableIndicator } from "~/islands/variable-indicator";
+ * import { PackagesIndicator } from "@/islands/packages-indicator";
+ * import { VariableIndicator } from "@/islands/variable-indicator";
  * ?...
  * <PackagesIndicator />
  * <VariableIndicator />

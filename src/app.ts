@@ -3,12 +3,13 @@
  * Materials about @satisfies: https://youtu.be/49gHWuepxxE, https://youtu.be/G1RtAmI0-vc
  */
 
-import { MainMenuItem, type FooterItem } from "~/types";
+// TODO: remove unused config
 
-import { ContentSection, HeroHeader } from "~/server/config/appts";
-import { productCategories } from "~/server/config/products";
-import { networks } from "~/server/config/socials";
-import { slugify } from "~/server/utils";
+import { ContentSection, HeroHeader } from "@/server/config/appts";
+import { productCategories } from "@/server/config/products";
+import { networks } from "@/server/config/socials";
+import { slugify } from "@/server/utils";
+import { MainMenuItem, type FooterItem } from "@/types";
 
 export const appts = {
   name: "Relivator",

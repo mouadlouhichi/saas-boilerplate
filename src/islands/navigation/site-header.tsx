@@ -1,14 +1,13 @@
-import { settings, siteConfig } from "~/app";
+import { settings, siteConfig } from "@/app";
+import { CartSheet } from "@/islands/checkout/cart-sheet";
+import { Combobox } from "@/islands/navigation/combobox";
+import { MainMenu } from "@/islands/navigation/main-menu";
+import { MobileMenu } from "@/islands/navigation/mobile-menu";
+import LocaleSwitcher from "@/islands/switchers/localization-main-switcher";
+import { ThemesGeneralSwitcher } from "@/islands/switchers/themes-general-switcher";
+import { dashboardConfig } from "@/server/config/dashboard";
 import { type Session } from "next-auth";
 import { tv, type VariantProps } from "tailwind-variants";
-
-import { dashboardConfig } from "~/server/config/dashboard";
-import { CartSheet } from "~/islands/checkout/cart-sheet";
-import { Combobox } from "~/islands/navigation/combobox";
-import { MainMenu } from "~/islands/navigation/main-menu";
-import { MobileMenu } from "~/islands/navigation/mobile-menu";
-import LocaleSwitcher from "~/islands/switchers/localization-main-switcher";
-import { ThemesGeneralSwitcher } from "~/islands/switchers/themes-general-switcher";
 
 import UserMenu from "./user-menu";
 

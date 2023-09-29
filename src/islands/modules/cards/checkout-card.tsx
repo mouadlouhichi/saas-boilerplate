@@ -1,17 +1,16 @@
-import Link from "next-intl/link";
-
-import { getCartAction } from "~/server/actions/cart";
-import { cn, formatPrice } from "~/server/utils";
-import { CartLineItems } from "~/islands/checkout/cart-line-items";
-import { buttonVariants } from "~/islands/primitives/button";
+import { CartLineItems } from "@/islands/checkout/cart-line-items";
+import { buttonVariants } from "@/islands/primitives/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Separator } from "~/islands/primitives/separator";
+} from "@/islands/primitives/card";
+import { Separator } from "@/islands/primitives/separator";
+import { getCartAction } from "@/server/actions/cart";
+import { cn, formatPrice } from "@/server/utils";
+import Link from "next-intl/link";
 
 interface CheckoutCardProps {
   storeId: number;

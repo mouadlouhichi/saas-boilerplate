@@ -1,19 +1,19 @@
-import { Icons } from "~/islands/icons";
+import { Icons } from "@/islands/icons";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
+} from "@/islands/navigation/page-header";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "~/islands/primitives/card";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
-import { Separator } from "~/islands/primitives/separator";
-import { Skeleton } from "~/islands/primitives/skeleton";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { Separator } from "@/islands/primitives/separator";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export default function CartLoading() {
   return (

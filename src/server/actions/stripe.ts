@@ -1,14 +1,7 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { type CheckoutItem } from "~/types";
-import { eq } from "drizzle-orm";
-import { getServerSession } from "next-auth";
-import { z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { absoluteUrl, calculateOrderAmount, ERR } from "~/server/utils";
-import { db } from "~/data/db/client";
+import { db } from "@/data/db/client";
 import {
   accounts,
   carts,
@@ -16,16 +9,22 @@ import {
   payments,
   stores,
   users,
-} from "~/data/db/schema";
-import { findAccount, findUserById } from "~/data/routers/handlers/users";
-import { stripe } from "~/data/routers/stripe";
+} from "@/data/db/schema";
+import { findAccount, findUserById } from "@/data/routers/handlers/users";
+import { stripe } from "@/data/routers/stripe";
 import type {
   createPaymentIntentSchema,
   getPaymentIntentSchema,
   getPaymentIntentsSchema,
   getStripeAccountSchema,
   manageSubscriptionSchema,
-} from "~/data/validations/stripe";
+} from "@/data/validations/stripe";
+import { authOptions } from "@/server/auth";
+import { absoluteUrl, calculateOrderAmount, ERR } from "@/server/utils";
+import { type CheckoutItem } from "@/types";
+import { eq } from "drizzle-orm";
+import { getServerSession } from "next-auth";
+import { z } from "zod";
 
 // Managing stripe subscriptions for a user
 export async function manageSubscriptionAction(

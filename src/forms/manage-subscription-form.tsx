@@ -1,13 +1,12 @@
 "use client";
 
 import * as React from "react";
+import { type manageSubscriptionSchema } from "@/data/validations/stripe";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { manageSubscriptionAction } from "@/server/actions/stripe";
+import { catchError } from "@/server/utils";
 import { type z } from "zod";
-
-import { manageSubscriptionAction } from "~/server/actions/stripe";
-import { catchError } from "~/server/utils";
-import { type manageSubscriptionSchema } from "~/data/validations/stripe";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
 
 type ManageSubscriptionFormProps = z.infer<typeof manageSubscriptionSchema>;
 

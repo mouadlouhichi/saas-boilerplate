@@ -1,34 +1,33 @@
 import { type Metadata } from "next";
 import { redirect } from "next/navigation";
-import { RocketIcon } from "@radix-ui/react-icons";
-import { desc, eq, sql } from "drizzle-orm";
-import { getServerSession } from "next-auth";
-import Link from "next-intl/link";
-
-import { authOptions } from "~/server/auth";
-import {
-  getDashboardRedirectPath,
-  getPlanFeatures,
-  getUserSubscriptionPlan,
-} from "~/server/subs";
-import { cn } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { products, stores } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
-import { findUserById, getUserAccounts } from "~/data/routers/handlers/users";
-import { StoreCard } from "~/islands/modules/cards/store-card";
+import { db } from "@/data/db/client";
+import { products, stores } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
+import { findUserById, getUserAccounts } from "@/data/routers/handlers/users";
+import { StoreCard } from "@/islands/modules/cards/store-card";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
+} from "@/islands/navigation/page-header";
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "~/islands/primitives/alert";
-import { buttonVariants } from "~/islands/primitives/button";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/alert";
+import { buttonVariants } from "@/islands/primitives/button";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { authOptions } from "@/server/auth";
+import {
+  getDashboardRedirectPath,
+  getPlanFeatures,
+  getUserSubscriptionPlan,
+} from "@/server/subs";
+import { cn } from "@/server/utils";
+import { RocketIcon } from "@radix-ui/react-icons";
+import { desc, eq, sql } from "drizzle-orm";
+import { getServerSession } from "next-auth";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

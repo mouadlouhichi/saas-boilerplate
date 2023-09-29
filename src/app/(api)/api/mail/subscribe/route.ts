@@ -1,15 +1,14 @@
+import { db } from "@/data/db/client";
+import { emailPreferences } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import NewsletterWelcomeEmail from "@/data/mail/newsletter";
+import { subscribeToNewsletterSchema } from "@/data/validations/email";
+import { authOptions } from "@/server/auth";
+import { resend } from "@/server/resend";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
 import { type ErrorResponse } from "resend";
 import { z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { resend } from "~/server/resend";
-import { db } from "~/data/db/client";
-import { emailPreferences } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import NewsletterWelcomeEmail from "~/data/mail/newsletter";
-import { subscribeToNewsletterSchema } from "~/data/validations/email";
 
 export async function POST(req: Request) {
   const input = subscribeToNewsletterSchema.parse(await req.json());

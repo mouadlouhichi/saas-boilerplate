@@ -1,9 +1,8 @@
 import Link from "next/link";
+import { Button } from "@/islands/primitives/button";
+import { typography } from "@/server/text";
 import { ChevronLeft } from "lucide-react";
 import { Balancer } from "react-wrap-balancer";
-
-import { typography } from "~/server/text";
-import { Button } from "~/islands/primitives/button";
 
 export default function NotFound() {
   return (

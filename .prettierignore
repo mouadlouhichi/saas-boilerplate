@@ -13,3 +13,7 @@
 
 # typescript
 next-env.d.ts
+
+# misc
+.utils
+storybook-static

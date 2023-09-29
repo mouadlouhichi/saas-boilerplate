@@ -1,8 +1,7 @@
 import { type ReactNode } from "react";
+import { Button } from "@/islands/primitives/button";
 import { ChevronLeftIcon } from "lucide-react";
 import Link from "next-intl/link";
-
-import { Button } from "~/islands/primitives/button";
 
 type Props = {
   children?: ReactNode;

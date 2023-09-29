@@ -1,4 +1,4 @@
-import { Skeleton } from "~/islands/primitives/skeleton";
+import { Skeleton } from "@/islands/primitives/skeleton";
 import {
   Table,
   TableBody,
@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "~/islands/primitives/table";
+} from "@/islands/primitives/table";
 
 interface DataTableLoadingProps {
   columnCount: number;

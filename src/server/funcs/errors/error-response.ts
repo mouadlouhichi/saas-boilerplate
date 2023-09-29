@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import { type ApiResponseError } from "~/types";
+import { logger } from "@/server/logger";
+import { type ApiResponseError } from "@/types";
 import { ZodError } from "zod";
-
-import { logger } from "~/server/logger";
 
 import { isApiError } from "./api-error";
 import { isNextJsError } from "./nextjs-error";

@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { getStripe } from "@/server/get-stripe";
+import { cn } from "@/server/utils";
 import { Elements } from "@stripe/react-stripe-js";
 import { type StripeElementsOptions } from "@stripe/stripe-js";
-
-import { getStripe } from "~/server/get-stripe";
-import { cn } from "~/server/utils";
 
 interface CheckoutShellProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;

@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { trpc } from "@/data/env/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
-
-import { trpc } from "~/data/env/client";
 
 // url: "http://localhost:3000/api/trpc",
 

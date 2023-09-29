@@ -2,15 +2,14 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-
+import { type Product } from "@/data/db/schema";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   getNextProductIdAction,
   getPreviousProductIdAction,
-} from "~/server/actions/product";
-import { type Product } from "~/data/db/schema";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+} from "@/server/actions/product";
+import { toast } from "sonner";
 
 interface ProductPagerProps {
   product: Product;

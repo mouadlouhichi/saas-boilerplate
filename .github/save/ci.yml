@@ -1,0 +1,72 @@
+name: CI/CD Build and Deploy
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+
+jobs: 
+  build:
+    name: Build and Deploy Backend
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          build-args: |
+            DATABASE_URL: ${{ secrets.DATABASE_URL }}
+            NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+            NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+            NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+            ANALYZE: ${{ secrets.ANALYZE }}
+            NEXT_PUBLIC_VERCEL_URL: ${{ secrets.NEXT_PUBLIC_VERCEL_URL }}
+            LOGLIB_API_KEY: ${{ secrets.LOGLIB_API_KEY }}
+            LOGLIB_SITE_ID: ${{ secrets.LOGLIB_SITE_ID }}
+            LINKEDIN_ID: ${{ secrets.LINKEDIN_ID }}
+            LINKEDIN_SECRET: ${{ secrets.LINKEDIN_SECRET }}
+            FACEBOOK_ID: ${{ secrets.FACEBOOK_ID }}
+            FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
+  deploy:
+    needs: build
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout files    
+        uses: actions/checkout@v2
+        
+      - name: Set environment variables
+        run: |
+           echo "GIT_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+      - name: Use environment variables
+        run: |
+         echo "GIT_BRANCH=${GIT_BRANCH}"
+        
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+         
+      - name: Provision Droplet and deploy container
+        run: doctl compute droplet create "mindrested-$GIT_BRANCH" --image docker-18-04 --size s-1vcpu-1gb --region fra1 --wait 
+
+
+    

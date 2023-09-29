@@ -1,10 +1,9 @@
+import { db } from "@/data/db/client";
+import { users } from "@/data/db/schema";
+import { protectedProcedure, router } from "@/data/env/trpc";
 import { TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-
-import { db } from "~/data/db/client";
-import { users } from "~/data/db/schema";
-import { protectedProcedure, router } from "~/data/env/trpc";
 
 export const userRouter = router({
   getUser: protectedProcedure

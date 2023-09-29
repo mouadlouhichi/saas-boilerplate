@@ -1,6 +1,5 @@
+import { cn } from "@/server/utils";
 import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;

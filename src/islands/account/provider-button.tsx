@@ -2,10 +2,9 @@
 
 import { type FC } from "react";
 import { useSearchParams } from "next/navigation";
+import { ActionButton } from "@/islands/account/action-button";
 import { signIn, type ClientSafeProvider } from "next-auth/react";
 import { useLocale, useTranslations } from "next-intl";
-
-import { ActionButton } from "~/islands/account/action-button";
 
 type ProviderButtonProps = {
   provider: ClientSafeProvider;

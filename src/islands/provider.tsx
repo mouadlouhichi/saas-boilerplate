@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { TooltipProvider } from "@/islands/primitives/tooltip";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
-
-import { TooltipProvider } from "~/islands/primitives/tooltip";
 
 export function Providers({ children, ...props }: ThemeProviderProps) {
   return (

@@ -1,14 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { type Order } from "@/data/db/schema";
+import { DataTable } from "@/islands/modules/data-table/data-table";
+import { DataTableColumnHeader } from "@/islands/modules/data-table/data-table-column-header";
+import { Badge } from "@/islands/primitives/badge";
+import { cn, formatDate, formatPrice } from "@/server/utils";
+import { type CheckoutItem } from "@/types";
 import { type ColumnDef } from "@tanstack/react-table";
-import { type CheckoutItem } from "~/types";
-
-import { cn, formatDate, formatPrice } from "~/server/utils";
-import { type Order } from "~/data/db/schema";
-import { DataTable } from "~/islands/modules/data-table/data-table";
-import { DataTableColumnHeader } from "~/islands/modules/data-table/data-table-column-header";
-import { Badge } from "~/islands/primitives/badge";
 
 interface OrdersTableShellProps {
   data: Order[];

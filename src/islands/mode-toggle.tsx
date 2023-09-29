@@ -1,16 +1,15 @@
 "use client";
 
 import * as React from "react";
-import { useTheme } from "next-themes";
-
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
+} from "@/islands/primitives/dropdown";
+import { useTheme } from "next-themes";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

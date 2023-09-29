@@ -1,0 +1,25 @@
+.custom-select__control {
+  @apply  h-6 rounded border-neutral-300 bg-transparent text-primary-500 shadow-primary-6000 focus:ring-primary-500 #{!important};
+  &:focus {
+    @apply ring-primary-500 #{!important};
+  }
+  &--is-focused {
+    @apply border-2 border-primary-500 shadow-md ring-primary-500 #{!important};
+  }
+}
+
+.custom-select__option {
+  @apply text-sm font-medium text-neutral-700 hover:bg-primary-50  dark:text-neutral-300 #{!important};
+}
+
+.custom-select__option--is-focused,
+.custom-select__option--is-selected {
+  @apply bg-primary-50 text-neutral-700 dark:text-neutral-300 dark:bg-primary-300 #{!important};
+}
+
+.custom-select__menu{
+    @apply bg-white  dark:bg-neutral-700 #{!important};
+}
+.custom-select__single-value{
+    @apply text-sm text-neutral-700 dark:text-neutral-300 #{!important};
+}

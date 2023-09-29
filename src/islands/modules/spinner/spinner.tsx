@@ -1,4 +1,4 @@
-import { cls } from "~/server/utils";
+import { cls } from "@/server/utils";
 
 import styles from "./spinner.module.css";
 

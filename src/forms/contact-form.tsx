@@ -1,11 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { contactConfig } from "~/app";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-
-import { Button } from "~/islands/primitives/button";
+import { contactConfig } from "@/app";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -14,9 +10,12 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
-import { Textarea } from "~/islands/primitives/textarea";
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
+import { Textarea } from "@/islands/primitives/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 
 const formSchema = z.object({
   subject: z.string().min(1, {

@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
+import { authOptions } from "@/server/auth";
 import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
 
 interface CartLayoutProps {
   children: React.ReactNode;

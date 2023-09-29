@@ -1,5 +1,5 @@
 import * as React from "react";
-import { type FileWithPreview } from "~/types";
+import { type FileWithPreview } from "@/types";
 import Cropper, { type ReactCropperElement } from "react-cropper";
 import {
   useDropzone,
@@ -19,15 +19,14 @@ import { toast } from "sonner";
 import "cropperjs/dist/cropper.css";
 
 import Image from "next/image";
-
-import { cn, formatBytes } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
-} from "~/islands/primitives/dialog";
+} from "@/islands/primitives/dialog";
+import { cn, formatBytes } from "@/server/utils";
 
 // FIXME Your proposed upload exceeds the maximum allowed size, this should trigger toast.error too
 

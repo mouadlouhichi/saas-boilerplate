@@ -1,16 +1,11 @@
 import { type Metadata } from "next";
 import { revalidatePath } from "next/cache";
 import { notFound, redirect } from "next/navigation";
-import { and, eq, not } from "drizzle-orm";
-import Link from "next-intl/link";
-
-import { getStripeAccountAction } from "~/server/actions/stripe";
-import { cn, formatDate } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { products, stores } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
-import { LoadingButton } from "~/islands/loading-button";
-import { buttonVariants } from "~/islands/primitives/button";
+import { db } from "@/data/db/client";
+import { products, stores } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
+import { LoadingButton } from "@/islands/loading-button";
+import { buttonVariants } from "@/islands/primitives/button";
 import {
   Card,
   CardContent,
@@ -18,11 +13,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Input } from "~/islands/primitives/input";
-import { Label } from "~/islands/primitives/label";
-import { Textarea } from "~/islands/primitives/textarea";
-import { ConnectStoreToStripeButton } from "~/islands/stripe-btn-connect";
+} from "@/islands/primitives/card";
+import { Input } from "@/islands/primitives/input";
+import { Label } from "@/islands/primitives/label";
+import { Textarea } from "@/islands/primitives/textarea";
+import { ConnectStoreToStripeButton } from "@/islands/stripe-btn-connect";
+import { getStripeAccountAction } from "@/server/actions/stripe";
+import { cn, formatDate } from "@/server/utils";
+import { and, eq, not } from "drizzle-orm";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

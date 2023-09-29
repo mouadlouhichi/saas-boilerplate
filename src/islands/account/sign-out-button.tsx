@@ -1,8 +1,7 @@
 "use client";
 
+import { Button } from "@/islands/primitives/button";
 import { signOut } from "next-auth/react";
-
-import { Button } from "~/islands/primitives/button";
 
 export function SignOutButton() {
   return (

@@ -1,26 +1,25 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-import { getProviders } from "next-auth/react";
-
-import { authOptions } from "~/server/auth";
-import { seo } from "~/data/meta";
-import { fullURL } from "~/data/meta/builder";
-import { findUserById, getUserAccounts } from "~/data/routers/handlers/users";
-import AuthPageContent from "~/islands/content/auth-pages-content";
+import { seo } from "@/data/meta";
+import { fullURL } from "@/data/meta/builder";
+import { findUserById, getUserAccounts } from "@/data/routers/handlers/users";
+import AuthPageContent from "@/islands/content/auth-pages-content";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
+} from "@/islands/navigation/page-header";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { authOptions } from "@/server/auth";
+import { getServerSession } from "next-auth";
+import { getProviders } from "next-auth/react";
 
 export const metadata = seo({
   metadataBase: fullURL(),

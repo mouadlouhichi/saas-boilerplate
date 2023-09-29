@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-
-import { Input, type InputProps } from "~/islands/primitives/input";
+import { Input, type InputProps } from "@/islands/primitives/input";
 
 interface DebounceInputProps extends InputProps {
   debounce?: number;

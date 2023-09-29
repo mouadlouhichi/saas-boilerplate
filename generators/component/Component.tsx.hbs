@@ -1,0 +1,51 @@
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
+
+
+const cvaConfig = cva(
+  [
+    "flex",
+  ],
+  {
+    variants: {
+      intent: {
+        primary: [
+          "bg-primary-500"
+           ],
+        secondary: [
+          "bg-transparent",
+        ],
+
+      },
+      size: {
+        sm: ["px-2", "py-1", "sm:px-2"],
+        md: ["px-4", "py-3", "sm:px-6"],
+        lg: ["px-6", "py-4", "sm:px-8"]
+      },
+
+    },
+    defaultVariants: {
+      intent: "primary",
+      size: "lg",
+    }
+  }
+);
+
+export interface {{properCase name}}Props extends VariantProps<typeof cvaConfig> {
+  intent?: "primary";
+  size?:  | "sm" | "md" | "lg";
+  className?: string;
+}
+const {{properCase name}} = 
+  ({ intent, size, className }: {{properCase name}}Props) => {
+  return (
+    <div  className={twMerge(
+          cvaConfig({ intent, size, className })
+        )}>
+      {{properCase name}}
+    </div>
+  ); 
+};
+
+export default {{properCase name}};

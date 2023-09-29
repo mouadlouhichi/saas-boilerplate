@@ -2,16 +2,8 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import {
-  CaretSortIcon,
-  CheckIcon,
-  PlusCircledIcon,
-} from "@radix-ui/react-icons";
-
-import { getRandomPatternStyle } from "~/server/pattern";
-import { cn } from "~/server/utils";
-import { type Store } from "~/data/db/schema";
-import { Button } from "~/islands/primitives/button";
+import { type Store } from "@/data/db/schema";
+import { Button } from "@/islands/primitives/button";
 import {
   Command,
   CommandEmpty,
@@ -20,13 +12,20 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "~/islands/primitives/command";
-import { Dialog, DialogTrigger } from "~/islands/primitives/dialog";
+} from "@/islands/primitives/command";
+import { Dialog, DialogTrigger } from "@/islands/primitives/dialog";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "~/islands/primitives/popover";
+} from "@/islands/primitives/popover";
+import { getRandomPatternStyle } from "@/server/pattern";
+import { cn } from "@/server/utils";
+import {
+  CaretSortIcon,
+  CheckIcon,
+  PlusCircledIcon,
+} from "@radix-ui/react-icons";
 
 interface StoreSwitcherProps
   extends React.ComponentPropsWithoutRef<typeof PopoverTrigger> {

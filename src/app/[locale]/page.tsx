@@ -10,29 +10,28 @@ import {
   REPOSITORY_OWNER,
   REPOSITORY_URL,
   siteConfig,
-} from "~/app";
+} from "@/app";
+import { db } from "@/data/db/client";
+import { products, stores } from "@/data/db/schema";
+import { seo } from "@/data/meta";
+import { Icons } from "@/islands/icons";
+import { ProductCard } from "@/islands/modules/cards/product-card";
+import { StoreCard } from "@/islands/modules/cards/store-card";
+import { AspectRatio } from "@/islands/primitives/aspect-ratio";
+import { Badge } from "@/islands/primitives/badge";
+import { buttonVariants } from "@/islands/primitives/button";
+import CommonSection from "@/islands/sections/common-section";
+import FeaturesSection from "@/islands/sections/features-section";
+import OssRepoSection from "@/islands/sections/ossrepo-section";
+import GeneralShell from "@/islands/wrappers/general-shell";
+import { productCategories } from "@/server/config/products";
+import { typography } from "@/server/text";
+import { cn } from "@/server/utils";
 import { desc, eq, sql } from "drizzle-orm";
 import { Download, Store } from "lucide-react";
 import Link from "next-intl/link";
 import { FaDiscord } from "react-icons/fa";
 import { Balancer } from "react-wrap-balancer";
-
-import { productCategories } from "~/server/config/products";
-import { typography } from "~/server/text";
-import { cn } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { products, stores } from "~/data/db/schema";
-import { seo } from "~/data/meta";
-import { Icons } from "~/islands/icons";
-import { ProductCard } from "~/islands/modules/cards/product-card";
-import { StoreCard } from "~/islands/modules/cards/store-card";
-import { AspectRatio } from "~/islands/primitives/aspect-ratio";
-import { Badge } from "~/islands/primitives/badge";
-import { buttonVariants } from "~/islands/primitives/button";
-import CommonSection from "~/islands/sections/common-section";
-import FeaturesSection from "~/islands/sections/features-section";
-import OssRepoSection from "~/islands/sections/ossrepo-section";
-import GeneralShell from "~/islands/wrappers/general-shell";
 
 export const dynamic = "force-dynamic";
 
@@ -348,8 +347,8 @@ export default async function HomePage() {
  * !📄 "HOW TO USE TRPC-BASED COMPONENTS"
  *
  * ?1️⃣ Import the component and forse cache:
- * import { serverClient } from "~/islands/wrappers/trpc/server-client";
- * import TodoList from "~/islands/features/todo-list";
+ * import { serverClient } from "@/islands/wrappers/trpc/server-client";
+ * import TodoList from "@/islands/features/todo-list";
  * export const dynamic = "force-dynamic";
  *
  * ?2️⃣ Place this in your component before return:
@@ -366,7 +365,7 @@ export default async function HomePage() {
  *
  * ?1️⃣ Import the next things:
  * import { type Metadata } from "next";
- * import { LocaleLayoutParams } from "~/types";
+ * import { LocaleLayoutParams } from "@/types";
  * import { getTranslator } from "next-intl/server";
  *
  * ?2️⃣ Use the next function:
@@ -387,7 +386,7 @@ export default async function HomePage() {
  *
  * ?1️⃣ Import:
  * import { getServerSession } from "next-auth";
- * import { authOptions } from "~/server/auth";
+ * import { authOptions } from "@/server/auth";
  *
  * ?2️⃣ Add variables inside the component:
  * const session = await getServerSession(authOptions());

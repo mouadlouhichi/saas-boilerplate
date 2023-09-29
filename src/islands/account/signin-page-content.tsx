@@ -1,9 +1,8 @@
 import { type FC } from "react";
-import { type getProviders } from "next-auth/react";
-
 // import { useTranslations } from "next-intl";
 
-import { HomeLink } from "~/islands/account/home-link";
+import { HomeLink } from "@/islands/account/home-link";
+import { type getProviders } from "next-auth/react";
 
 import { ProviderButton } from "./provider-button";
 

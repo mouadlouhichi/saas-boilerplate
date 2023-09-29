@@ -1,10 +1,10 @@
 import { eq } from "drizzle-orm";
 import { type SendVerificationRequestParams } from "next-auth/providers/email";
 
-import { emailClient } from "~/server/email";
-import { accountUser } from "~/data/db/account";
-import { db } from "~/data/env/db";
-import SignInEmail from "~/data/mail/auth-user";
+import { emailClient } from "@/server/email";
+import { accountUser } from "@/data/db/account";
+import { db } from "@/data/env/db";
+import SignInEmail from "@/data/mail/auth-user";
 
 export async function sendVerificationRequest({
   identifier,

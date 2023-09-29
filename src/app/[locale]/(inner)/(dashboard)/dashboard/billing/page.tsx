@@ -1,24 +1,17 @@
 import { type Metadata } from "next";
 import { redirect } from "next/navigation";
-import { appts, siteConfig } from "~/app";
-import { getServerSession } from "next-auth";
-import Link from "next-intl/link";
-
-import { authOptions } from "~/server/auth";
-import { storeSubscriptionPlans } from "~/server/config/subscriptions";
-import { getUserSubscriptionPlan } from "~/server/subs";
-import { cn, formatDate, formatPrice } from "~/server/utils";
-import { users } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
-import { findUserById } from "~/data/routers/handlers/users";
-import { ManageSubscriptionForm } from "~/forms/manage-subscription-form";
-import { Icons } from "~/islands/icons";
+import { appts, siteConfig } from "@/app";
+import { users } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
+import { findUserById } from "@/data/routers/handlers/users";
+import { ManageSubscriptionForm } from "@/forms/manage-subscription-form";
+import { Icons } from "@/islands/icons";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { buttonVariants } from "~/islands/primitives/button";
+} from "@/islands/navigation/page-header";
+import { buttonVariants } from "@/islands/primitives/button";
 import {
   Card,
   CardContent,
@@ -26,8 +19,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { authOptions } from "@/server/auth";
+import { storeSubscriptionPlans } from "@/server/config/subscriptions";
+import { getUserSubscriptionPlan } from "@/server/subs";
+import { cn, formatDate, formatPrice } from "@/server/utils";
+import { getServerSession } from "next-auth";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

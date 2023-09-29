@@ -1,13 +1,8 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
-import { useTranslations } from "next-intl";
-import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-import { Avatar, AvatarFallback, AvatarImage } from "~/islands/account/avatar";
-import { Icons } from "~/islands/icons";
-import { Button, buttonVariants } from "~/islands/primitives/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/islands/account/avatar";
+import { Icons } from "@/islands/icons";
+import { Button, buttonVariants } from "@/islands/primitives/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +11,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
+} from "@/islands/primitives/dropdown";
+import { cn } from "@/server/utils";
+import { signOut, useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
+import Link from "next-intl/link";
 
 /**
  * You can get it in sync with src/server/config/dashboard.ts

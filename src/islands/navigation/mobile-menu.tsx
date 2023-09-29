@@ -2,21 +2,20 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { siteConfig } from "~/app";
-import { SidebarNavItem, type MainMenuItem } from "~/types";
-import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-import { Icons } from "~/islands/icons";
+import { siteConfig } from "@/app";
+import { Icons } from "@/islands/icons";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/islands/primitives/accordion";
-import { Button } from "~/islands/primitives/button";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
-import { Sheet, SheetContent, SheetTrigger } from "~/islands/primitives/sheet";
+} from "@/islands/primitives/accordion";
+import { Button } from "@/islands/primitives/button";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { Sheet, SheetContent, SheetTrigger } from "@/islands/primitives/sheet";
+import { cn } from "@/server/utils";
+import { SidebarNavItem, type MainMenuItem } from "@/types";
+import Link from "next-intl/link";
 
 interface MobileMenuProps {
   MainMenuItems?: MainMenuItem[];

@@ -1,10 +1,6 @@
 import * as React from "react";
-import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
-import { type Option } from "~/types";
-
-import { cn } from "~/server/utils";
-import { Badge } from "~/islands/primitives/badge";
-import { Button } from "~/islands/primitives/button";
+import { Badge } from "@/islands/primitives/badge";
+import { Button } from "@/islands/primitives/button";
 import {
   Command,
   CommandEmpty,
@@ -13,13 +9,16 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "~/islands/primitives/command";
+} from "@/islands/primitives/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "~/islands/primitives/popover";
-import { Separator } from "~/islands/primitives/separator";
+} from "@/islands/primitives/popover";
+import { Separator } from "@/islands/primitives/separator";
+import { cn } from "@/server/utils";
+import { type Option } from "@/types";
+import { CheckIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 
 interface FacetedFilterProps {
   title?: string;

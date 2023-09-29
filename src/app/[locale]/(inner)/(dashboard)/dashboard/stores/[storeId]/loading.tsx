@@ -3,8 +3,8 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-} from "~/islands/primitives/card";
-import { Skeleton } from "~/islands/primitives/skeleton";
+} from "@/islands/primitives/card";
+import { Skeleton } from "@/islands/primitives/skeleton";
 
 export default function StoreLoading() {
   return (

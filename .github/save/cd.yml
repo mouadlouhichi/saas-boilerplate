@@ -1,0 +1,72 @@
+
+name: Build and Deploy
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+    push:
+      branches:
+        - main
+        - develop
+    workflow_dispatch:
+        inputs:
+            logLevel:
+                description: 'Log level'
+                required: true
+                default: 'warning'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: node:14
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Build and Publish to Github Packages Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        env:
+            DATABASE_URL_ARG: ${{ secrets.DATABASE_URL }}
+            NEXTAUTH_SECRET_ARG: ${{ secrets.NEXTAUTH_SECRET }}
+            NEXTAUTH_URL_ARG: ${{ secrets.NEXTAUTH_URL }}
+            NEXT_PUBLIC_APP_URL_ARG: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+            ANALYZE_ARG: ${{ secrets.ANALYZE }}
+            NEXT_PUBLIC_VERCEL_URL_ARG: ${{ secrets.NEXT_PUBLIC_VERCEL_URL }}
+            LOGLIB_API_KEY_ARG: ${{ secrets.LOGLIB_API_KEY }}
+            LOGLIB_SITE_ID_ARG: ${{ secrets.LOGLIB_SITE_ID }}
+            LINKEDIN_ID_ARG: ${{ secrets.LINKEDIN_ID }}
+            LINKEDIN_SECRET_ARG: ${{ secrets.LINKEDIN_SECRET }}
+            FACEBOOK_ID_ARG: ${{ secrets.FACEBOOK_ID }}
+            FACEBOOK_SECRET_ARG: ${{ secrets.FACEBOOK_SECRET }}
+        with:
+          name: mouadlouhichi/mindrested-app/mindrested
+          registry: ghcr.io
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets. GITHUB_TOKEN }}
+          dockerfile: Dockerfile
+          buildargs: DATABASE_URL_ARG,NEXTAUTH_SECRET_ARG,NEXTAUTH_URL_ARG,NEXT_PUBLIC_APP_URL_ARG,ANALYZE_ARG,NEXT_PUBLIC_VERCEL_URL_ARG,LOGLIB_API_KEY_ARG,LOGLIB_SITE_ID_ARG,LINKEDIN_ID_ARG,LINKEDIN_SECRET_ARG,FACEBOOK_ID_ARG,FACEBOOK_SECRET_ARG
+          tags: latest
+
+      - name: Deploy package to digitalocean
+        uses: appleboy/ssh-action@master
+        env:
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
+          GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          envs: GITHUB_USERNAME, GITHUB_TOKEN
+          script: |
+            docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
+            docker pull ghcr.io/mouadlouhichi/mindrested-app/mindrested:latest
+            docker stop containername
+            docker system prune -f
+            docker run --name containername -dit -p 3000:3000 ghcr.io/mouadlouhichi/mindrested-app/mindrested:latest
+

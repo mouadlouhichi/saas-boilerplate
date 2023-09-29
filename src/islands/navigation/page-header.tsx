@@ -1,7 +1,6 @@
+import { cn } from "@/server/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Balancer } from "react-wrap-balancer";
-
-import { cn } from "~/server/utils";
 
 interface PageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;

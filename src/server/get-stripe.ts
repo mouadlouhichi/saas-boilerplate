@@ -1,6 +1,5 @@
+import { env } from "@/data/env/env.mjs";
 import { loadStripe, type Stripe } from "@stripe/stripe-js";
-
-import { env } from "~/data/env/env.mjs";
 
 let stripePromise: Promise<Stripe | null>;
 export function getStripe(stripeAccountId?: string) {

@@ -1,11 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { type SidebarNavItem } from "~/types";
+import { Icons } from "@/islands/icons";
+import { cn } from "@/server/utils";
+import { type SidebarNavItem } from "@/types";
 import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-import { Icons } from "~/islands/icons";
 
 export interface SidebarNavProps extends React.HTMLAttributes<HTMLDivElement> {
   items: SidebarNavItem[];

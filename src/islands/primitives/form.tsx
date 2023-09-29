@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Label } from "@/islands/primitives/label";
+import { cn } from "@/server/utils";
 import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import {
@@ -9,9 +11,6 @@ import {
   type FieldPath,
   type FieldValues,
 } from "react-hook-form";
-
-import { cn } from "~/server/utils";
-import { Label } from "~/islands/primitives/label";
 
 const Form = FormProvider;
 

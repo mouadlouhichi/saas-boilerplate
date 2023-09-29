@@ -2,6 +2,11 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
+import { useIsClient } from "@/hooks/use-is-client";
+import { Icons } from "@/islands/icons";
+import { Button, buttonVariants } from "@/islands/primitives/button";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { cn } from "@/server/utils";
 import {
   signIn,
   SignInResponse,
@@ -9,12 +14,6 @@ import {
   useSession,
   type ClientSafeProvider,
 } from "next-auth/react";
-
-import { cn } from "~/server/utils";
-import { useIsClient } from "~/hooks/use-is-client";
-import { Icons } from "~/islands/icons";
-import { Button, buttonVariants } from "~/islands/primitives/button";
-import { Skeleton } from "~/islands/primitives/skeleton";
 
 export function LogOutButtons() {
   const router = useRouter();

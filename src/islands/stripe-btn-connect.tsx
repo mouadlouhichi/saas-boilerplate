@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
-
-import { createAccountLinkAction } from "~/server/actions/stripe";
-import { catchError } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { createAccountLinkAction } from "@/server/actions/stripe";
+import { catchError } from "@/server/utils";
 
 interface ConnectToStripeButtonProps {
   storeId: number;

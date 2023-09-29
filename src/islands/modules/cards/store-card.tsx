@@ -1,16 +1,15 @@
-import { type CuratedStore } from "~/types";
-import Link from "next-intl/link";
-
-import { getRandomPatternStyle } from "~/server/pattern";
-import { cn } from "~/server/utils";
-import { AspectRatio } from "~/islands/primitives/aspect-ratio";
-import { Badge } from "~/islands/primitives/badge";
+import { AspectRatio } from "@/islands/primitives/aspect-ratio";
+import { Badge } from "@/islands/primitives/badge";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { getRandomPatternStyle } from "@/server/pattern";
+import { cn } from "@/server/utils";
+import { type CuratedStore } from "@/types";
+import Link from "next-intl/link";
 
 interface StoreCardProps {
   store: CuratedStore;

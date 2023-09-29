@@ -1,24 +1,23 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import { and, desc, eq, not } from "drizzle-orm";
-import Link from "next-intl/link";
-
-import { formatPrice, toTitleCase } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { products, stores } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
-import { AddToCartForm } from "~/forms/add-to-cart-form";
-import { ProductCard } from "~/islands/modules/cards/product-card";
-import { Breadcrumbs } from "~/islands/navigation/pagination/breadcrumbs";
+import { db } from "@/data/db/client";
+import { products, stores } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
+import { AddToCartForm } from "@/forms/add-to-cart-form";
+import { ProductCard } from "@/islands/modules/cards/product-card";
+import { Breadcrumbs } from "@/islands/navigation/pagination/breadcrumbs";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/islands/primitives/accordion";
-import { Separator } from "~/islands/primitives/separator";
-import { ProductImageCarousel } from "~/islands/product-carousel";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/accordion";
+import { Separator } from "@/islands/primitives/separator";
+import { ProductImageCarousel } from "@/islands/product-carousel";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { formatPrice, toTitleCase } from "@/server/utils";
+import { and, desc, eq, not } from "drizzle-orm";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

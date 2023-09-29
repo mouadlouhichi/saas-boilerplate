@@ -6,6 +6,6 @@
     "src/{app,pages}/**/*.{js,jsx,ts,tsx}"
   ],
   "paths": {
-    "~/*": ["./src/*"]
+    "@/*": ["./src/*"]
   }
 }

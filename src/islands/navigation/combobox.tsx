@@ -2,18 +2,11 @@
 
 import { useCallback, useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Circle, File, Laptop, Moon, Sun } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
-
-import { filterProductsAction } from "~/server/actions/product";
-import { navItems } from "~/server/links";
-import { cn } from "~/server/utils";
-import { type Product } from "~/data/db/schema";
-import { useDebounce } from "~/hooks/use-debounce";
-import { useHotkeys } from "~/hooks/use-hotkeys";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { type Product } from "@/data/db/schema";
+import { useDebounce } from "@/hooks/use-debounce";
+import { useHotkeys } from "@/hooks/use-hotkeys";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   CommandDialog,
   CommandEmpty,
@@ -22,8 +15,14 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "~/islands/primitives/command";
-import { Skeleton } from "~/islands/primitives/skeleton";
+} from "@/islands/primitives/command";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { filterProductsAction } from "@/server/actions/product";
+import { navItems } from "@/server/links";
+import { cn } from "@/server/utils";
+import { Circle, File, Laptop, Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
 type RouteHref = never;
 

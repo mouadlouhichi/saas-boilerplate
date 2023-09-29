@@ -1,4 +1,4 @@
-import { cls } from "~/server/utils";
+import { cls } from "@/server/utils";
 
 test("merges class names", () => {
   // eslint-disable-next-line tailwindcss/no-custom-classname

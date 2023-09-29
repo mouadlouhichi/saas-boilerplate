@@ -1,21 +1,20 @@
 import { type Metadata } from "next";
-
 // import Image from "next/image";
 // import Link from "next-intl/link";
 // import dayjs from "dayjs";
 
-// import { formatDate } from "~/server/utils";
-// import { env } from "~/data/env/env.mjs";
-import { fullURL } from "~/data/meta/builder";
-// import { Icons } from "~/islands/icons";
+// import { formatDate } from "@/server/utils";
+// import { env } from "@/data/env/env.mjs";
+import { fullURL } from "@/data/meta/builder";
+// import { Icons } from "@/islands/icons";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-// import { AspectRatio } from "~/islands/primitives/aspect-ratio";
-import { Separator } from "~/islands/primitives/separator";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+// import { AspectRatio } from "@/islands/primitives/aspect-ratio";
+import { Separator } from "@/islands/primitives/separator";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

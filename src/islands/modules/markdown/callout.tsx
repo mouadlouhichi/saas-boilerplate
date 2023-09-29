@@ -2,7 +2,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "~/islands/primitives/alert";
+} from "@/islands/primitives/alert";
 
 interface CalloutProps {
   icon?: string;

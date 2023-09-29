@@ -8,8 +8,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "~/islands/primitives/alert-dialog";
-import { Button } from "~/islands/primitives/button";
+} from "@/islands/primitives/alert-dialog";
+import { Button } from "@/islands/primitives/button";
 
 export default function ProductPreviewModal() {
   return (

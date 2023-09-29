@@ -6,7 +6,7 @@
 
 import { NextRequest } from "next/server";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { defaultLocale } from "~/i18n/locales";
+import { defaultLocale } from "@/i18n/locales";
 import NextAuth, {
   getServerSession,
   NextAuthOptions,
@@ -18,11 +18,11 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { type Provider } from "next-auth/providers/index";
 
-import { createAccount, createUser, findAccount } from "~/server/user";
-// import { sendVerificationRequest } from "~/server/request";
-import { signInPagePath } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { env } from "~/data/env/env.mjs";
+import { createAccount, createUser, findAccount } from "@/server/user";
+// import { sendVerificationRequest } from "@/server/request";
+import { signInPagePath } from "@/server/utils";
+import { db } from "@/data/db/client";
+import { env } from "@/data/env/env.mjs";
 
 /**
  * Configure authentication providers. To enable email, google, and github

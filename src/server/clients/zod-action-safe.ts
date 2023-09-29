@@ -1,11 +1,10 @@
 /** @see https://github.com/TheEdoRan/next-safe-action/tree/main/packages/next-safe-action */
 
 import { cookies } from "next/headers";
+import { authOptions } from "@/server/auth";
+import { ERR } from "@/server/utils";
 import { getServerSession } from "next-auth";
 import { createSafeActionClient } from "next-safe-action";
-
-import { authOptions } from "~/server/auth";
-import { ERR } from "~/server/utils";
 
 // todo: rewrite in the better ways for auth.js library
 

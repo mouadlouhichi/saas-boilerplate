@@ -1,24 +1,23 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import { eq } from "drizzle-orm";
-import Link from "next-intl/link";
-
-import { getCartAction } from "~/server/actions/cart";
+import { db } from "@/data/db/client";
+import { stores } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import CheckoutForm from "@/forms/checkout-form";
+import { CartLineItems } from "@/islands/checkout/cart-line-items";
+import { CheckoutShell } from "@/islands/checkout/checkout-shell";
+import { Badge } from "@/islands/primitives/badge";
+import { buttonVariants } from "@/islands/primitives/button";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getCartAction } from "@/server/actions/cart";
 import {
   createPaymentIntentAction,
   getStripeAccountAction,
-} from "~/server/actions/stripe";
-import { cn, formatPrice } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { stores } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import CheckoutForm from "~/forms/checkout-form";
-import { CartLineItems } from "~/islands/checkout/cart-line-items";
-import { CheckoutShell } from "~/islands/checkout/checkout-shell";
-import { Badge } from "~/islands/primitives/badge";
-import { buttonVariants } from "~/islands/primitives/button";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/server/actions/stripe";
+import { cn, formatPrice } from "@/server/utils";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { eq } from "drizzle-orm";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),

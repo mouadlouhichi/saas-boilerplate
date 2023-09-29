@@ -1,19 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import { type ColumnDef } from "@tanstack/react-table";
-import Link from "next-intl/link";
-import { toast } from "sonner";
-
-import { deleteProductAction } from "~/server/actions/product";
-import { catchError, formatDate, formatPrice } from "~/server/utils";
-import { products, type Product } from "~/data/db/schema";
-import { DataTable } from "~/islands/modules/data-table/data-table";
-import { DataTableColumnHeader } from "~/islands/modules/data-table/data-table-column-header";
-import { Badge } from "~/islands/primitives/badge";
-import { Button } from "~/islands/primitives/button";
-import { Checkbox } from "~/islands/primitives/checkbox";
+import { products, type Product } from "@/data/db/schema";
+import { DataTable } from "@/islands/modules/data-table/data-table";
+import { DataTableColumnHeader } from "@/islands/modules/data-table/data-table-column-header";
+import { Badge } from "@/islands/primitives/badge";
+import { Button } from "@/islands/primitives/button";
+import { Checkbox } from "@/islands/primitives/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +14,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
+} from "@/islands/primitives/dropdown";
+import { deleteProductAction } from "@/server/actions/product";
+import { catchError, formatDate, formatPrice } from "@/server/utils";
+import { DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { type ColumnDef } from "@tanstack/react-table";
+import Link from "next-intl/link";
+import { toast } from "sonner";
 
 interface ProductsTableShellProps {
   data: Product[];

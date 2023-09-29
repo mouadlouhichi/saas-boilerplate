@@ -1,5 +1,20 @@
 import * as React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useDebounce } from "@/hooks/use-debounce";
+import { DataTablePagination } from "@/islands/modules/data-table/data-table-pagination";
+import { DataTableToolbar } from "@/islands/modules/data-table/data-table-toolbar";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/islands/primitives/table";
+import type {
+  DataTableFilterableColumn,
+  DataTableSearchableColumn,
+} from "@/types";
 import {
   flexRender,
   getCoreRowModel,
@@ -15,22 +30,6 @@ import {
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table";
-import type {
-  DataTableFilterableColumn,
-  DataTableSearchableColumn,
-} from "~/types";
-
-import { useDebounce } from "~/hooks/use-debounce";
-import { DataTablePagination } from "~/islands/modules/data-table/data-table-pagination";
-import { DataTableToolbar } from "~/islands/modules/data-table/data-table-toolbar";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "~/islands/primitives/table";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];

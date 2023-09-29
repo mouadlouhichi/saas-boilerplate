@@ -4,6 +4,15 @@
  * @see https://github.com/Apestein/nextflix/blob/main/src/lib/server-fetchers.ts
  */
 
+import { db } from "@/data/db/client";
+import {
+  accounts,
+  sessions,
+  users,
+  verificationTokens,
+} from "@/data/db/schema";
+import { authOptions } from "@/server/auth";
+import { ERR } from "@/server/utils";
 import type { Adapter } from "@auth/core/adapters";
 import axios from "axios";
 import { eq } from "drizzle-orm";
@@ -11,16 +20,6 @@ import { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { createInsertSchema } from "drizzle-zod";
 import { getServerSession } from "next-auth";
 import { z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { ERR } from "~/server/utils";
-import { db } from "~/data/db/client";
-import {
-  accounts,
-  sessions,
-  users,
-  verificationTokens,
-} from "~/data/db/schema";
 
 import { stripe } from "../stripe";
 import { getOrCreateStripeCustomerIdForUser } from "./stripe";
@@ -138,8 +137,8 @@ export async function getAccount(accountId: string) {
 }
 
 // todo: implement (currently is not finished)
-// import { comments } from "~/data/db/schema";
-// import type { Comment, CommentType } from "~/types";
+// import { comments } from "@/data/db/schema";
+// import type { Comment, CommentType } from "@/types";
 // export async function getComments(limit: number) {
 //   const user = await getUserWithActiveAccount();
 //   const comments = await db.query.comments.findMany({

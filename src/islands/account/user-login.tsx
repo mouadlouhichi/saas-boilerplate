@@ -1,11 +1,10 @@
 "use client";
 
 import { FC, type ButtonHTMLAttributes } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
-
 // import { useTranslations } from "next-intl";
 
-import { ActionButton } from "~/islands/account/action-button";
+import { ActionButton } from "@/islands/account/action-button";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export const UserLogin: FC<
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children" | "type" | "onClick">

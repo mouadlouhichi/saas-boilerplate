@@ -1,13 +1,13 @@
-import { Icons } from "~/islands/icons";
-import { AspectRatio } from "~/islands/primitives/aspect-ratio";
+import { Icons } from "@/islands/icons";
+import { AspectRatio } from "@/islands/primitives/aspect-ratio";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "~/islands/primitives/card";
-import { Skeleton } from "~/islands/primitives/skeleton";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export default function ProductsLoading() {
   return (

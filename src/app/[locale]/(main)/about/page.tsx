@@ -1,12 +1,11 @@
-// import { REPOSITORY_URL } from "~/app";
+// import { REPOSITORY_URL } from "@/app";
 
 // import { Balancer } from "react-wrap-balancer";
+import { type GenerateMetadata } from "@/data/meta/extend";
+import { typography } from "@/server/text";
 import { cnBase } from "tailwind-variants";
 
-import { typography } from "~/server/text";
-import { type GenerateMetadata } from "~/data/meta/extend";
-
-// import { getScopedI18n } from "~/data/i18n/server";
+// import { getScopedI18n } from "@/data/i18n/server";
 
 export const generateMetadata: GenerateMetadata = async () => {
   // const t = await getScopedI18n("pages.about");

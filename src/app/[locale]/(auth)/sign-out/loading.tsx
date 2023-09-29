@@ -2,9 +2,9 @@ import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Skeleton } from "~/islands/primitives/skeleton";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export default function SignOutLoading() {
   return (

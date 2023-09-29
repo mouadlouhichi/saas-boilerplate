@@ -8,8 +8,31 @@ import React, {
   type HTMLAttributes,
 } from "react";
 import { useSearchParams } from "next/navigation";
+import { appts, siteConfig } from "@/app";
+import { IAccount, IUser } from "@/data/routers/handlers/users";
+import { userAuthSchema } from "@/data/validations/user";
+import { useToast } from "@/hooks/use-toast-2";
+import { Spinner } from "@/islands/modules/spinner";
+import { Button, buttonVariants } from "@/islands/primitives/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+} from "@/islands/primitives/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
+import { Separator } from "@/islands/primitives/separator";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { typography } from "@/server/text";
+import { catchAuthError, cls, cn } from "@/server/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { appts, siteConfig } from "~/app";
 import { Loader2, MailIcon } from "lucide-react";
 import {
   signIn,
@@ -25,30 +48,6 @@ import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa";
 import { Balancer } from "react-wrap-balancer";
 import { cnBase } from "tailwind-variants";
 import { type z } from "zod";
-
-import { typography } from "~/server/text";
-import { catchAuthError, cls, cn } from "~/server/utils";
-import { IAccount, IUser } from "~/data/routers/handlers/users";
-import { userAuthSchema } from "~/data/validations/user";
-import { useToast } from "~/hooks/use-toast-2";
-import { Spinner } from "~/islands/modules/spinner";
-import { Button, buttonVariants } from "~/islands/primitives/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "~/islands/primitives/card";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
-import { Separator } from "~/islands/primitives/separator";
-import { Shell } from "~/islands/wrappers/shell-variants";
 
 type FormData = z.infer<typeof userAuthSchema>;
 

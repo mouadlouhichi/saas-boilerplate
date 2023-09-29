@@ -1,7 +1,6 @@
 import { type NextResponse } from "next/server";
-import { NextRouteContext, NextRouteHandler, type ApiResponse } from "~/types";
-
-import { logger } from "~/server/logger";
+import { logger } from "@/server/logger";
+import { NextRouteContext, NextRouteHandler, type ApiResponse } from "@/types";
 
 import { buildErrorResponse } from "./errors/error-response";
 

@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { generateProducts } from "@/server/actions/generate";
+import { catchError } from "@/server/utils";
 import { toast } from "sonner";
-
-import { generateProducts } from "~/server/actions/generate";
-import { catchError } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
 
 interface GenerateButtonProps {
   storeId: number;

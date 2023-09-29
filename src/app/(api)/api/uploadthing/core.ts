@@ -1,8 +1,7 @@
+import { findUserById } from "@/data/routers/handlers/users";
+import { authOptions } from "@/server/auth";
 import { getServerSession } from "next-auth";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
-
-import { authOptions } from "~/server/auth";
-import { findUserById } from "~/data/routers/handlers/users";
 
 const f = createUploadthing();
 

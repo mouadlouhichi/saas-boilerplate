@@ -8,9 +8,10 @@
  * @see https://orm.drizzle.team/docs/column-types/pg
  */
 
+import { planTuple } from "@/server/config/subscriptions2";
+import type { CartItem, CheckoutItem, StoredFile } from "@/types";
 import type { AdapterAccount } from "@auth/core/adapters";
 import { createId } from "@paralleldrive/cuid2";
-import type { CartItem, CheckoutItem, StoredFile } from "~/types";
 import { relations } from "drizzle-orm";
 import {
   boolean,
@@ -29,8 +30,6 @@ import {
   uniqueIndex,
 } from "drizzle-orm/pg-core";
 import Stripe from "stripe";
-
-import { planTuple } from "~/server/config/subscriptions2";
 
 /**
  * @module drizzle-schema-accounts

@@ -1,12 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { siteConfig } from "~/app";
-import { type MainMenuItem } from "~/types";
-import { ActivitySquare } from "lucide-react";
-import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
+import { siteConfig } from "@/app";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,7 +10,11 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "~/islands/navigation/nav-menu";
+} from "@/islands/navigation/nav-menu";
+import { cn } from "@/server/utils";
+import { type MainMenuItem } from "@/types";
+import { ActivitySquare } from "lucide-react";
+import Link from "next-intl/link";
 
 interface MainMenuProps {
   items?: MainMenuItem[];

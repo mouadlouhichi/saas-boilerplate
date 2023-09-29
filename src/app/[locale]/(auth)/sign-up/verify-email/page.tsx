@@ -1,15 +1,14 @@
 import { type Metadata } from "next";
-
-import { fullURL } from "~/data/meta/builder";
-// import { VerifyEmailForm } from "~/forms/verify-email-form";
+import { fullURL } from "@/data/meta/builder";
+// import { VerifyEmailForm } from "@/forms/verify-email-form";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

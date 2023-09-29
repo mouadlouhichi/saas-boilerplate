@@ -1,11 +1,10 @@
 "use client";
 
 import { useMemo } from "react";
+import { useToast } from "@/hooks/use-toast-1";
+import { Button } from "@/islands/primitives/button";
+import { cls } from "@/server/utils";
 import { CheckIcon } from "lucide-react";
-
-import { cls } from "~/server/utils";
-import { useToast } from "~/hooks/use-toast-1";
-import { Button } from "~/islands/primitives/button";
 
 export function Features() {
   const { toast } = useToast();
@@ -64,9 +63,9 @@ export function Features() {
   );
 }
 
-// import { features } from "~/app";
+// import { features } from "@/app";
 //
-// import HeadingText from "~/islands/modules/heading-text";
+// import HeadingText from "@/islands/modules/heading-text";
 //
 // export default function Features() {
 //   return (

@@ -4,8 +4,7 @@
  */
 
 import * as React from "react";
-
-import type { ToastActionElement, ToastProps } from "~/islands/toast-1";
+import type { ToastActionElement, ToastProps } from "@/islands/toast-1";
 
 const TOAST_LIMIT = 1;
 const TOAST_REMOVE_DELAY = 1000000;

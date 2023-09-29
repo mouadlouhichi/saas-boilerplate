@@ -1,6 +1,5 @@
+import { checkoutItemSchema } from "@/data/validations/cart";
 import * as z from "zod";
-
-import { checkoutItemSchema } from "~/data/validations/cart";
 
 export const getOrderedProductsSchema = z.object({
   checkoutItems: z.array(checkoutItemSchema),

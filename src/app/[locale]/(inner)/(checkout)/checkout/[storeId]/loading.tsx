@@ -1,7 +1,7 @@
-import { Icons } from "~/islands/icons";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
-import { Separator } from "~/islands/primitives/separator";
-import { Skeleton } from "~/islands/primitives/skeleton";
+import { Icons } from "@/islands/icons";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { Separator } from "@/islands/primitives/separator";
+import { Skeleton } from "@/islands/primitives/skeleton";
 
 export default function CheckoutLoading() {
   return (

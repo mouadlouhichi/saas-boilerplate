@@ -3,25 +3,12 @@
 import * as React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { generateReactHelpers } from "@uploadthing/react/hooks";
-import { type FileWithPreview } from "~/types";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { type z } from "zod";
-
-import {
-  checkProductAction,
-  deleteProductAction,
-  updateProductAction,
-} from "~/server/actions/product";
-import { getSubcategories } from "~/server/config/products";
-import { catchError, isArrayOfFile } from "~/server/utils";
-import { products, type Product } from "~/data/db/schema";
-import { productSchema } from "~/data/validations/product";
-import { FileDialog } from "~/islands/file-dialog";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { type OurFileRouter } from "@/app/(api)/api/uploadthing/core";
+import { products, type Product } from "@/data/db/schema";
+import { productSchema } from "@/data/validations/product";
+import { FileDialog } from "@/islands/file-dialog";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -30,8 +17,8 @@ import {
   FormLabel,
   FormMessage,
   UncontrolledFormMessage,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
 import {
   Select,
   SelectContent,
@@ -39,10 +26,22 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/islands/primitives/select";
-import { Textarea } from "~/islands/primitives/textarea";
-import { Zoom } from "~/islands/zoom-image";
-import { type OurFileRouter } from "~/app/(api)/api/uploadthing/core";
+} from "@/islands/primitives/select";
+import { Textarea } from "@/islands/primitives/textarea";
+import { Zoom } from "@/islands/zoom-image";
+import {
+  checkProductAction,
+  deleteProductAction,
+  updateProductAction,
+} from "@/server/actions/product";
+import { getSubcategories } from "@/server/config/products";
+import { catchError, isArrayOfFile } from "@/server/utils";
+import { type FileWithPreview } from "@/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { generateReactHelpers } from "@uploadthing/react/hooks";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { type z } from "zod";
 
 interface UpdateProductFormProps {
   product: Product;

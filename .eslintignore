@@ -16,3 +16,7 @@ next-env.d.ts
 
 # temporary
 *.tson
+
+# misc
+.utils
+storybook-static

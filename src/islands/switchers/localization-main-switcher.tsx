@@ -3,12 +3,9 @@
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 import { useSearchParams } from "next/navigation";
-import { localeLabels, locales } from "~/i18n/locales";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next-intl/client";
-
-import { useIsClient } from "~/hooks/use-is-client";
-import { Button, type ButtonProps } from "~/islands/primitives/button";
+import { useIsClient } from "@/hooks/use-is-client";
+import { localeLabels, locales } from "@/i18n/locales";
+import { Button, type ButtonProps } from "@/islands/primitives/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,7 +14,9 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
+} from "@/islands/primitives/dropdown";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next-intl/client";
 
 type LocalizationMainSwitcherProps = ButtonProps & {
   iconClassName?: string;

@@ -2,9 +2,8 @@
 
 // Error components must be Client Components
 import * as React from "react";
-
-import { ErrorCard } from "~/islands/modules/cards/error-card";
-import { Shell } from "~/islands/wrappers/shell-variants";
+import { ErrorCard } from "@/islands/modules/cards/error-card";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export default function StoreCheckoutError({
   error,

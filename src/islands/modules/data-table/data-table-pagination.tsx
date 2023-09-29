@@ -1,3 +1,11 @@
+import { Button } from "@/islands/primitives/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/islands/primitives/select";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -5,15 +13,6 @@ import {
   DoubleArrowRightIcon,
 } from "@radix-ui/react-icons";
 import { type Table } from "@tanstack/react-table";
-
-import { Button } from "~/islands/primitives/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "~/islands/primitives/select";
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>;

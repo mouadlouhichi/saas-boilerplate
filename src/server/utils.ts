@@ -1,11 +1,10 @@
-import { type CartLineItem } from "~/types";
+import { env } from "@/data/env/env.mjs";
+import { type CartLineItem } from "@/types";
 import { clsx, type ClassValue } from "clsx";
 import dayjs from "dayjs";
 import { toast } from "sonner";
 import { twMerge } from "tailwind-merge";
 import * as z from "zod";
-
-import { env } from "~/data/env/env.mjs";
 
 export const signInPagePath = (locale: string) => `/${locale}/sign-in`;
 

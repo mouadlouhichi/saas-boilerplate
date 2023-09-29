@@ -4,9 +4,8 @@
  * @see https://github.com/sadmann7/skateshop/blob/main/src/config/subscriptions.ts
  */
 
-import { type SubscriptionPlan } from "~/types";
-
-import { env } from "~/data/env/env.mjs";
+import { env } from "@/data/env/env.mjs";
+import { type SubscriptionPlan } from "@/types";
 
 export const storeSubscriptionPlans: SubscriptionPlan[] = [
   {

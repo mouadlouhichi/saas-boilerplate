@@ -1,4 +1,4 @@
-import { env } from "~/data/env/env.mjs";
+import { env } from "@/data/env/env.mjs";
 
 export function TailwindIndicator() {
   if (env.NODE_ENV === "production") return null;

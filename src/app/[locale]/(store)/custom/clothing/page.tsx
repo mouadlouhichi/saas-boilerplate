@@ -1,20 +1,19 @@
 import { type Metadata } from "next";
 import { cookies } from "next/headers";
-import Link from "next-intl/link";
-
-import { getCartItemsAction } from "~/server/actions/cart";
-import { getProductsAction } from "~/server/actions/product";
-import { productCategories } from "~/server/config/products";
-import { cn } from "~/server/utils";
-import { fullURL } from "~/data/meta/builder";
-import { Icons } from "~/islands/icons";
+import { fullURL } from "@/data/meta/builder";
+import { Icons } from "@/islands/icons";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { ProductBuilder } from "~/islands/product-building";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { ProductBuilder } from "@/islands/product-building";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getCartItemsAction } from "@/server/actions/cart";
+import { getProductsAction } from "@/server/actions/product";
+import { productCategories } from "@/server/config/products";
+import { cn } from "@/server/utils";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

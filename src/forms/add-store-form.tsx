@@ -2,16 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { type z } from "zod";
-
-import { addStoreAction } from "~/server/actions/store";
-import { catchError } from "~/server/utils";
-import { storeSchema } from "~/data/validations/store";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { storeSchema } from "@/data/validations/store";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -19,9 +12,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
-import { Textarea } from "~/islands/primitives/textarea";
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
+import { Textarea } from "@/islands/primitives/textarea";
+import { addStoreAction } from "@/server/actions/store";
+import { catchError } from "@/server/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { type z } from "zod";
 
 interface AddStoreFormProps {
   userId: string;

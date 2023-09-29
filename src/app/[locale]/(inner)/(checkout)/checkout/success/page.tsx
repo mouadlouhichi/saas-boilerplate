@@ -1,16 +1,15 @@
 import { type Metadata } from "next";
-import { eq } from "drizzle-orm";
-
-import { getCheckoutSessionProducts } from "~/server/actions/order";
-import { db } from "~/data/db/client";
-import { stores } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
+import { db } from "@/data/db/client";
+import { stores } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getCheckoutSessionProducts } from "@/server/actions/order";
+import { eq } from "drizzle-orm";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),

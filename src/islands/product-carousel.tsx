@@ -2,16 +2,15 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { cn } from "@/server/utils";
+import { type StoredFile } from "@/types";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import { type StoredFile } from "~/types";
 import useEmblaCarousel, {
   type EmblaCarouselType,
   type EmblaOptionsType,
 } from "embla-carousel-react";
-
-import { cn } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
 
 interface ProductImageCarouselProps
   extends React.HTMLAttributes<HTMLDivElement> {

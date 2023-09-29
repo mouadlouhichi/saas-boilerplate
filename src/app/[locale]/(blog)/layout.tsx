@@ -1,6 +1,5 @@
+import { authOptions } from "@/server/auth";
 import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
 
 interface LobbyLayoutProps {
   children: React.ReactNode;

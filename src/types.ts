@@ -1,24 +1,23 @@
 import { Metadata } from "next";
 import { NextResponse, type NextRequest } from "next/server";
-import { type DefaultSession } from "next-auth";
-import { type FileWithPath } from "react-dropzone";
-import { type z, type ZodIssue } from "zod";
-
-import type { storeSubscriptionPlans } from "~/server/config/subscriptions";
 import {
   commentsTypeEnum,
   type accounts,
   type comments,
   type Store,
-} from "~/data/db/schema";
-import { IUser } from "~/data/routers/handlers/users";
-import { type userPrivateMetadataSchema } from "~/data/validations/auth";
+} from "@/data/db/schema";
+import { IUser } from "@/data/routers/handlers/users";
+import { type userPrivateMetadataSchema } from "@/data/validations/auth";
 import type {
   cartItemSchema,
   cartLineItemSchema,
   checkoutItemSchema,
-} from "~/data/validations/cart";
-import { type Icons } from "~/islands/icons";
+} from "@/data/validations/cart";
+import { type Icons } from "@/islands/icons";
+import type { storeSubscriptionPlans } from "@/server/config/subscriptions";
+import { type DefaultSession } from "next-auth";
+import { type FileWithPath } from "react-dropzone";
+import { type z, type ZodIssue } from "zod";
 
 /**
  * =======================================================================

@@ -2,14 +2,13 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   getNextStoreIdAction,
   getPreviousStoreIdAction,
-} from "~/server/actions/store";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+} from "@/server/actions/store";
+import { toast } from "sonner";
 
 interface StorePagerProps {
   storeId: number;

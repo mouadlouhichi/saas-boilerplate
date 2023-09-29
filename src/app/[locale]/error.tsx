@@ -3,13 +3,12 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { Button, buttonVariants } from "@/islands/primitives/button";
+import { Separator } from "@/islands/primitives/separator";
+import { cn } from "@/server/utils";
 import { useCopyToClipboard } from "@uidotdev/usehooks";
 import { ClipboardCheck, ClipboardCopy } from "lucide-react";
 import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-import { Button, buttonVariants } from "~/islands/primitives/button";
-import { Separator } from "~/islands/primitives/separator";
 
 // todo: migrate to useHooks: useCopyToClipboard
 // todo: https://usehooks.com/usecopytoclipboard

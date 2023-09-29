@@ -1,15 +1,14 @@
 import { type Metadata } from "next";
-
-import { getStoresAction } from "~/server/actions/store";
-// import { env } from "~/data/env/env.mjs";
-import { fullURL } from "~/data/meta/builder";
+// import { env } from "@/data/env/env.mjs";
+import { fullURL } from "@/data/meta/builder";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Stores } from "~/islands/stores";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Stores } from "@/islands/stores";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getStoresAction } from "@/server/actions/store";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

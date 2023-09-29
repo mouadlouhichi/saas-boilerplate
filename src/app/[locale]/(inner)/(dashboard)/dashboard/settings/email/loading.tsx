@@ -1,13 +1,13 @@
-import { PageHeader } from "~/islands/navigation/page-header";
+import { PageHeader } from "@/islands/navigation/page-header";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Skeleton } from "~/islands/primitives/skeleton";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export default function EmailPreferencesLoading() {
   return (

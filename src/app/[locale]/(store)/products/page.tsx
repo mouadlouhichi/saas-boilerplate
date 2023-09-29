@@ -1,16 +1,15 @@
 import { type Metadata } from "next";
-
-import { getProductsAction } from "~/server/actions/product";
-import { getStoresAction } from "~/server/actions/store";
-import { products } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
+import { products } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Products } from "~/islands/products";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Products } from "@/islands/products";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getProductsAction } from "@/server/actions/product";
+import { getStoresAction } from "@/server/actions/store";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

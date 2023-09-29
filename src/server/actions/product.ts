@@ -1,7 +1,14 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { type StoredFile } from "~/types";
+import { db } from "@/data/db/client";
+import { products, type Product } from "@/data/db/schema";
+import type {
+  getProductSchema,
+  getProductsSchema,
+  productSchema,
+} from "@/data/validations/product";
+import { type StoredFile } from "@/types";
 import {
   and,
   asc,
@@ -17,14 +24,6 @@ import {
   sql,
 } from "drizzle-orm";
 import { type z } from "zod";
-
-import { db } from "~/data/db/client";
-import { products, type Product } from "~/data/db/schema";
-import type {
-  getProductSchema,
-  getProductsSchema,
-  productSchema,
-} from "~/data/validations/product";
 
 export async function filterProductsAction(query: string) {
   if (query.length === 0) return null;

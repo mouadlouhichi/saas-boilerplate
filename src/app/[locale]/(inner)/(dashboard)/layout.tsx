@@ -1,10 +1,9 @@
 import { redirect } from "next/navigation";
+import { SidebarNav } from "@/islands/navigation/sidebar-nav";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { authOptions } from "@/server/auth";
+import { dashboardConfig } from "@/server/config/dashboard";
 import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
-import { dashboardConfig } from "~/server/config/dashboard";
-import { SidebarNav } from "~/islands/navigation/sidebar-nav";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;

@@ -1,14 +1,14 @@
-import { getProductsAction } from "~/server/actions/product";
-import { getStoresAction } from "~/server/actions/store";
-import { toTitleCase, unslugify } from "~/server/utils";
-import { type Product } from "~/data/db/schema";
+import { type Product } from "@/data/db/schema";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { Products } from "~/islands/products";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { Products } from "@/islands/products";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getProductsAction } from "@/server/actions/product";
+import { getStoresAction } from "@/server/actions/store";
+import { toTitleCase, unslugify } from "@/server/utils";
 
 // Running out of edge function execution units on vercel free plan
 // export const runtime = "edge"

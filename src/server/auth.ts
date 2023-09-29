@@ -5,8 +5,18 @@
  */
 
 import { NextRequest } from "next/server";
+import { db } from "@/data/db/client";
+import { users } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+// import { sendVerificationRequest } from "@/server/request";
+import {
+  createAccount,
+  createUser,
+  findAccount,
+} from "@/data/routers/handlers/users";
+import { defaultLocale } from "@/i18n/locales";
+import { signInPagePath } from "@/server/utils";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { defaultLocale } from "~/i18n/locales";
 import { and, eq, isNotNull } from "drizzle-orm";
 import NextAuth, {
   getServerSession,
@@ -19,17 +29,6 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { type Provider } from "next-auth/providers/index";
 import { Client } from "postmark";
-
-import { signInPagePath } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { users } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-// import { sendVerificationRequest } from "~/server/request";
-import {
-  createAccount,
-  createUser,
-  findAccount,
-} from "~/data/routers/handlers/users";
 
 // const postmark = new Client(env.POSTMARK_API_TOKEN as string);
 

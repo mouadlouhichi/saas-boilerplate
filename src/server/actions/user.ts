@@ -6,17 +6,7 @@
 import { revalidatePath } from "next/cache";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { CommentTuple, type CheckoutItem } from "~/types";
-import { eq } from "drizzle-orm";
-import { getServerSession } from "next-auth";
-import type { Stripe } from "stripe";
-import { z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { authAction } from "~/server/clients/zod-action-safe";
-import { planTuple } from "~/server/config/subscriptions2";
-import { absoluteUrl, calculateOrderAmount, ERR } from "~/server/utils";
-import { db } from "~/data/db/client";
+import { db } from "@/data/db/client";
 import {
   accounts,
   carts,
@@ -24,7 +14,7 @@ import {
   payments,
   stores,
   users,
-} from "~/data/db/schema";
+} from "@/data/db/schema";
 import {
   findUserById,
   getAccount,
@@ -32,15 +22,24 @@ import {
   getUserAccounts,
   getUserWithAccounts,
   getUserWithActiveAccount,
-} from "~/data/routers/handlers/users";
-import { stripe } from "~/data/routers/stripe";
+} from "@/data/routers/handlers/users";
+import { stripe } from "@/data/routers/stripe";
 import type {
   createPaymentIntentSchema,
   getPaymentIntentSchema,
   getPaymentIntentsSchema,
   getStripeAccountSchema,
   manageSubscriptionSchema,
-} from "~/data/validations/stripe";
+} from "@/data/validations/stripe";
+import { authOptions } from "@/server/auth";
+import { authAction } from "@/server/clients/zod-action-safe";
+import { planTuple } from "@/server/config/subscriptions2";
+import { absoluteUrl, calculateOrderAmount, ERR } from "@/server/utils";
+import { CommentTuple, type CheckoutItem } from "@/types";
+import { eq } from "drizzle-orm";
+import { getServerSession } from "next-auth";
+import type { Stripe } from "stripe";
+import { z } from "zod";
 
 // todo: not finished (merge with: src/data/routers/handlers/user.ts)
 export const createAccount = authAction(

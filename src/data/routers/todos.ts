@@ -1,10 +1,9 @@
+import { db } from "@/data/db/client";
+import * as schema from "@/data/db/schema";
+import { publicProcedure, router } from "@/data/env/trpc";
 import { TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-
-import { db } from "~/data/db/client";
-import * as schema from "~/data/db/schema";
-import { publicProcedure, router } from "~/data/env/trpc";
 
 export const todosRouter = router({
   getTodos: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {

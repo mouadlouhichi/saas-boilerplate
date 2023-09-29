@@ -4,9 +4,8 @@
  */
 
 import { NextRequest } from "next/server";
+import { authOptions } from "@/server/auth";
 import NextAuth from "next-auth";
-
-import { authOptions } from "~/server/auth";
 
 type RouteHandlerContext = {
   params: { nextauth: string[] };

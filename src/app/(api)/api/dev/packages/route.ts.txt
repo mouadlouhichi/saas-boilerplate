@@ -5,7 +5,7 @@ import { readFileSync } from 'fs';
 import latestVersion from "latest-version";
 import latestVersion from "@badisi/latest-version";
 
-import { env } from "~/data/env/env.mjs";
+import { env } from "@/data/env/env.mjs";
 
 /**
  * todo: it is basic implementation

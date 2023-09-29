@@ -1,10 +1,8 @@
 import * as React from "react";
 import Link from "next/link";
-
-import { cn } from "~/server/utils";
-import { ClientButton } from "~/islands/client-button";
-import { Icons } from "~/islands/icons";
-import { buttonVariants } from "~/islands/primitives/button";
+import { ClientButton } from "@/islands/client-button";
+import { Icons } from "@/islands/icons";
+import { buttonVariants } from "@/islands/primitives/button";
 import {
   Card,
   CardContent,
@@ -12,7 +10,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { cn } from "@/server/utils";
 
 interface ErrorCardProps extends React.ComponentPropsWithoutRef<typeof Card> {
   icon?: keyof typeof Icons;

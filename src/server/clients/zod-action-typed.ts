@@ -1,9 +1,8 @@
 /** @see https://github.com/demestoss/next-typed-action */
 
 import { cookies } from "next/headers";
+import { ERR } from "@/server/utils";
 import { typedServerActionClient } from "next-typed-action";
-
-import { ERR } from "~/server/utils";
 
 // todo: rewrite in the better ways for auth.js library
 

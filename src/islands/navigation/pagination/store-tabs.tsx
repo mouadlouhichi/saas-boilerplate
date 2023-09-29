@@ -1,9 +1,8 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-
-import { cn } from "~/server/utils";
-import { Tabs, TabsList, TabsTrigger } from "~/islands/primitives/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/islands/primitives/tabs";
+import { cn } from "@/server/utils";
 
 interface StoreTabsProps extends React.ComponentPropsWithoutRef<typeof Tabs> {
   storeId: number;

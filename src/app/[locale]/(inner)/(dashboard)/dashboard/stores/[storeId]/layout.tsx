@@ -1,19 +1,18 @@
 import { notFound, redirect } from "next/navigation";
-import { eq } from "drizzle-orm";
-import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
+import { db } from "@/data/db/client";
+import { stores } from "@/data/db/schema";
+import { findUserById } from "@/data/routers/handlers/users";
+import { PageHeaderHeading } from "@/islands/navigation/page-header";
+import { StoreSwitcher } from "@/islands/navigation/pagination/store-switcher";
+import { StoreTabs } from "@/islands/navigation/pagination/store-tabs";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { authOptions } from "@/server/auth";
 import {
   getDashboardRedirectPath,
   getUserSubscriptionPlan,
-} from "~/server/subs";
-import { db } from "~/data/db/client";
-import { stores } from "~/data/db/schema";
-import { findUserById } from "~/data/routers/handlers/users";
-import { PageHeaderHeading } from "~/islands/navigation/page-header";
-import { StoreSwitcher } from "~/islands/navigation/pagination/store-switcher";
-import { StoreTabs } from "~/islands/navigation/pagination/store-tabs";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/server/subs";
+import { eq } from "drizzle-orm";
+import { getServerSession } from "next-auth";
 
 interface StoreLayoutProps {
   children: React.ReactNode;

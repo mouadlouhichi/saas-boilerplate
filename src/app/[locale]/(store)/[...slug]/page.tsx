@@ -1,20 +1,19 @@
 // import { notFound } from "next/navigation";
 
-import "~/styles/mdx.css";
+import "@/styles/mdx.css";
 
 import { type Metadata } from "next";
-import { siteConfig } from "~/app";
-
-import { absoluteUrl } from "~/server/utils";
-// import { Mdx } from "~/islands/modules/markdown/mdx-components";
+import { siteConfig } from "@/app";
+// import { Mdx } from "@/islands/modules/markdown/mdx-components";
 import {
   PageHeader,
   // PageHeaderDescription,
   // PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-// import { MdxPager } from "~/islands/navigation/pagination/mdx-pager";
-import { Separator } from "~/islands/primitives/separator";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+// import { MdxPager } from "@/islands/navigation/pagination/mdx-pager";
+import { Separator } from "@/islands/primitives/separator";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { absoluteUrl } from "@/server/utils";
 
 // interface PageProps {
 //   params: {

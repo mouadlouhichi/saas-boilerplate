@@ -1,11 +1,10 @@
 "use client";
 
+import { FeatureCard } from "@/islands/modules/cards/feature-card";
+import { typography } from "@/server/text";
 import { Clock, Code, DollarSign, Files, QrCode, Text } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cnBase } from "tailwind-variants";
-
-import { typography } from "~/server/text";
-import { FeatureCard } from "~/islands/modules/cards/feature-card";
 
 export default function FeaturesSection() {
   const t = useTranslations("landing");

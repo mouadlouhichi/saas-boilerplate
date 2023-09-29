@@ -2,18 +2,12 @@
 
 import * as React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { type CartItem } from "~/types";
-import { toast } from "sonner";
-
-import { addToCartAction, deleteCartItemAction } from "~/server/actions/cart";
-import { sortOptions } from "~/server/config/products";
-import { cn } from "~/server/utils";
-import { type Product } from "~/data/db/schema";
-import { useDebounce } from "~/hooks/use-debounce";
-import { Icons } from "~/islands/icons";
-import { ProductCard } from "~/islands/modules/cards/product-card";
-import { PaginationButton } from "~/islands/navigation/pagination/pagination-button";
-import { Button } from "~/islands/primitives/button";
+import { type Product } from "@/data/db/schema";
+import { useDebounce } from "@/hooks/use-debounce";
+import { Icons } from "@/islands/icons";
+import { ProductCard } from "@/islands/modules/cards/product-card";
+import { PaginationButton } from "@/islands/navigation/pagination/pagination-button";
+import { Button } from "@/islands/primitives/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,9 +15,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
-import { Input } from "~/islands/primitives/input";
-import { Separator } from "~/islands/primitives/separator";
+} from "@/islands/primitives/dropdown";
+import { Input } from "@/islands/primitives/input";
+import { Separator } from "@/islands/primitives/separator";
 import {
   Sheet,
   SheetContent,
@@ -31,8 +25,13 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "~/islands/primitives/sheet";
-import { Slider } from "~/islands/primitives/slider";
+} from "@/islands/primitives/sheet";
+import { Slider } from "@/islands/primitives/slider";
+import { addToCartAction, deleteCartItemAction } from "@/server/actions/cart";
+import { sortOptions } from "@/server/config/products";
+import { cn } from "@/server/utils";
+import { type CartItem } from "@/types";
+import { toast } from "sonner";
 
 interface ProductBuilderProps extends React.HTMLAttributes<HTMLDivElement> {
   products: Product[];

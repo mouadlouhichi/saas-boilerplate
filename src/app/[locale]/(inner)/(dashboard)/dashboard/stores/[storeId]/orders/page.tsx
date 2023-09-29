@@ -1,11 +1,10 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
+import { db } from "@/data/db/client";
+import { orders, stores, type Order } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import { OrdersTableShell } from "@/islands/wrappers/orders-table-shell";
 import { and, asc, desc, eq, like, sql } from "drizzle-orm";
-
-import { db } from "~/data/db/client";
-import { orders, stores, type Order } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import { OrdersTableShell } from "~/islands/wrappers/orders-table-shell";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),

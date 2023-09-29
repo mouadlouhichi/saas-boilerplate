@@ -3,18 +3,11 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { type z } from "zod";
-
-import { updateEmailPreferencesAction } from "~/server/actions/email";
-import { catchAuthError } from "~/server/utils";
-import { type EmailPreference } from "~/data/db/schema";
-import { updateEmailPreferencesSchema } from "~/data/validations/email";
-import { useToast } from "~/hooks/use-toast-2";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { type EmailPreference } from "@/data/db/schema";
+import { updateEmailPreferencesSchema } from "@/data/validations/email";
+import { useToast } from "@/hooks/use-toast-2";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -23,8 +16,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/islands/primitives/form";
-import { Switch } from "~/islands/primitives/switch";
+} from "@/islands/primitives/form";
+import { Switch } from "@/islands/primitives/switch";
+import { updateEmailPreferencesAction } from "@/server/actions/email";
+import { catchAuthError } from "@/server/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { type z } from "zod";
 
 interface UpdateEmailPreferencesFormProps {
   emailPreference: EmailPreference;

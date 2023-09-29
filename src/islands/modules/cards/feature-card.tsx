@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { featureCards } from "~/app";
-
-import HeadingText from "~/islands/modules/heading-text";
-import { Card, CardDescription, CardTitle } from "~/islands/primitives/card";
+import { featureCards } from "@/app";
+import HeadingText from "@/islands/modules/heading-text";
+import { Card, CardDescription, CardTitle } from "@/islands/primitives/card";
 
 type FeatureCardProps = {
   title: string;

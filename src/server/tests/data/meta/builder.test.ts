@@ -1,5 +1,5 @@
-import { env } from "~/data/env/env.mjs";
-import { appHost, fullURL } from "~/data/meta/builder";
+import { env } from "@/data/env/env.mjs";
+import { appHost, fullURL } from "@/data/meta/builder";
 
 test("appHost() returns the app host", () => {
   const oldHost = env.NEXT_PUBLIC_APP_URL;

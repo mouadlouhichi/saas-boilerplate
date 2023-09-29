@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { absoluteUrl } from "@/server/utils";
 import {
   AddressElement,
   LinkAuthenticationElement,
@@ -8,10 +11,6 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-
-import { absoluteUrl } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
 
 interface CheckoutFormProps {
   storeId: number;

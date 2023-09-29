@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-
-import { cn } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
-import { type InputProps } from "~/islands/primitives/forms/input";
-import { Input } from "~/islands/primitives/input";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { type InputProps } from "@/islands/primitives/forms/input";
+import { Input } from "@/islands/primitives/input";
+import { cn } from "@/server/utils";
 
 const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {

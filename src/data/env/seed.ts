@@ -10,9 +10,8 @@
 
 import path from "node:path";
 
+import { db } from "@/data/db/client";
 import dotenv from "dotenv";
-
-import { db } from "~/data/db/client";
 
 dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 

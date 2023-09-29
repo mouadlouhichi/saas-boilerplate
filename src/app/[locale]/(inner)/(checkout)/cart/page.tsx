@@ -1,18 +1,17 @@
 import { type Metadata } from "next";
-import Link from "next-intl/link";
-
-import { getUniqueStoreIds } from "~/server/actions/cart";
-import { cn } from "~/server/utils";
-import { env } from "~/data/env/env.mjs";
-import { Icons } from "~/islands/icons";
-import { CheckoutCard } from "~/islands/modules/cards/checkout-card";
+import { env } from "@/data/env/env.mjs";
+import { Icons } from "@/islands/icons";
+import { CheckoutCard } from "@/islands/modules/cards/checkout-card";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
-import { buttonVariants } from "~/islands/primitives/button";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/navigation/page-header";
+import { buttonVariants } from "@/islands/primitives/button";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { getUniqueStoreIds } from "@/server/actions/cart";
+import { cn } from "@/server/utils";
+import Link from "next-intl/link";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),

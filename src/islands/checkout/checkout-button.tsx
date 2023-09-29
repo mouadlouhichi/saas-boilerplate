@@ -1,13 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { type CartLineItem } from "~/types";
-
-import { createCheckoutSessionAction } from "~/server/actions/stripe";
-import { getStripe } from "~/server/get-stripe";
-import { catchError } from "~/server/utils";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
+import { createCheckoutSessionAction } from "@/server/actions/stripe";
+import { getStripe } from "@/server/get-stripe";
+import { catchError } from "@/server/utils";
+import { type CartLineItem } from "@/types";
 
 interface CheckoutButtonProps {
   storeId: number;

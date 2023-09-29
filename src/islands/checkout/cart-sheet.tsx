@@ -1,12 +1,8 @@
-import Link from "next-intl/link";
-
-import { getCartAction } from "~/server/actions/cart";
-import { cn, formatPrice } from "~/server/utils";
-import { CartLineItems } from "~/islands/checkout/cart-line-items";
-import { Icons } from "~/islands/icons";
-import { Badge } from "~/islands/primitives/badge";
-import { Button, buttonVariants } from "~/islands/primitives/button";
-import { Separator } from "~/islands/primitives/separator";
+import { CartLineItems } from "@/islands/checkout/cart-line-items";
+import { Icons } from "@/islands/icons";
+import { Badge } from "@/islands/primitives/badge";
+import { Button, buttonVariants } from "@/islands/primitives/button";
+import { Separator } from "@/islands/primitives/separator";
 import {
   Sheet,
   SheetContent,
@@ -14,7 +10,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "~/islands/primitives/sheet";
+} from "@/islands/primitives/sheet";
+import { getCartAction } from "@/server/actions/cart";
+import { cn, formatPrice } from "@/server/utils";
+import Link from "next-intl/link";
 
 export async function CartSheet() {
   const cartLineItems = await getCartAction();

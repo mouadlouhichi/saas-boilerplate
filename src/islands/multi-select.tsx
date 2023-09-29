@@ -1,17 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { type Option } from "~/types";
-import { Command as CommandPrimitive } from "cmdk";
-import { X } from "lucide-react";
-
-import { Badge } from "~/islands/primitives/badge";
-import { Button } from "~/islands/primitives/button";
+import { Badge } from "@/islands/primitives/badge";
+import { Button } from "@/islands/primitives/button";
 import {
   Command,
   CommandGroup,
   CommandItem,
-} from "~/islands/primitives/command";
+} from "@/islands/primitives/command";
+import { type Option } from "@/types";
+import { Command as CommandPrimitive } from "cmdk";
+import { X } from "lucide-react";
 
 interface MultiSelectProps {
   selected: Option[] | null;

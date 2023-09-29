@@ -8,16 +8,16 @@
 import Image from "next/image";
 import { type MDXComponents } from "mdx/types";
 
-import { cn } from "~/server/utils";
-import { MdxCard } from "~/islands/modules/cards/mdx-card";
-import { Callout } from "~/islands/modules/markdown/callout";
-import { CodeBlock } from "~/islands/modules/markdown/code-block";
+import { cn } from "@/server/utils";
+import { MdxCard } from "@/islands/modules/cards/mdx-card";
+import { Callout } from "@/islands/modules/markdown/callout";
+import { CodeBlock } from "@/islands/modules/markdown/code-block";
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "~/islands/primitives/alert";
-import { AspectRatio } from "~/islands/primitives/aspect-ratio";
+} from "@/islands/primitives/alert";
+import { AspectRatio } from "@/islands/primitives/aspect-ratio";
 
 // These types are required to make the related components work with `useMDXComponent`
 // They used to work without these types, but now they don't for some reason

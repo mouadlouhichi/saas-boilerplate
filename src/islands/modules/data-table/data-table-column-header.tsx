@@ -1,3 +1,12 @@
+import { Button } from "@/islands/primitives/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/islands/primitives/dropdown";
+import { cn } from "@/server/utils";
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -5,16 +14,6 @@ import {
   EyeNoneIcon,
 } from "@radix-ui/react-icons";
 import { type Column } from "@tanstack/react-table";
-
-import { cn } from "~/server/utils";
-import { Button } from "~/islands/primitives/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {

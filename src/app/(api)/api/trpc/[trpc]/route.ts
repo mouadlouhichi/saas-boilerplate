@@ -2,14 +2,13 @@
  * @see https://youtu.be/qCLV0Iaq9zU
  */
 
+import { appRouter } from "@/data/db/client";
+import { createContext } from "@/data/env/context";
+import { authOptions } from "@/server/auth";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { getServerSession } from "next-auth";
 
-import { authOptions } from "~/server/auth";
-import { appRouter } from "~/data/db/client";
-import { createContext } from "~/data/env/context";
-
-const handler = async (req: Request) => {
+const handler = async (req: "Request") => {
   const session = await getServerSession(authOptions());
 
   return fetchRequestHandler({

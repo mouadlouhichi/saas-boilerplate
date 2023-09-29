@@ -1,7 +1,6 @@
 import { type PropsWithChildren } from "react";
-import { type WithChildren } from "~/types";
-
-import GeneralShell from "~/islands/wrappers/general-shell";
+import GeneralShell from "@/islands/wrappers/general-shell";
+import { type WithChildren } from "@/types";
 
 type AuthLayoutProps = PropsWithChildren;
 

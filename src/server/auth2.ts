@@ -1,15 +1,14 @@
+import { db } from "@/data/db/client";
+import { env } from "@/data/env/env.mjs";
+import { defaultLocale } from "@/i18n/locales";
+// import { sendVerificationRequest } from "@/server/request";
+import { signInPagePath } from "@/server/utils";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
-import { defaultLocale } from "~/i18n/locales";
 import { NextAuthOptions, type AuthOptions } from "next-auth";
 import EmailProvider from "next-auth/providers/email";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { type Provider } from "next-auth/providers/index";
-
-// import { sendVerificationRequest } from "~/server/request";
-import { signInPagePath } from "~/server/utils";
-import { db } from "~/data/db/client";
-import { env } from "~/data/env/env.mjs";
 
 const providers = [
   /**

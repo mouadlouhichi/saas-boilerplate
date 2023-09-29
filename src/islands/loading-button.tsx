@@ -1,17 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { experimental_useFormStatus as useFormStatus } from "react-dom";
-
-import { cn } from "~/server/utils";
-import { useIsClient } from "~/hooks/use-is-client";
-import { Icons } from "~/islands/icons";
+import { useIsClient } from "@/hooks/use-is-client";
+import { Icons } from "@/islands/icons";
 import {
   Button,
   buttonVariants,
   type ButtonProps,
-} from "~/islands/primitives/button";
-import { Skeleton } from "~/islands/primitives/skeleton";
+} from "@/islands/primitives/button";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { cn } from "@/server/utils";
+import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
 const LoadingButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {

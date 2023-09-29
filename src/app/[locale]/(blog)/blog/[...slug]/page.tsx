@@ -1,21 +1,20 @@
 // import { notFound } from "next/navigation";
 
-// import { Mdx } from "~/islands/modules/markdown/mdx-components";
+// import { Mdx } from "@/islands/modules/markdown/mdx-components";
 
-import "~/styles/mdx.css";
+import "@/styles/mdx.css";
 
 import { type Metadata } from "next";
+// import { absoluteUrl, cn, formatDate } from "@/server/utils";
+import { env } from "@/data/env/env.mjs";
+import { Icons } from "@/islands/icons";
+// import { MdxPager } from "@/islands/navigation/pagination/mdx-pager";
+import { buttonVariants } from "@/islands/primitives/button";
+import { Separator } from "@/islands/primitives/separator";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { cn } from "@/server/utils";
 // import Image from "next/image";
 import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-// import { absoluteUrl, cn, formatDate } from "~/server/utils";
-import { env } from "~/data/env/env.mjs";
-import { Icons } from "~/islands/icons";
-// import { MdxPager } from "~/islands/navigation/pagination/mdx-pager";
-import { buttonVariants } from "~/islands/primitives/button";
-import { Separator } from "~/islands/primitives/separator";
-import { Shell } from "~/islands/wrappers/shell-variants";
 
 // interface PostPageProps {
 //   params: {

@@ -4,11 +4,10 @@
  * @see https://github.com/amirs18/trpc-on-the-app-router/tree/main
  */
 
+import { appRouter } from "@/data/db/client";
+import { createContext } from "@/data/env/context";
 import { inferAsyncReturnType } from "@trpc/server";
 import { Session } from "next-auth";
-
-import { appRouter } from "~/data/db/client";
-import { createContext } from "~/data/env/context";
 
 export const createServerClient = async (session: Session | null) =>
   appRouter.createCaller(await createContext(session));

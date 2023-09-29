@@ -1,4 +1,4 @@
-import { ApiResponseError, type ApiResponse } from "~/types";
+import { ApiResponseError, type ApiResponse } from "@/types";
 
 /**
  *

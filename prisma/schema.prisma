@@ -1,0 +1,189 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String        @id @default(cuid())
+  name          String?
+  email         String?       @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  survey        Survey?
+  hasSurvey     Boolean       @default(false)
+  userType      UserType      @default(User)
+  therapist     Therapist?
+  appointment   Appointment[]
+}
+
+enum UserType {
+  Owner
+  Admin
+  Therapist
+  User
+  Guest
+}
+
+model Survey {
+  id                           String   @id @default(cuid())
+  gender                       String
+  occupation                   String
+  education                    String
+  age                          String
+  diagnosed                    String
+  receivedTreatment            String
+  currentSymptoms              String
+  symptomsFrequency            String
+  suicidalThoughts             String
+  struggledAddiction           String
+  experiencedTrauma            String
+  receivedTherapy              String
+  foundTherapist               String[]
+  notSeekingTherapyReasons     String[]
+  participatedOnline           String
+  primaryReason                String[]
+  preferredCommunicationMethod String[]
+  comfortWithTechnology        String
+
+  // Relationship with User
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Therapist {
+  id          String        @id @default(cuid())
+  specialties String[]
+  sessions    Appointment[] // Therapists can have multiple sessions
+
+  // Relationship with User
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique
+
+  // New 
+  credentials            String
+  location               String
+  languages              String[]
+  experienceYears        Int
+  education              String
+  certifications         String[]
+  about                  String
+  availability           Availability?
+  contact                Contact?
+  reviews                Review[]
+  formation              String
+  professionalExperience String
+  awards                 Award[]
+  methods                String[]
+  tools                  String[]
+  fees                   Fee[]
+}
+
+model Availability {
+  id             String   @id @default(cuid())
+  days           String[]
+  hours          String
+  onlineSessions Boolean
+
+  therapist   Therapist @relation(fields: [therapistId], references: [id])
+  therapistId String    @unique
+}
+
+model Contact {
+  id      String @id @default(cuid())
+  email   String
+  phone   String
+  website String
+
+  therapist   Therapist @relation(fields: [therapistId], references: [id])
+  therapistId String    @unique
+}
+
+model Review {
+  id          String    @id @default(cuid())
+  rating      Float
+  reviewText  String
+  therapistId String    @unique
+  therapist   Therapist @relation(fields: [therapistId], references: [id])
+}
+
+model Award {
+  id           String @id @default(cuid())
+  date         String
+  awardingBody String
+  awardDetails String
+
+  therapistId String    @unique
+  therapist   Therapist @relation(fields: [therapistId], references: [id])
+}
+
+model Fee {
+  id          String    @id @default(cuid())
+  service     String
+  fee         String
+  therapistId String    @unique
+  therapist   Therapist @relation(fields: [therapistId], references: [id])
+}
+
+model Appointment {
+  id          String            @id @default(cuid())
+  clientId    String
+  therapistId String
+  sessionDate DateTime
+  status      AppointmentStatus @default(SCHEDULED)
+  user        User              @relation(fields: [clientId], references: [id])
+  therapist   Therapist         @relation(fields: [therapistId], references: [id])
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  COMPLETED
+  CANCELED
+  // Add other relevant statuses
+}

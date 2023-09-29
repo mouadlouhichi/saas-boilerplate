@@ -23,6 +23,11 @@
 
 import path from "node:path";
 
+import * as schema from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import { router } from "@/data/env/trpc";
+import { todosRouter } from "@/data/routers/todos";
+import { userRouter } from "@/data/routers/users";
 import { Client, neon, neonConfig } from "@neondatabase/serverless";
 import { createClient } from "@supabase/supabase-js";
 import { inferRouterOutputs } from "@trpc/server";
@@ -37,12 +42,6 @@ import {
   type PostgresJsDatabase,
 } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-
-import * as schema from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import { router } from "~/data/env/trpc";
-import { todosRouter } from "~/data/routers/todos";
-import { userRouter } from "~/data/routers/users";
 
 // Configure Neon client
 neonConfig.fetchConnectionCache = true;

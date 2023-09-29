@@ -1,17 +1,16 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import { eq } from "drizzle-orm";
-import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
-
-import { db } from "~/data/db/client";
-import { stores } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
+import { db } from "@/data/db/client";
+import { stores } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { eq } from "drizzle-orm";
+import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

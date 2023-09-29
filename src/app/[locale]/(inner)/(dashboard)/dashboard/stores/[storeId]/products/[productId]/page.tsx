@@ -1,19 +1,18 @@
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
-import { and, eq } from "drizzle-orm";
-
-import { db } from "~/data/db/client";
-import { products } from "~/data/db/schema";
-import { fullURL } from "~/data/meta/builder";
-import { UpdateProductForm } from "~/forms/update-product-form";
-import { ProductPager } from "~/islands/navigation/pagination/product-pager";
+import { db } from "@/data/db/client";
+import { products } from "@/data/db/schema";
+import { fullURL } from "@/data/meta/builder";
+import { UpdateProductForm } from "@/forms/update-product-form";
+import { ProductPager } from "@/islands/navigation/pagination/product-pager";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { and, eq } from "drizzle-orm";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

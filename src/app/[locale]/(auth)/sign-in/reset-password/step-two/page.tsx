@@ -1,15 +1,14 @@
 import { type Metadata } from "next";
-
-import { fullURL } from "~/data/meta/builder";
-// import { ResetPasswordSecondForm } from "~/forms/reset-password-form-two";
+import { fullURL } from "@/data/meta/builder";
+// import { ResetPasswordSecondForm } from "@/forms/reset-password-form-two";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Shell } from "@/islands/wrappers/shell-variants";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

@@ -1,18 +1,17 @@
 import { type Metadata } from "next";
 import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-
-import { authOptions } from "~/server/auth";
-// import { env } from "~/data/env/env.mjs";
-import { fullURL } from "~/data/meta/builder";
-import { AddProductForm } from "~/forms/add-product-form";
+// import { env } from "@/data/env/env.mjs";
+import { fullURL } from "@/data/meta/builder";
+import { AddProductForm } from "@/forms/add-product-form";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/islands/primitives/card";
+} from "@/islands/primitives/card";
+import { authOptions } from "@/server/auth";
+import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
   metadataBase: fullURL(),

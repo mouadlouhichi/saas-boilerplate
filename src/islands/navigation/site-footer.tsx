@@ -1,11 +1,10 @@
-import { siteConfig } from "~/app";
+import { siteConfig } from "@/app";
+import { SubscribeToNewsletterForm } from "@/forms/newsletter-subscribe";
+import { buttonVariants } from "@/islands/primitives/button";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { cn } from "@/server/utils";
 import { Github, Twitter } from "lucide-react";
 import Link from "next-intl/link";
-
-import { cn } from "~/server/utils";
-import { SubscribeToNewsletterForm } from "~/forms/newsletter-subscribe";
-import { buttonVariants } from "~/islands/primitives/button";
-import { Shell } from "~/islands/wrappers/shell-variants";
 
 export async function SiteFooter() {
   return (

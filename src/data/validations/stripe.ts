@@ -1,6 +1,5 @@
+import { cartLineItemSchema } from "@/data/validations/cart";
 import * as z from "zod";
-
-import { cartLineItemSchema } from "~/data/validations/cart";
 
 export const manageSubscriptionSchema = z.object({
   stripePriceId: z.string(),

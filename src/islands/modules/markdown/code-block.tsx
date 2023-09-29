@@ -1,6 +1,5 @@
 import * as React from "react";
-
-import { CopyButton } from "~/islands/copy-button";
+import { CopyButton } from "@/islands/copy-button";
 
 type CodeBlockProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLPreElement>,

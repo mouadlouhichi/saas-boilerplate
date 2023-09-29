@@ -1,3 +1,4 @@
+import { siteConfig } from "@/app";
 import {
   Body,
   Button,
@@ -11,7 +12,6 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { siteConfig } from "~/app";
 
 export type SignInEmailProps = {
   existingUser?: boolean;

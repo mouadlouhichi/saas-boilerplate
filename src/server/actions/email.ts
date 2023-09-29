@@ -1,17 +1,16 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { db } from "@/data/db/client";
+import { emailPreferences } from "@/data/db/schema";
+import { env } from "@/data/env/env.mjs";
+import NewsletterWelcomeEmail from "@/data/mail/newsletter";
+import { type updateEmailPreferencesSchema } from "@/data/validations/email";
+import { authOptions } from "@/server/auth";
+import { resend } from "@/server/resend";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth";
 import { type z } from "zod";
-
-import { authOptions } from "~/server/auth";
-import { resend } from "~/server/resend";
-import { db } from "~/data/db/client";
-import { emailPreferences } from "~/data/db/schema";
-import { env } from "~/data/env/env.mjs";
-import NewsletterWelcomeEmail from "~/data/mail/newsletter";
-import { type updateEmailPreferencesSchema } from "~/data/validations/email";
 
 // Email can not be sent through a server action in production, because it is returning an email component maybe?
 // So we are using the route handler /api/mail/subscribe instead

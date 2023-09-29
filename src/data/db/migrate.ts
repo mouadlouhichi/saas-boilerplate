@@ -15,12 +15,11 @@
 
 import path from "node:path";
 
+import * as schema from "@/data/db/schema";
 import dotenv from "dotenv";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
-
-import * as schema from "~/data/db/schema";
 
 /**
  * Load environments before importing

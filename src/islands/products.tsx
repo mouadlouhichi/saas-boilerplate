@@ -2,18 +2,14 @@
 
 import * as React from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { type Option } from "~/types";
-
-import { getSubcategories, sortOptions } from "~/server/config/products";
-import { cn, toTitleCase, truncate } from "~/server/utils";
-import { type Product, type Store } from "~/data/db/schema";
-import { useDebounce } from "~/hooks/use-debounce";
-import { Icons } from "~/islands/icons";
-import { ProductCard } from "~/islands/modules/cards/product-card";
-import { MultiSelect } from "~/islands/multi-select";
-import { PaginationButton } from "~/islands/navigation/pagination/pagination-button";
-import { Button } from "~/islands/primitives/button";
-import { Checkbox } from "~/islands/primitives/checkbox";
+import { type Product, type Store } from "@/data/db/schema";
+import { useDebounce } from "@/hooks/use-debounce";
+import { Icons } from "@/islands/icons";
+import { ProductCard } from "@/islands/modules/cards/product-card";
+import { MultiSelect } from "@/islands/multi-select";
+import { PaginationButton } from "@/islands/navigation/pagination/pagination-button";
+import { Button } from "@/islands/primitives/button";
+import { Checkbox } from "@/islands/primitives/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,11 +17,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "~/islands/primitives/dropdown";
-import { Input } from "~/islands/primitives/input";
-import { Label } from "~/islands/primitives/label";
-import { ScrollArea } from "~/islands/primitives/scroll-area";
-import { Separator } from "~/islands/primitives/separator";
+} from "@/islands/primitives/dropdown";
+import { Input } from "@/islands/primitives/input";
+import { Label } from "@/islands/primitives/label";
+import { ScrollArea } from "@/islands/primitives/scroll-area";
+import { Separator } from "@/islands/primitives/separator";
 import {
   Sheet,
   SheetContent,
@@ -33,8 +29,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "~/islands/primitives/sheet";
-import { Slider } from "~/islands/primitives/slider";
+} from "@/islands/primitives/sheet";
+import { Slider } from "@/islands/primitives/slider";
+import { getSubcategories, sortOptions } from "@/server/config/products";
+import { cn, toTitleCase, truncate } from "@/server/utils";
+import { type Option } from "@/types";
 
 interface ProductsProps extends React.HTMLAttributes<HTMLDivElement> {
   products: Product[];

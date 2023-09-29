@@ -1,16 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { type z } from "zod";
-
-import { addToCartAction } from "~/server/actions/cart";
-import { catchError } from "~/server/utils";
-import { updateCartItemSchema } from "~/data/validations/cart";
-import { Icons } from "~/islands/icons";
-import { Button } from "~/islands/primitives/button";
+import { updateCartItemSchema } from "@/data/validations/cart";
+import { Icons } from "@/islands/icons";
+import { Button } from "@/islands/primitives/button";
 import {
   Form,
   FormControl,
@@ -18,8 +11,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/islands/primitives/form";
-import { Input } from "~/islands/primitives/input";
+} from "@/islands/primitives/form";
+import { Input } from "@/islands/primitives/input";
+import { addToCartAction } from "@/server/actions/cart";
+import { catchError } from "@/server/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { type z } from "zod";
 
 interface AddToCartFormProps {
   productId: number;

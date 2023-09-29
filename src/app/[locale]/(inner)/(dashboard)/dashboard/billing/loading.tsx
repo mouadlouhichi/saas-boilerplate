@@ -1,17 +1,17 @@
-import { cn } from "~/server/utils";
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/islands/navigation/page-header";
+} from "@/islands/navigation/page-header";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "~/islands/primitives/card";
-import { Skeleton } from "~/islands/primitives/skeleton";
-import { Shell } from "~/islands/wrappers/shell-variants";
+} from "@/islands/primitives/card";
+import { Skeleton } from "@/islands/primitives/skeleton";
+import { Shell } from "@/islands/wrappers/shell-variants";
+import { cn } from "@/server/utils";
 
 export default function BillingLoading() {
   return (

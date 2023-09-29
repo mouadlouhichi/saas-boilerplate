@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import { WithChildren, type GeneralShellParams } from "~/types";
+import { WithChildren, type GeneralShellParams } from "@/types";
 
 import { Shell } from "./shell-variants";
 
