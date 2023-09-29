@@ -12,7 +12,7 @@ RUN pnpm install
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY prisma ./prisma/ next.config.mjs package.json postcss.config.js tailwind.config.js tsconfig.json ./
+COPY prisma ./prisma/ next.config.mjs package.json postcss.config.cjs tailwind.config.js tsconfig.json ./
 COPY . .
 
 RUN npx prisma generate
