@@ -41,7 +41,7 @@ export const contactConfig = {
 export const REPOSITORY_OWNER = "mouadlouhichi";
 export const REPOSITORY_NAME = "mindrested-app";
 export const REPOSITORY_URL = `https://github.com/${REPOSITORY_OWNER}/${REPOSITORY_NAME}`;
-export const baseUrl = "http://localhost:3000";
+export const baseUrl = "https://saas-biolerplate.vercel.app";
 
 // ========================================================
 
