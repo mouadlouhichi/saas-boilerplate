@@ -14,6 +14,10 @@ RUN pnpm install
 
 # Rebuild the source code only when needed
 FROM node:18-alpine AS builder
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY prisma ./prisma/ next.config.mjs package.json postcss.config.cjs tailwind.config.js tsconfig.json ./
