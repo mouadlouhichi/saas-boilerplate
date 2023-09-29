@@ -39,7 +39,7 @@
     "format:fix": "pnpm lint:fix & pnpm prettier:fix",
     "format:write": "prettier --write \"**/*.{js,ts,tsx,md,mdx,json}\" --cache",
     "generate": "plop",
-    "postinstall": "npx patch-package -y & pnpm db:generate && pnpm db:push",
+    "postinstall": "npx patch-package -y & pnpm db:generate",
     "latest": "pnpm up --latest && pnpm i next-intl@3.0.0-beta.19",
     "lint": "pnpm lint:next && pnpm lint:i18n",
     "lint:fix": "next lint --fix",
