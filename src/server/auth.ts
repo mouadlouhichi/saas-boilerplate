@@ -57,7 +57,7 @@ export const authOptions = () => {
         clientId: env.GOOGLE_CLIENT_ID!,
         clientSecret: env.GOOGLE_CLIENT_SECRET!,
       }),
-      // todo: use drizzle auth adapter for this
+      // TODO: use drizzle auth adapter for this
       /* EmailProvider({
         from: process.env.SMTP_FROM,
         sendVerificationRequest: async ({ identifier, url, provider }) => {

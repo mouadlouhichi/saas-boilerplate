@@ -1,11 +1,14 @@
-import { type PropsWithChildren } from "react";
-import GeneralShell from "@/islands/wrappers/general-shell";
-import { type WithChildren } from "@/types";
+import SiteHeader from "@/shared/Header/SiteHeader";
 
-type AuthLayoutProps = PropsWithChildren;
+interface LoginLayoutProps {
+  children: React.ReactNode;
+}
+export default function LoginLayout({ children }: LoginLayoutProps) {
+  return (
+    <div className="grid gap-0 md:grid-cols-2">
+      <SiteHeader type="moderated" />
 
-export default function AuthLayout({
-  children,
-}: WithChildren<AuthLayoutProps>) {
-  return <GeneralShell>{children}</GeneralShell>;
+      {children}
+    </div>
+  );
 }

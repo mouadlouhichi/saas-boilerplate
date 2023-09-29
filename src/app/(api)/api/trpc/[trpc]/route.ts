@@ -8,7 +8,7 @@ import { authOptions } from "@/server/auth";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { getServerSession } from "next-auth";
 
-const handler = async (req: "Request") => {
+const handler = async (req: any) => {
   const session = await getServerSession(authOptions());
 
   return fetchRequestHandler({

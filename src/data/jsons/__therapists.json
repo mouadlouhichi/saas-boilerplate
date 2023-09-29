@@ -1,0 +1,698 @@
+[
+    {
+        "name": "Meryam Boulmani",
+        "image": "https://media.istockphoto.com/id/1368424494/es/foto/retrato-de-estudio-de-una-mujer-alegre.jpg?s=612x612&w=0&k=20&c=V6sLE6kK9t4_QJtnTJ5kp8c8poiWuqdgWdJh59zV14A=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image": "https://media.istockphoto.com/id/1303539296/es/foto/una-empresaria-de-perfil-mirando-la-c%C3%A1mara.jpg?s=612x612&w=0&k=20&c=oqV4cNn_dM5I0PeLGo4BKM_DVDrqlqEO24nfaLS_rFc=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    },
+    {
+        "name": "Meryam Boulmani",
+        "image":"https://media.istockphoto.com/id/1311084168/es/foto/mujer-asi%C3%A1tica-bastante-contenta-mira-a-la-c%C3%A1mara-con-risas-sinceras.jpg?s=612x612&w=0&k=20&c=FePulBSpsAvurAKoifAzOod2s1QEOpIE6wtSJAZI_uI=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image":"https://media.istockphoto.com/id/1300972573/es/foto/agradable-joven-india-freelancer-consultar-cliente-a-trav%C3%A9s-de-videollamada.jpg?s=612x612&w=0&k=20&c=xrtGALAJqw1li-XQGPtF4_EEUM_74C5Q0ZzbMArp2T0=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    },
+    {
+        "name": "Meryam Boulmani",
+        "image":"https://media.istockphoto.com/id/1320811419/es/foto/retrato-en-la-cabeza-de-una-empresaria-india-sonriente-y-exitosa.jpg?s=612x612&w=0&k=20&c=8FebqCAXgyXydZbZw4D1ScY07awOfzn3m2UXlXs3qOI=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image": "https://media.istockphoto.com/id/1129174878/es/foto/retrato-de-mujer-joven-rubia-hermosa-feliz-en-casual-camisa-a-cuadros-rojo-de-pie-y-mirando-a.jpg?s=612x612&w=0&k=20&c=R4SuKFYFMWO2FkIGlYFgr9TQGQkW7XvloSiFknRtjAc=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    },
+    {
+        "name": "Meryam Boulmani",
+        "image":"https://media.istockphoto.com/id/1309328823/es/foto/retrato-a-la-cabeza-de-un-empleado-masculino-sonriente-en-la-oficina.jpg?s=612x612&w=0&k=20&c=dHyuXtXkuaHfJN4t205t_Xt1mKRxa8LY2ViVQi837f0=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image":"https://media.istockphoto.com/id/1303206644/es/foto/retrato-del-sonriente-hombre-cauc%C3%A1sico-posa-en-el-cargo.jpg?s=612x612&w=0&k=20&c=oocCuhValZtYvZg2b759_untx8JJkifYRo7tlSgUFow=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    },
+    {
+        "name": "Meryam Boulmani",
+        "image":"https://media.istockphoto.com/id/1319095687/es/foto/retrato-de-toma-de-cabeza-sonriente-hombre-confiado-mirando-a-la-c%C3%A1mara.jpg?s=612x612&w=0&k=20&c=BxG3saD44ek7d4Qwc6NbXnqYwivRrWO9FK9T7wJVVzA=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image":"https://media.istockphoto.com/id/1303206642/es/foto/retrato-a-la-cabeza-de-un-sonriente-empresario-cauc%C3%A1sico-con-gafas.jpg?s=612x612&w=0&k=20&c=8xBl24OBO7eIvAnU2FLufkiESKtI2rc9ksZ-_167JpQ=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    },
+    {
+        "name": "Meryam Boulmani",
+        "image":"https://media.istockphoto.com/id/1320811419/es/foto/retrato-en-la-cabeza-de-una-empresaria-india-sonriente-y-exitosa.jpg?s=612x612&w=0&k=20&c=8FebqCAXgyXydZbZw4D1ScY07awOfzn3m2UXlXs3qOI=",
+        "credentials": "Licensed Psychologist",
+        "location": "Paris, France",
+        "specialties": ["Anxiety", "Stress Management", "Relationship Counseling"],
+        "languages": ["French", "English"],
+        "experience_years": 12,
+        "education": "Ph.D. in Clinical Psychology",
+        "certifications": ["Licensed Psychologist", "Relationship Counseling Certification"],
+        "about": "I am a dedicated therapist with over 12 years of experience in helping individuals and couples overcome life's challenges. My approach is empathetic and solution-focused, aiming to provide a safe and supportive environment for personal growth and healing.",
+        "availability": {
+            "days": ["Monday", "Wednesday", "Friday"],
+            "hours": "9:00 AM - 5:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "meryam@example.com",
+            "phone": "+33 123 456 789",
+            "website": "www.meryampsychology.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.7,
+                "review_text": "Meryam is an exceptional therapist. She truly cares about her clients' well-being."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I'm grateful for the positive changes Meryam has helped me achieve in my life."
+            }
+        ],
+        "formation": "M.S. in Clinical Psychology, University of Paris",
+        "professional_experience": "Worked as a therapist at ABC Counseling Center for 8 years",
+        "awards": [
+            {
+                "date": "11/06/2022",
+                "awarding_body": "European Federation of Sexology IOSS",
+                "award_details": "Evolution de la médecine sexuelle et de la sexologie clinique"
+            },
+            {
+                "date": "05/12/2021",
+                "awarding_body": "International Psychology Association",
+                "award_details": "Outstanding Contribution to Psychology"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Mindfulness-Based Stress Reduction (MBSR)"],
+        "tools": ["EMDR (Eye Movement Desensitization and Reprocessing)", "Art Therapy"],
+        "fees": [
+            {
+                "service": "Consultation sexologique",
+                "fee": "500 Dhs"
+            },
+            {
+                "service": "Individual Therapy",
+                "fee": "150 Euros"
+            }
+        ]
+    },
+    {
+        "name": "John Doe",
+        "image":"https://media.istockphoto.com/id/1316878036/es/foto/feliz-y-guapo-macho-millennial-posando-en-interior-blanco.jpg?s=612x612&w=0&k=20&c=rRHh1kpyUEEfAoVdNApIyjxuNiW3OQ_0ihrKiJ4Owz0=",
+        "credentials": "Licensed Therapist",
+        "location": "Los Angeles, CA",
+        "specialties": ["Depression", "Stress Management", "Family Therapy"],
+        "languages": ["English", "Arabic"],
+        "experience_years": 8,
+        "education": "M.S. in Marriage and Family Therapy",
+        "certifications": ["Licensed Marriage and Family Therapist"],
+        "about": "With 8 years of experience, I am dedicated to helping individuals and families navigate life's challenges. My therapeutic approach is client-centered, focusing on fostering a supportive and empowering environment.",
+        "availability": {
+            "days": ["Tuesday", "Thursday", "Saturday"],
+            "hours": "10:00 AM - 6:00 PM",
+            "online_sessions": true
+        },
+        "contact": {
+            "email": "john@example.com",
+            "phone": "+1 (987) 654-3210",
+            "website": "www.johndoe-therapy.com"
+        },
+        "reviews": [
+            {
+                "rating": 4.9,
+                "review_text": "John is an amazing therapist. He has helped me immensely."
+            },
+            {
+                "rating": 5.0,
+                "review_text": "I appreciate John's expertise and caring approach."
+            }
+        ],
+        "formation": "M.S. in Marriage and Family Therapy, XYZ University",
+        "professional_experience": "Counselor at XYZ Family Counseling Center for 6 years",
+        "awards": [
+            {
+                "date": "03/10/2022",
+                "awarding_body": "National Association of Therapists",
+                "award_details": "Outstanding Therapist Award"
+            },
+            {
+                "date": "07/15/2021",
+                "awarding_body": "American Association of Family Therapists",
+                "award_details": "Excellence in Family Therapy"
+            }
+        ],
+        "methods": ["Cognitive-Behavioral Therapy (CBT)", "Narrative Therapy"],
+        "tools": ["Art Therapy", "Play Therapy"],
+        "fees": [
+            {
+                "service": "Individual Therapy",
+                "fee": "$150 per session"
+            },
+            {
+                "service": "Family Therapy",
+                "fee": "$200 per session"
+            }
+        ]
+    }
+]

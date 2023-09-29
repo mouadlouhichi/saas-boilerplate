@@ -3,6 +3,12 @@
  * Go to "app/[locale]/layout.tsx" file.
  */
 
+import "@/fonts/line-awesome-1.3.0/css/line-awesome.css";
+import "nprogress/nprogress.css";
+import "@/styles/index.scss";
+import "rc-slider/assets/index.css";
+import "@/styles/globals.css";
+
 import { ReactNode } from "react";
 import { Metadata } from "next";
 

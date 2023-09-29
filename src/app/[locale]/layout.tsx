@@ -12,7 +12,7 @@ import {
   Inter as FontSans,
 } from "next/font/google";
 import { siteConfig } from "@/app";
-import { seo } from "@/data/meta";
+import { DEFAULT_METADATA, seo } from "@/data/meta";
 import { fullURL } from "@/data/meta/builder";
 import { defaultLocale, locales } from "@/i18n/locales";
 import LoglibAnalytics from "@/islands/loglib-analytics";
@@ -30,6 +30,7 @@ import { cn } from "@/server/utils";
 import { WithChildren, type LocaleLayoutParams } from "@/types";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { getServerSession } from "next-auth";
+import { Metadata } from "next";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -42,65 +43,8 @@ const fontHeading = FontHeading({
   weight: "500",
 });
 
-/**
- * Every page in the app will have this metadata.
- * You can override it by defining the `metadata`
- * in the `page.tsx` or in children `layout.tsx`.
- */
-export const metadata = seo({
-  metadataBase: fullURL(),
-  title: {
-    default: siteConfig.name,
-    template: `%s – ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
-  viewport: "width=device-width, initial-scale=1",
-  creator: siteConfig.author,
-  publisher: "Bleverse",
-  authors: [
-    {
-      name: siteConfig.author,
-      url: siteConfig.url.author,
-    },
-  ],
-  robots: "index, follow",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  applicationName: "Bleverse Relivator",
-  alternates: {
-    canonical: "https://relivator.bleverse.com",
-  },
-  openGraph: {
-    type: "website",
-    locale: defaultLocale,
-    alternateLocale: locales.filter((locale) => locale !== defaultLocale),
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    url: siteConfig.url.base,
-    title: siteConfig.name,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1280,
-        height: 640,
-        alt: "Bleverse Relivator",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url.base}/og-image.png`],
-    creator: siteConfig.author,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-});
+export const metadata: Metadata = seo(DEFAULT_METADATA);
+
 
 type LocaleLayoutProps = PropsWithChildren<LocaleLayoutParams>;
 
@@ -157,31 +101,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
-// [💡 INTERESTING THINGS SECTION 💡]
-
-/**
- * ?? Important Nextjs Caveat
- *
- * Good to know: cookies() is a Dynamic Function whose returned values cannot be
- * known ahead of time. Using it in a layout or page will opt a route
- * into dynamic rendering at request time.
- *
- * This caveat means that putting cookies() in the Layout.tsx component will
- * disable static rendering for the entire app. You may not want to
- * do this if you have a large app with many static pages.
- *
- * @see https://nextjs.org/docs/app/api-reference/functions/cookies
- * @see https://michaelangelo.io/blog/darkmode-rsc#important-nextjs-caveat
- * @see https://github.com/pacocoursey/next-themes/issues/152#issuecomment-1693979442
- */
-
-// [ IMPLEMENT ]
-
-/**
- * import { PackagesIndicator } from "@/islands/packages-indicator";
- * import { VariableIndicator } from "@/islands/variable-indicator";
- * ?...
- * <PackagesIndicator />
- * <VariableIndicator />
- */
