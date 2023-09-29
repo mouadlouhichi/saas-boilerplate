@@ -5,14 +5,14 @@ FROM node:18-alpine AS deps
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json yarn-lock.yaml* ./
-RUN yarn install
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm install
 
 # Rebuild the source code only when needed
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY prisma ./prisma/ .env* next.config.mjs package.json postcss.config.js tailwind.config.js tsconfig.json ./
+COPY prisma ./prisma/ next.config.mjs package.json postcss.config.js tailwind.config.js tsconfig.json ./
 COPY . .
 
 RUN npx prisma generate
@@ -53,7 +53,7 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN echo ${NODE_ENV}
-RUN NODE_ENV=${NODE_ENV} yarn build
+RUN NODE_ENV=${NODE_ENV} pnpm build
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
