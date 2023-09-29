@@ -1,6 +1,7 @@
 
 name: Build and Deploy
 
+permissions: write-all
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -45,7 +46,7 @@ jobs:
             FACEBOOK_SECRET_ARG: ${{ secrets.FACEBOOK_SECRET }}
             NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY_ARG: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}
         with:
-          name: mouadlouhichi/saas-biolerplate/saasBoilerplate
+          name: mouadlouhichi/saas-biolerplate/saasboilerplate
           registry: ghcr.io
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets. GITHUB_TOKEN }}
@@ -66,8 +67,8 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull ghcr.io/mouadlouhichi/saas-biolerplate/saasBoilerplate:latest
+            docker pull ghcr.io/mouadlouhichi/saas-biolerplate/saasboilerplate:latest
             docker stop containername
             docker system prune -f
-            docker run --name containername -dit -p 3000:3000 ghcr.io/mouadlouhichi/saas-biolerplate/saasBoilerplate:latest
+            docker run --name containername -dit -p 3000:3000 ghcr.io/mouadlouhichi/saas-biolerplate/saasboilerplate:latest
 
