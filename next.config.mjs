@@ -13,7 +13,8 @@ import remarkGfm from "remark-gfm";
  * It skips environment vars validation. This is especially useful for Docker builds.
  * @example !process.env.SKIP_ENV_VALIDATION && (await import("./src/data/env/env.mjs"));
  */
-await import("./src/data/env/env.mjs");
+
+!process.env.SKIP_ENV_VALIDATION && (await import("./src/data/env/env.mjs"));
 
 /**
  * The whitelist list of domains,
