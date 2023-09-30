@@ -44,14 +44,14 @@ export const env = createEnv({
   // !! We are incrementally moving towards full and strict ENV data safety.
   // !! Accordingly, possibly, optional params will be eliminated in the future.
   server: {
-    ANALYZE: z.string().optional(),
+    ANALYZE: optionalString,
 
     // DATABASE
-    DATABASE_URL: z.string().url().optional(),
+    DATABASE_URL: optionalString,
 
     // AUTHENTICATION
-    NEXTAUTH_SECRET: z.string().trim().min(1).optional(),
-    NEXTAUTH_URL: z.string().url().optional(),
+    NEXTAUTH_SECRET: optionalString,
+    NEXTAUTH_URL: optionalString,
     GOOGLE_ID: optionalString,
     GOOGLE_SECRET: optionalString,
     LINKEDIN_ID: optionalString,
@@ -62,16 +62,16 @@ export const env = createEnv({
     GITHUB_SECRET: optionalString,
 
     // VERCEL SPECIFIC
-    VERCEL_GIT_COMMIT_SHA: z.string().optional(),
-    VERCEL_URL: z.string().optional(),
+    VERCEL_GIT_COMMIT_SHA: optionalString,
+    VERCEL_URL: optionalString,
 
     // MAILING
     //EMAIL_FROM: z.string(),
     //RESEND_API_KEY: optionalString,
 
     // ANALYTICS
-    LOGLIB_API_KEY: z.string().optional(),
-    LOGLIB_SITE_ID: z.string().optional(),
+    LOGLIB_API_KEY: optionalString,
+    LOGLIB_SITE_ID: optionalString,
 
     // UPLOADTHING
     //UPLOADTHING_APP_ID: z.string(),

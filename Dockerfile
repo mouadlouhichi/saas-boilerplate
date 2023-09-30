@@ -75,6 +75,7 @@ RUN echo ${NODE_ENV}
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV SKIP_ENV_VALIDATION 1
 RUN echo ${NODE_ENV}
+RUN echo ${SKIP_ENV_VALIDATION}
 RUN NODE_ENV=${NODE_ENV} pnpm build
 
 # Production image, copy all the files and run next
