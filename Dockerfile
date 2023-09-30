@@ -67,6 +67,10 @@ RUN NODE_ENV=${NODE_ENV} pnpm build
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
 WORKDIR /app
 
 
@@ -86,8 +90,5 @@ EXPOSE 3000
 
 ENV HOSTNAME 0.0.0.0
 ENV PORT 3000
-
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
 
 CMD ["pnpm", "next", "start"]
