@@ -73,6 +73,9 @@ RUN corepack enable
 COPY . /app
 WORKDIR /app
 
+# Install dependencies based on the preferred package manager
+COPY package.json pnpm-lock.yaml* ./
+
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
