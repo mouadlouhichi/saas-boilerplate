@@ -43,7 +43,6 @@ const hostnames = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
   swcMinify: true,
   /**
    * Toggle experimental features.
