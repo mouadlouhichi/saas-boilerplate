@@ -67,14 +67,7 @@ RUN NODE_ENV=${NODE_ENV} pnpm build
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
-COPY . /app
 WORKDIR /app
-
-# Install dependencies based on the preferred package manager
-COPY package.json pnpm-lock.yaml* ./
 
 
 RUN addgroup --system --gid 1001 nodejs
@@ -86,7 +79,7 @@ COPY --from=builder /app/public ./public
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
+COPY --from=builder --chown=nextjs:nodejs /app/.next/types ./types
 USER nextjs
 
 EXPOSE 3000
@@ -94,4 +87,4 @@ EXPOSE 3000
 ENV HOSTNAME 0.0.0.0
 ENV PORT 3000
 
-RUN npx next start
+CMD ["node", "server.js"]
