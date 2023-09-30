@@ -87,4 +87,9 @@ EXPOSE 3000
 ENV HOSTNAME 0.0.0.0
 ENV PORT 3000
 
-CMD ["next", "start"]
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
+
+CMD ["pnpm", "next", "start"]
