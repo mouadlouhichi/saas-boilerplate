@@ -1,6 +1,8 @@
 import { Session } from "next-auth";
 import { inferAsyncReturnType, initTRPC } from "@trpc/server";
 import { CreateNextContextOptions } from "@trpc/server/adapters/next";
+import type { FetchCreateContextFnOptions } from '@trpc/server/adapters/fetch';
+
 import superjson from "superjson";
 import { ZodError } from "zod";
 
@@ -28,7 +30,7 @@ export const createContextInner = async (opts: CreateContextOptions) => {
  * This is the actual context you'll use in your router
  * @link https://trpc.io/docs/context
  **/
-export const createContext = async (opts: CreateNextContextOptions) => {
+export const _createContext = async (opts: CreateNextContextOptions) => {
   const { req, res } = opts;
 
   // Get the session from the server using the unstable_getServerSession wrapper function
@@ -38,6 +40,31 @@ export const createContext = async (opts: CreateNextContextOptions) => {
     session
   });
 };
+
+export async function createContext(opts?: FetchCreateContextFnOptions) {
+  /**
+   * Remove the other `session` declaration after enabling
+   * @enable NextAuth
+   */
+  // const session = await auth();
+  // return { session };
+  const session = { user: null };
+
+  /**
+   * Remove the other `eventServer` declaration after enabling
+   * @enable WebSockets
+   */
+  // const eventServer = new Pusher({
+  //   appId: env.PUSHER_APP_ID,
+  //   key: env.NEXT_PUBLIC_PUSHER_APP_KEY,
+  //   secret: env.PUSHER_SECRET,
+  //   cluster: env.NEXT_PUBLIC_PUSHER_CLUSTER,
+  //   useTLS: true,
+  // });
+  const eventServer = { trigger: async (...args: unknown[]) => {} };
+
+  return { eventServer, session };
+}
 
 type Context = inferAsyncReturnType<typeof createContext>;
 // Avoid exporting the entire t-object

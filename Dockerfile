@@ -26,7 +26,7 @@ COPY . .
 
 RUN npx prisma generate
 
-RUN ls -al /app
+
 
 # env vars
 # add environment variables to client code
@@ -57,8 +57,8 @@ ENV FACEBOOK_SECRET=$FACEBOOK_SECRET_ARG
 ENV NODE_ENV=production
 
 RUN echo ${DATABASE_URL}
-RUN echo ${NEXTAUTH_SECRET}
-RUN echo ${NEXTAUTH_URL}
+RUN echo ${NEXTAUTH_SECRET_ARG}
+RUN echo ${NEXTAUTH_URL_ARG}
 RUN echo ${ANALYZE}
 RUN echo ${NEXT_PUBLIC_APP_URL}
 RUN echo ${NEXT_PUBLIC_VERCEL_URL}
@@ -91,17 +91,13 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-RUN ls -al /app
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/ ./
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-#COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-#COPY --from=builder --chown=nextjs:nodejs /app/cache ./cache
-#COPY --from=builder --chown=nextjs:nodejs /app/server ./server
-#COPY .env* ./
-RUN ls -al /app
+COPY --from=builder --chown=nextjs:nodejs  /app/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs  /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs  /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs  /app/node_modules ./node_modules
+COPY --from=builder --chown=nextjs:nodejs  /app/prisma ./prisma
 
 USER nextjs
 
