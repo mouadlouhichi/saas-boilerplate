@@ -26,6 +26,7 @@ COPY . .
 
 RUN npx prisma generate
 
+RUN ls -al /app
 
 # env vars
 # add environment variables to client code
@@ -90,7 +91,7 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-
+RUN ls -al /app
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/ ./
@@ -100,7 +101,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 #COPY --from=builder --chown=nextjs:nodejs /app/cache ./cache
 #COPY --from=builder --chown=nextjs:nodejs /app/server ./server
 #COPY .env* ./
-
+RUN ls -al /app
 
 USER nextjs
 

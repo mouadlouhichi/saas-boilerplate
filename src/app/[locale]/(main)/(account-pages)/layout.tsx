@@ -1,6 +1,6 @@
+import { Nav } from "@/shared/Navigation/Nav";
 import React, { FC } from "react";
 
-import Nav from "@/shared/PsychologistsListening/Nav";
 
 export interface CommonLayoutProps {
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ const CommonLayout: FC<CommonLayoutProps> = ({ children }) => {
         <Nav />
       </div>
       <h1 className="sr-only">Psychologists Listening</h1>
-      <div className="container pb-24 pt-14 sm:pt-20 lg:pb-32">{children}h</div>
+      <div className="container pb-24 pt-14 sm:pt-20 lg:pb-32">{children}</div>
     </div>
   );
 };
