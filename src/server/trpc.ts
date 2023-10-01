@@ -9,6 +9,7 @@ import { ZodError } from "zod";
 import { prisma as db } from "@/data/db";
 
 import { getServerAuthSession } from "./common/get-server-auth-session";
+import { auth } from "@/app/(api)/api/auth/[...nextauth]/route";
 
 // eslint-disable-next-line
 interface CreateContextOptions {
@@ -41,30 +42,10 @@ export const _createContext = async (opts: CreateNextContextOptions) => {
   });
 };
 
-export async function createContext(opts?: FetchCreateContextFnOptions) {
-  /**
-   * Remove the other `session` declaration after enabling
-   * @enable NextAuth
-   */
-  // const session = await auth();
-  // return { session };
-  const session = { user: null };
-
-  /**
-   * Remove the other `eventServer` declaration after enabling
-   * @enable WebSockets
-   */
-  // const eventServer = new Pusher({
-  //   appId: env.PUSHER_APP_ID,
-  //   key: env.NEXT_PUBLIC_PUSHER_APP_KEY,
-  //   secret: env.PUSHER_SECRET,
-  //   cluster: env.NEXT_PUBLIC_PUSHER_CLUSTER,
-  //   useTLS: true,
-  // });
-  const eventServer = { trigger: async (...args: unknown[]) => {} };
-
-  return { eventServer, session };
+export async function createContext(session: Session | null) {
+  return { user: session?.user, prisma: db, session };
 }
+
 
 type Context = inferAsyncReturnType<typeof createContext>;
 // Avoid exporting the entire t-object
