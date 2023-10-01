@@ -101,7 +101,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/cache ./cache
 COPY --from=builder --chown=nextjs:nodejs /app/server ./server
 COPY --from=builder --chown=nextjs:nodejs /app/static ./static
-COPY --from=builder --chown=nextjs:nodejs /app/types ./types
 COPY .env* ./
 
 
