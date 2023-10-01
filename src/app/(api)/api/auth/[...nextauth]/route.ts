@@ -16,4 +16,3 @@ const handler = (req: NextRequest, context: RouteHandlerContext) => {
 };
 
 export { handler as GET, handler as POST };
-export const { auth } = NextAuth(authOptions);

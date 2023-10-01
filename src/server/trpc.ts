@@ -9,7 +9,6 @@ import { ZodError } from "zod";
 import { prisma as db } from "@/data/db";
 
 import { getServerAuthSession } from "./common/get-server-auth-session";
-import { auth } from "@/app/(api)/api/auth/[...nextauth]/route";
 
 // eslint-disable-next-line
 interface CreateContextOptions {
@@ -27,20 +26,6 @@ export const createContextInner = async (opts: CreateContextOptions) => {
   };
 };
 
-/**
- * This is the actual context you'll use in your router
- * @link https://trpc.io/docs/context
- **/
-export const _createContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts;
-
-  // Get the session from the server using the unstable_getServerSession wrapper function
-  const session = await getServerAuthSession({ req, res });
-
-  return await createContextInner({
-    session
-  });
-};
 
 export async function createContext(session: Session | null) {
   return { user: session?.user, prisma: db, session };
