@@ -56,21 +56,6 @@ ENV FACEBOOK_ID=$FACEBOOK_ID_ARG
 ENV FACEBOOK_SECRET=$FACEBOOK_SECRET_ARG
 ENV NODE_ENV=production
 
-RUN echo ${DATABASE_URL}
-RUN echo ${NEXTAUTH_SECRET_ARG}
-RUN echo ${NEXTAUTH_URL_ARG}
-RUN echo ${ANALYZE}
-RUN echo ${NEXT_PUBLIC_APP_URL}
-RUN echo ${NEXT_PUBLIC_VERCEL_URL}
-RUN echo ${LOGLIB_API_KEY}
-RUN echo ${LOGLIB_SITE_ID}
-RUN echo ${LINKEDIN_ID}
-RUN echo ${LINKEDIN_SECRET}
-RUN echo ${FACEBOOK_ID}
-RUN echo ${FACEBOOK_SECRET}
-RUN echo ${NODE_ENV}
-
-
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
@@ -91,13 +76,29 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Uncomment the following line in case you want to disable telemetry during runtime.
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV DATABASE_URL=$DATABASE_URL_ARG
+ENV NEXTAUTH_SECRET=$NEXTAUTH_SECRET_ARG
+ENV NEXTAUTH_URL=$NEXTAUTH_URL_ARG
+ENV ANALYZE=$ANALYZE_ARG
+ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL_ARG
+ENV NEXT_PUBLIC_VERCEL_URL=$NEXT_PUBLIC_VERCEL_URL_ARG
+ENV LOGLIB_API_KEY=$LOGLIB_API_KEY_ARG
+ENV LOGLIB_SITE_ID=$LOGLIB_SITE_ID_ARG
+ENV LINKEDIN_ID=$LINKEDIN_ID_ARG
+ENV LINKEDIN_SECRET=$LINKEDIN_SECRET_ARG
+ENV FACEBOOK_ID=$FACEBOOK_ID_ARG
+ENV FACEBOOK_SECRET=$FACEBOOK_SECRET_ARG
+ENV NODE_ENV=production
+
+COPY --from=builder /app/public ./public
+
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs  /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs  /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs  /app/package.json ./package.json
-COPY --from=builder --chown=nextjs:nodejs  /app/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nodejs  /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
 
 USER nextjs
 
@@ -106,4 +107,7 @@ EXPOSE 3000
 ENV HOSTNAME 0.0.0.0
 ENV PORT 3000
 
-CMD ["next", "start"]
+CMD ["node", "server.js"]
+
+
+
