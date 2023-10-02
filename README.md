@@ -1,61 +1,16 @@
-# Relivator Next.js 13.5: Store | Landing | Dashboard (Template 2023)
+# SAAS TEMPLATE Next.js 13.5: Survey | Auth | Landing | Account (Template 2023)
 
-**Relivator v1.0.0 is released! Now it's stable and ready for production! 🚀** _If you have used the project before, please double check your ENV file. NextAuth.js, PostgreSQL and next-intl are now used (instead of Clerk, MySQL and next-international)._
-
-## 01. Follow Us Everywhere
-
-[Discord](https://discord.gg/Pb8uKbwpsJ) | [Twitter/𝕏](https://x.com/blefnk) | [GitHub](https://github.com/blefnk) | [Fiverr](https://fiverr.com/blefnk) | [LinkedIn](https://linkedin.com/in/blefnk) | [Facebook](https://facebook.com/blefnk)
-
-## 02. The Bleverse Framework for the Web
-
-[Jump to **Project Features** Section](#04-project-features--roadmap--checklists) | [Jump to **Environment Variables** Section](#12-environment-variables)
-
-**GitHub Goals Progress:**
-
-- [ ] **100 Stars**: 90% [▲▲▲▲▲▲▲▲▲_]
-- [ ] **20 Forks**: 75% [▲▲▲▲▲▲▲___]
-
-**We craft the world's most featured, global, and iconic Next.js starter template!** It's really huge! Step into the future with this ultimate Next.js starter! Beautifully created with ❤️ **Next.js 13 template** by **[@blefnk Nazarii Korniienko](https://github.com/blefnk)**, **[Bleverse](https://github.com/bs-oss)**, and its the most gorgeous, entire OSS community. The starter is perfectly opinionated and has i18n, means internationalization, and built with `app router` and `server actions` using `TypeScript` programming language. Everything has been set up for you. It's more than just code; it's a journey. You're not on this journey alone. Download it and move really faster than ever, than anyone!
-
-When you give us the star [on this repo](https://github.com/blefnk/relivator) and introduce yourself in the [Discord Channel of the project](https://discord.gg/Pb8uKbwpsJ), you take part in a lotteries where the 5 randomly selected persons will win the early-access to some secret Relivator features! ⭐ The first gift contest will be started once we reach 100 stars and have at least 5 users participate in the "Relivator 100 Stars" thread (_just say hello or tell something about yourself there_). This thread can be found in the `bleverse-events` channel [on our Discord server](https://discord.gg/Pb8uKbwpsJ). ✨ _More stars lead to more features!_
-
-**🔥 We are growing so fast! Many thanks [to everyone for the stars](https://github.com/blefnk/relivator/stargazers)! Here are the stargazers over time:**
-
-[![Star History Chart](https://api.star-history.com/svg?repos=blefnk/relivator&type=Timeline)](https://star-history.com/#blefnk/relivator&Timeline)
-
-We've laid the groundwork; now, grab it, dive in and accelerate your development. This is the space where we're playing with everything new in Next.js 13. Stumbled upon something? Use repository discussions, raise an issue right here, or DM us on 𝕏/Twitter [@blefnk](https://x.com/blefnk). Btw, project takes some inspirations from T3 and similar stacks. Our own stack beside other includes also many more other things. Just get it and enjoy! And remember! We love your feedback. We love your stars. So smash it, please! And make your forks! It helps the project to be even coolest! If you've got some coding magic up your sleeve, contributions are always celebrated! 🎉
-
-[📑 Article on Medium about this Project (updates soon)](https://cutt.ly/awf6fScS)
-
-[![Join the Bleverse Discord](https://discordapp.com/api/guilds/1075533942096150598/widget.png?style=banner2)][bleverse-discord]
-
-![Bleverse Relivator Landing Page Screenshot](/public/screenshot.png)
+**SAAS TEMPLATE v1.0.0 is released! Now it's stable and ready for production! 🚀**
 
 > **Note**
 > This README tries to be really useful. By this reason it requires many of text. It means the some of text may be outdated, and will be updated as we scaling. So please let us know on the [discussion page](https://github.com/blefnk/relivator/discussions/6) if you notice any minor issues in the project, such as outdated information, broken links, grammatical or spelling mistakes etc. in the README.md or another files.
 
 _You can also check [our another free Next.js 13 starter](https://github.com/blefnk/reliverse). This one starter, a monorepo, offers you tech used in the current starter plus also: Turborepo/Turbopack, Prisma, Valibot, Lucia, Clerk, and much more. It means there we're very experimentally trying to implement all the important and most used tech together._
 
-## 03. We are Waiting for Your Help
 
-The project has a huge plans! So we are very appreciate any help! Here is the things for the people, who are searching to make their own commits, like GitHub beginners.
+## 01. Project Features | Roadmap | Checklists
 
-**Currently we are very interested in the help with:**
-
-1. README.md needs to be fully improved.
-2. Some toaster notifications doesn't work.
-3. Sometimes next-intl error is randomly shown in console.
-4. Stripe is not fully finished and may not work in some places.
-
-You can also use `Cmd/Ctrl+Shift+F` in VSCode to search for `todo:`.
-
-Please **check [Commits](https://github.com/blefnk/relivator/issues) tab** to see another things where help is needed.
-
-Besides it, check the v2.0.0-v3.0.0 Project Roadmap below to get know what things can be implemented in this Next.js starter.
-
-## 04. Project Features | Roadmap | Checklists
-
-### 04.01. Roadmap Checklist For **v1.0.0** Release
+### 01.01. Roadmap Checklist For **v1.0.0** Release
 
 This roadmap outlines the key features and improvements to be implemented in this Next.js starter. If mistakes here, please create an issue.
 
@@ -81,7 +36,7 @@ This roadmap outlines the key features and improvements to be implemented in thi
 20. [x] 🅰️ The beautiful implementation of font system, using **[Inter](https://rsms.me/inter)** and other typefaces.
 21. [x] 🔀 Type-safety validations for project schemas and UI fields via **[Zod](https://zod.dev)**.
 
-### 04.02. Roadmap Checklist For **v2.0.0** Release
+### 01.02. Roadmap Checklist For **v2.0.0** Release
 
 This roadmap outlines the key features and improvements to be implemented in this Next.js starter. Not marked things may be already configured, but was not tested too much. If mistakes here, please create an issue.
 
@@ -132,7 +87,7 @@ This roadmap outlines the key features and improvements to be implemented in thi
 45. [ ] 😜 Minimal possible references to Relivator, Bleverse, etc. to be really easy-starter. Using variables from `app.ts` everywhere.
 46. [ ] 🎯 Maximum possible for the app performance points on services like Google PageSpeed Insights. Also app must pass all hard tests.
 
-### 04.03. Roadmap Checklist For **v3.0.0** Release
+### 01.03. Roadmap Checklist For **v3.0.0** Release
 
 This roadmap outlines the key features and improvements to be implemented in this Next.js starter. Not marked things may be already configured, but was not tested too much. If mistakes here, please create an issue.
 
@@ -154,35 +109,32 @@ _The section will be expanded soon._
 
 <!-- TOC start -->
 
-- [Relivator Next.js 13.5: Store | Landing | Dashboard (Template 2023)](#relivator-nextjs-135-store--landing--dashboard-template-2023)
-  - [01. Follow Us Everywhere](#01-follow-us-everywhere)
-  - [02. The Bleverse Framework for the Web](#02-the-bleverse-framework-for-the-web)
-  - [03. We are Waiting for Your Help](#03-we-are-waiting-for-your-help)
-  - [04. Project Features | Roadmap | Checklists](#04-project-features--roadmap--checklists)
-    - [04.01. Roadmap Checklist For **v1.0.0** Release](#0401-roadmap-checklist-for-v100-release)
-    - [04.02. Roadmap Checklist For **v2.0.0** Release](#0402-roadmap-checklist-for-v200-release)
-    - [04.03. Roadmap Checklist For **v3.0.0** Release](#0403-roadmap-checklist-for-v300-release)
-    - [04.04. Relivator `1.0.0`-`2.0.0` Accessability Checklist](#0404-relivator-100-200-accessability-checklist)
-  - [06. Table of Contents](#06-table-of-contents)
-  - [07. Recommendations \& Why We Use This And That](#07-recommendations--why-we-use-this-and-that)
-  - [08. Bun Support \& Compatibility](#08-bun-support--compatibility)
-  - [09. Internationalization (i18n)](#09-internationalization-i18n)
-  - [10. Project Configuration](#10-project-configuration)
-  - [11. NextAuth.js Authentication](#11-nextauthjs-authentication)
-  - [12. Environment variables](#12-environment-variables)
-  - [13. Getting Started Locally](#13-getting-started-locally)
-  - [14. Database](#14-database)
+- [# SAAS TEMPLATE Next.js 13.5: Survey | Auth | Landing | Account (Template 2023)]
+  - [01. Project Features | Roadmap | Checklists](#01-project-features--roadmap--checklists)
+    - [01.01. Roadmap Checklist For **v1.0.0** Release](#0101-roadmap-checklist-for-v100-release)
+    - [01.02. Roadmap Checklist For **v2.0.0** Release](#0102-roadmap-checklist-for-v200-release)
+    - [01.03. Roadmap Checklist For **v3.0.0** Release](#0103-roadmap-checklist-for-v300-release)
+    - [01.04. Relivator `1.0.0`-`2.0.0` Accessability Checklist](#0104-relivator-100-200-accessability-checklist)
+  - [02. Table of Contents](#06-table-of-contents)
+  - [03. Recommendations \& Why We Use This And That](#07-recommendations--why-we-use-this-and-that)
+  - [04. Bun Support \& Compatibility](#08-bun-support--compatibility)
+  - [05. Internationalization (i18n)](#09-internationalization-i18n)
+  - [06. Project Configuration](#10-project-configuration)
+  - [07. NextAuth.js Authentication](#11-nextauthjs-authentication)
+  - [08. Environment variables](#12-environment-variables)
+  - [09. Getting Started Locally](#13-getting-started-locally)
+  - [10. Database](#14-database)
     - [1. `pnpm db` automatization](#1-pnpm-db-automatization)
     - [2. Making changes to the database schema (learn more)](#2-making-changes-to-the-database-schema-learn-more)
     - [tRPC](#trpc)
-  - [15. How to Deploy the Project](#15-how-to-deploy-the-project)
-  - [16. Migration From Similar Starter](#16-migration-from-similar-starter)
-  - [17. UI components](#17-ui-components)
-  - [18. Linting / Checking the codebase](#18-linting--checking-the-codebase)
-    - [18.01. Linting](#1801-linting)
-    - [18.02. Type Checking](#1802-type-checking)
-    - [18.03. Formatting with Prettier](#1803-formatting-with-prettier)
-    - [18.04. Testing](#1804-testing)
+  - [11. How to Deploy the Project](#15-how-to-deploy-the-project)
+  - [12. Migration From Similar Starter](#16-migration-from-similar-starter)
+  - [13. UI components](#17-ui-components)
+  - [14. Linting / Checking the codebase](#18-linting--checking-the-codebase)
+    - [14.01. Linting](#1801-linting)
+    - [14.02. Type Checking](#1802-type-checking)
+    - [14.03. Formatting with Prettier](#1803-formatting-with-prettier)
+    - [14.04. Testing](#1804-testing)
   - [19. Say Thank You to Them](#19-say-thank-you-to-them)
   - [19. Recommended Things to Learn](#19-recommended-things-to-learn)
   - [20. Contributing and Credits](#20-contributing-and-credits)
