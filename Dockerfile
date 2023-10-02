@@ -17,9 +17,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY public/ ./public/
 COPY src/ ./src/
-COPY .env* next.config.mjs package.json postcss.config.js tailwind.config.js tsconfig.json ./
+COPY prisma ./prisma/ next.config.mjs package.json postcss.config.cjs tailwind.config.js tsconfig.json ./
+
+RUN npx prisma generate
+
 # Set environment variables
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 ENV NODE_ENV=production
 # env vars
 # add environment variables to client code
@@ -48,6 +51,7 @@ ENV LINKEDIN_SECRET=$LINKEDIN_SECRET_ARG
 ENV FACEBOOK_ID=$FACEBOOK_ID_ARG
 ENV FACEBOOK_SECRET=$FACEBOOK_SECRET_ARG
 ENV NODE_ENV=production
+
 RUN pnpm run build
 
 # Production image, copy all the files and run next
