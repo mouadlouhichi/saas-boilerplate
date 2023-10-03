@@ -1,7 +1,7 @@
 # Adapted from https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile
 
 # Install dependencies only when needed
-FROM node:18-alpine AS deps
+FROM node:20-alpine AS deps
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -13,7 +13,7 @@ COPY package.json pnpm-lock.yaml* ./
 RUN pnpm install
 
 # Rebuild the source code only when needed
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -64,7 +64,7 @@ RUN echo ${NODE_ENV}
 RUN NODE_ENV=${NODE_ENV} pnpm build
 
 # Production image, copy all the files and run next
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 

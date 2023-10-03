@@ -234,7 +234,7 @@
     "@types/lodash": "^4.14.199",
     "@types/mdx": "^2.0.8",
     "@types/negotiator": "^0.6.1",
-    "@types/node": "20.7.0",
+    "@types/node": "20.8.2",
     "@types/nodemailer": "^6.4.11",
     "@types/nprogress": "^0.2.0",
     "@types/pg": "^8.10.3",
