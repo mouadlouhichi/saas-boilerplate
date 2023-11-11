@@ -167,7 +167,7 @@
     "nodemailer": "^6.9.5",
     "nprogress": "^0.2.0",
     "pg": "^8.11.3",
-    "plop": "^3.1.2",
+    "plop": "^4.0.0",
     "postgres": "^3.3.5",
     "postmark": "^3.0.19",
     "rc-slider": "^10.1.1",
