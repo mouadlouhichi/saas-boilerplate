@@ -294,8 +294,8 @@ dependencies:
     specifier: ^1.0.1
     version: 1.0.1
   next-intl:
-    specifier: 3.0.0-beta.19
-    version: 3.0.0-beta.19(next@13.5.3)(react@18.2.0)
+    specifier: 3.4.1
+    version: 3.4.1(next@13.5.3)(react@18.2.0)
   next-safe-action:
     specifier: ^3.3.0
     version: 3.3.0(next@13.5.3)(react@18.2.0)(zod@3.22.2)
@@ -16975,18 +16975,17 @@ packages:
       server-only: 0.0.1
     dev: false
 
-  /next-intl@3.0.0-beta.19(next@13.5.3)(react@18.2.0):
-    resolution: {integrity: sha512-F9ZZ342rDUJE3hOD2ZkKtkbeJNNUQtorN0Wnr2gThgLeeyKchbwm5KgijK4gOU66Yw91V1lRuGEcV6BMJdSaxg==}
+  /next-intl@3.4.1(next@13.5.3)(react@18.2.0):
+    resolution: {integrity: sha512-z8gY7uCe1cDHpH3rAD4uxZ5qEvt0WZX4bdKu7km2COPUIEXAXF1puwNAbtTC8b5clWGd87QwBy1+VS7ZElyU8g==}
     peerDependencies:
-      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@formatjs/intl-localematcher': 0.2.32
       negotiator: 0.6.3
       next: 13.5.3(@babel/core@7.23.0)(@opentelemetry/api@1.6.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.68.0)
       react: 18.2.0
-      server-only: 0.0.1
-      use-intl: 3.0.0-beta.3(react@18.2.0)
+      use-intl: 3.4.1(react@18.2.0)
     dev: false
 
   /next-safe-action@3.3.0(next@13.5.3)(react@18.2.0)(zod@3.22.2):
@@ -21749,8 +21748,8 @@ packages:
       react: 18.2.0
       tslib: 2.6.2
 
-  /use-intl@3.0.0-beta.3(react@18.2.0):
-    resolution: {integrity: sha512-b5c9F6F3Yw7xbdIVdDBj2qh5BHntdr2Obp3c40OTxXOwqDIyjAbOxjezGe7ak8EGo0TEezyN6oPvi6aQWPjDdQ==}
+  /use-intl@3.4.1(react@18.2.0):
+    resolution: {integrity: sha512-Z2SWvtFXXytpKCTMeyNX6Un8HC8mmu1RxYIHOwI01rMSy6mGBFaO9T1a/0xDL1CLNLP4NzHdzRNsuhDcrw2/VQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
