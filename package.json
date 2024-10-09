@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "@auth/core": "^0.15.2",
+    "@auth/core": "^0.37.0",
     "@auth/drizzle-adapter": "^0.3.2",
     "@cspell/dict-companies": "^3.0.24",
     "@cspell/dict-de-de": "^3.1.0",
