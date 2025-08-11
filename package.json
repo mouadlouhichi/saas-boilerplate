@@ -79,7 +79,7 @@
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.3.1",
-    "@loglib/tracker": "^0.6.2",
+    "@loglib/tracker": "^0.8.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@neondatabase/serverless": "^0.6.0",
